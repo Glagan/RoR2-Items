@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    min-height: 100vh;
+    background-color: #252F38;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body {
+    color: white;
+    text-shadow: 0 1px 1px black;
+}
+body .title {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+.is-sticky {
+    position: sticky;
+    top: 0;
+}
+
+.search .input::placeholder {
+    color: black;
+}
+
+.search .title {
+    margin-bottom: 0.75rem;
+}
+
+.items > .notification {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.items > .column {
+    overflow: hidden;
+}
+
+.ror-item {
+    border: 2px solid #4F6372;
+    background-color: #3E4E5B;
+    height: 94px;
+    border-radius: 2px;
+    transition: all 200ms ease-in-out;
+}
+.ror-item img:hover {
+    cursor: pointer;
+}
+
+.ror-item.uncommon {
+    border: 2px solid hsl(141, 71%, 48%);
+}
+.ror-item.uncommon:hover {
+}
+
+.ror-item.rare {
+    border: 2px solid hsl(12, 77%, 53%);
+}
+.ror-item.rare:hover {
+}
+
+.ror-item.unique {
+    border: 2px solid hsl(63, 76%, 51%);
+}
+.ror-item.unique:hover {
+}
+
+.ror-item.lunar {
+    border: 2px solid hsl(188, 92%, 61%);
+}
+.ror-item.lunar:hover {
+}
+
+.ror-item.equipment {
+    border: 2px solid hsl(35, 73%, 54%);
+}
+.ror-item.equipment:hover {
+}
+
+
+.ror-item-description {
+    overflow: hidden;
+    white-space: pre-line;
+}
+.ror-item:hover .ror-item-description {
+    overflow: auto;
+}
+.ror-item-description > * {
+    padding: 0 0.5rem;
+}
+.ror-item-description > .notification {
+    margin: 0.25rem 0.5rem;
+}
+
+.ror-item-description .per-stack {
+    color: #8990A7;
+    font-size: 14px;
+    text-shadow: 1px 0 1px black;
+}
