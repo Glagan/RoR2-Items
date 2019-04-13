@@ -35,7 +35,7 @@
             [30, 1, 'EquipmentMagazine', 'Fuel Cell', 'utility,charge,locked', 'cell', 'Hold an additional equipment charge {+1}.\nReduce equipment cooldown by 15% {+15%}.', 'Pickup 5 different types of Equipment.'],
             [33, 1, 'Infusion', 'Infusion', 'defense,life,locked', 'infusion', 'Killing an enemy increases your health permanently by 1, up to a maximum of 100 {+100} health.', 'Defeat 3000 enemies.'],
             [37, 1, 'Bandolier', 'Bandolier', 'utility', 'bandolier', '18% {+10%} chance on kill to drop an ammo pack that resets all cooldowns.'],
-            [46, 1, 'WarCryOnMultiKill', 'Berzerker\'s Pauldron', 'offense,movespeed,on,kill', 'berzerk', 'Killing 3 enemies within 1 second sends you into a frenzy for 6s {+4s}.\nIncreases movement speed by 50% and attack speed by 100%.'],
+            [46, 1, 'WarCryOnMultiKill', 'Berzerker\'s Pauldron', 'offense,movespeed,on,kill,locked', 'berzerk', 'Killing 3 enemies within 1 second sends you into a frenzy for 6s {+4s}.\nIncreases movement speed by 50% and attack speed by 100%.', 'Charge the Teleporter with less than 10% health.'],
             [62, 1, 'SprintArmor', 'Rose Buckler', 'defense,armour,shield', 'buckler', 'Increase armor by 25 {+25} while sprinting.'],
             [63, 1, 'IceRing', 'Runald\'s Band', 'offense,on,hit,locked', 'iceRing', '8% chance on hit to strike an ennemy with a runic ice blast, slowing them by 80% and dealing 250% damage {+125%}.', 'Discover the hidden chamber in the Abandonned Aqueduct.'],
             [64, 1, 'FireRing', 'Kjaro\'s Band', 'offense,on,hit,locked', 'fireRing', '8% chance on hit to strike an ennemy with a runic flame tornado, dSealing 500% damage {+250%}.', 'Discover the hidden chamber in the Abandonned Aqueduct.'],
@@ -47,17 +47,17 @@
             [14, 2, 'Icicle', 'Frost Relic', 'offense,on,kill', 'ice', 'Killing an enemy surrounds you with 3 icicles that deal 3x33% damage.'],
             [15, 2, 'GhostOnKill', 'Happiest Mask', 'offense,on,kill', 'mask', 'Killing enemies has a 10% chance to spawn a ghost of the killed enemy with 500% damage. Last 30s {+30s}.'],
             [22, 2, 'FallBoots', 'H3AD-5T v2', 'defense,attack,fall', 'cuffs', 'Increase jump height.\nCreates a 10m radius kinetic explosion on hitting the ground, dealing 2300% base damage that scales up with the speed.\nRecharges in 10 {-50%} seconds.'],
-            [31, 2, 'NovaOnHeal', 'N\'kuhana\'s Opinion', 'offense,locked', 'opinion', 'Store 100% {+100%} of healing as Soul Energy.\nAfter your soul Energy reaches 10% of your maximum health, fire a skull that deals 250% of your Soul Energy as damage.', 'Find the Altar to N\'kuhana.'], // TODO:
+            [31, 2, 'NovaOnHeal', 'N\'kuhana\'s Opinion', 'offense,locked', 'opinion', 'Store 100% {+100%} of healing as Soul Energy.\nAfter your soul Energy reaches 10% of your maximum health, fire a skull that deals 250% of your Soul Energy as damage.', 'Find the Altar to N\'kuhana.'],
             [32, 2, 'ShockNearby', 'Unstable Tesla Coil', 'offense,close,locked', 'tesla', 'Fire out lightning that hits 3 {+3} enemies for 200% base damage every 0.5 seconds.\nThe Tesla Coil switches off every 10 seconds.', 'Deal 5000 damage in one shot.'],
-            [35, 2, 'Clover', '57 Leaf Clover', 'utility,locked', 'clover', 'All random effects are rolled +1 {+1} times for a favorable outcome.'], // TODO: Picture
+            [35, 2, 'Clover', '57 Leaf Clover', 'utility,locked', 'clover', 'All random effects are rolled +1 {+1} times for a favorable outcome.', 'Complete 20 stages in a single run.'],
             [38, 2, 'BounceNearby', 'Sentient Meat Hook', 'offense,utility,grab,locked', 'hook', '20% {+20%} chance on hit to fire homing hooks at up to 10 {+5} enemies for 100% damage.', 'Loop back to the first stage.'],
             [50, 2, 'AlienHead', 'Alien Head', 'utility', 'alien', 'Reduce skill cooldown by 25% {+25%}.'],
-            [51, 2, 'Talisman', 'Souldbound Catalyst', 'utility,equipment', 'soul', 'Kills reduce equipment cooldown by 4s {+2s}.'], // TODO: Picture
+            [51, 2, 'Talisman', 'Souldbound Catalyst', 'utility,equipment,locked', 'soul', 'Kills reduce equipment cooldown by 4s {+2s}.', 'Discover and activate 8 unique Newt Altars.'],
             [66, 2, 'ExtraLife', 'Dio\'s Best Friend', 'utility,bear,death,jojo,locked', 'dio', 'Upon Death, this item will be consumed and you will return to life with 3 seconds of invulnerability.', 'Stay alive for 30 consecutive minutes.'],
             [68, 2, 'UtilitySkillMagazine', 'Hardlight Afterburner', 'utility,charge',  'burner', 'Add +2 {+2} charges of your Utility skill.\nReduces Utility skill cooldown by 33%.'],
             [69, 2, 'HeadHunter', 'Wake of Vultures', 'utility,useless,poe,headhunter', 'headhunter', 'Gain the power of any killed elite monster for 8s {+5s}.'],
-            [70, 2, 'KillEliteFrenzy', 'Brainstalks', 'attack', 'brain', 'Upon killing an elite monster, enter a frenzy for 3s {+2s} where skills have no cooldowns.'], // TODO: Picture
-            [75, 2, 'IncreaseHealing', 'Rejuvenation Rack', 'defense,heal,double', 'horn', 'Heal +100% {+100%} more.'],
+            [70, 2, 'KillEliteFrenzy', 'Brainstalks', 'offense,locked', 'brain', 'Upon killing an elite monster, enter a frenzy for 3s {+2s} where skills have no cooldowns.', 'Defeat an Elite boss on Monsoon difficulty.'],
+            [75, 2, 'IncreaseHealing', 'Rejuvenation Rack', 'defense,heal,double,locked', 'horn', 'Heal +100% {+100%} more.', 'Without healing, reach and complete the 3rd Teleporter event.'],
             // Unique
             [52, 3, 'Knurl', 'Titanic Knurl', 'defense,life', 'knurl', 'Increases maximum health by 40 {+40} and health regeneration by 1.6 {+1.6} health/second.'],
             [53, 3, 'BeetleGland', 'Queen\'s Gland', 'utility,invocation', 'beetle', 'Every 30 seconds, summon a Beetle Guard with bonus 300% damage and 100% health.\nCan have up to 1 {+1} Guards at a time.'],
@@ -66,16 +66,17 @@
             [44, 4, 'GoldOnHit', 'Brittle Crown', 'utility', 'crown', '30% chance on hit to gain 3 {+3} gold.\nLose gold equal to the amount you are hit for OR lose % gold equal to the % maximum health you lost.\nChooses the greater of the two.'],
             [49, 4, 'ShieldOnly', 'Transcendence', 'defense,chaos', 'transc', 'Convert all but 1 health into regenerating shields.\nGain 50% {+25%} maximum health.'],
             [71, 4, 'RepeatHeal', 'Corpsebloom', 'defense,heal,dot', 'flower', 'Heal +100% {+100%} more.\nAll healing is applied over time.\nCan heal for a maximum of 10% {-50%} of your health per second.'],
-            [74, 4, 'AutoCastEquipment', 'Gesture of the Drowned', 'utility,equipment', 'fossil', 'Reduce equipment cooldown by 50% {+50%}.\nForces your Equipment to activate whenever it is off cooldown.'], // TODO: Picture
+            [74, 4, 'AutoCastEquipment', 'Gesture of the Drowned', 'utility,equipment,locked', 'fossil', 'Reduce equipment cooldown by 50% {+50%}.\nForces your Equipment to activate whenever it is off cooldown.', 'Kill 20 Hermit Crabs by chasing them off the edge of the map.'],
+            [3, 4, 'Meteor', 'Glowing Meteorite', 'offense,suicide,equipment,locked', 'meteorite', 'Rain meteors from the sky, damaging ALL characters for 600% damage per blast.\nLast 20 seconds.', 'Carry 5 Lunar items in a single run.'],
             [23, 4, 'BurnNearby', 'Helfire Tincture', 'offense,suicide,fire,equipment,locked', 'burn', 'Ignite ALL characters within 8m. Deal 5% of your maximum health/second as burning to yourself.\nThe burn is 0.5x stronger on allies, and 24x stronger on enemies.', 'Kill 15 enemies simultaneously.'],
-            [24, 4, 'SoulCorruptor', 'Effigy of Grief', 'utility,equipment', 'slow', 'ALL characters are slowed by 50% and has their armor reduced by 20.'],
+            [26, 4, 'CrippleWard', 'Effigy of Grief', 'utility,equipment', 'slow', 'ALL characters are slowed by 50% and has their armor reduced by 20.'],
             // Equipments
             [0, 5, 'CommandMissile', 'Disposable Missile Launcher', 'attack', 'missile', 'Fire a swarm of 12 missiles that deal 12x300% damage.'],
             [2, 5, 'Fruit', 'Foreign Fruit', 'defense,heal', 'fruit', 'Instantly heal for 50% of your maximum health.'],
             [11, 5, 'Blackhole', 'Blackhole', 'offense,stack', 'blackhole', 'Fire a black hole that draws enemies within 30m into it\'s center.\nLast 10 seconds.'],
             [13, 5, 'CritOnUse', 'Ocular HUD', 'attack', 'hud', 'Gain +100% Critical Strike Chance for 8 seconds.'],
             [14, 5, 'DroneBackup', 'The Back-up', 'utility,locked', 'drone', 'Call 4 Strike Drones to fight for you.\nLast 25 seconds.', 'Repair 30 drones or turrets.'],
-            [15, 5, 'OrbitalLaser', 'Preon Accumulator', 'offense,locked', 'beam', 'Fires preon tendrils, zapping enemies within 35m up to 600% damage/second.\nOn contact, detonate in an enormous 20m explosion for 4000% damage.', 'Open the Timed Security Chest on Rallypoint Delta.'],
+            [16, 5, 'BFG', 'Preon Accumulator', 'offense,locked', 'beam', 'Fires preon tendrils, zapping enemies within 35m up to 600% damage/second.\nOn contact, detonate in an enormous 20m explosion for 4000% damage.', 'Open the Timed Security Chest on Rallypoint Delta.'],
             [18, 5, 'Jetpack', 'Milky Chrisalis', 'utility,movespeed', 'larva', 'Sprout wings and fly for 15 seconds.\nGain +20% movement speed for the duration.'],
             [19, 5, 'Lightning', 'Royal Capacitor', 'offense,locked', 'lightning', 'Call down a lightning strike on a targeted monster, dealing 3000% damage and stunning nearby monsters.', 'Defeat the Teleporter bosses after activating 2 Shrines of the Moutain.'],
             [20, 5, 'GoldGat', 'The Crowdfunder', 'offense,troll,locked', 'gatling', 'Fires a continuous barrage that deals 100% damage per bullet.\nCosts $1 per bullet. Costs increases over time.', 'Collect $30,480 total gold.'],
