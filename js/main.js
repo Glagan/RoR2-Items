@@ -82,9 +82,14 @@
             [20, 5, 'GoldGat', 'The Crowdfunder', 'offense,troll,locked', 'gatling', 'Fires a continuous barrage that deals 100% damage per bullet.\nCosts $1 per bullet. Costs increases over time.', 'Collect $30,480 total gold.'],
             [21, 5, 'PassiveHealing', 'Gnarled Woodsprite', 'defense,heal,locked', 'spirit', 'Gain a Woodsprite follower that heals for 1.5% of your maximum health/second.\nCan be sent to an ally to heal them for 10% of their maximum health.', 'Fully upgrade a Shrine of the Woods.'],
             [25, 5, 'Scanner', 'Radar Scanner', 'utility,scan,locked', 'radar', 'Reveal all interactables within 500m for 10 seconds.', 'Collect 10 Monster or Environment Logs.'],
+            // Drop
+            [5, 5, 'AffixRed', 'Ifrit\'s Distinction', 'offense,fire,drop', 'fireAspect', 'Become an aspect of fire.', 'Drop from Fire Elite enemies.'],
+            [6, 5, 'AffixBlue', 'Silent Between Two Strikes', 'offense,lightning,drop', 'lightningAspect', 'Become an aspect of lightning.', 'Drop from Lightning Elite enemies.'],
+            [9, 5, 'AffixWhite', 'Her Biting Embrace', 'offense,ice,drop', 'iceAspect', 'Become an aspect of ice.', 'Drop from Ice Elite enemies.'],
         ];
         let itemObjects = [];
         let rarities = ['common', 'uncommon', 'rare', 'unique', 'lunar', 'equipment'];
+        let lunarEquipments = [3, 23, 26];
         let itemCount = items.length;
         let itemList = document.getElementById("items");
         for (let i = 0; i < itemCount; i++) {
@@ -113,12 +118,17 @@
             let itemImageSrc = ['img/', currentItem.img, '.png'].join('');
             let img = document.createElement('img');
             img.addEventListener('click', event => {
-                navigator.clipboard.writeText(currentItem.id)
+                let give = 'give_item';
+                if (currentItem.rarity == 5 ||
+                    currentItem.rarity == 4 && lunarEquipments.indexOf(currentItem.id) >= 0) {
+                    give = 'give_equip';
+                }
+                navigator.clipboard.writeText([give, ' ', currentItem.id, ' 1'].join(""))
                 .then(() => {
-                    SimpleNotification.success('Copied', ['**', currentItem.name, '** ID has been copied.'].join(''), itemImageSrc, {duration: 1000, position: 'bottom-left'});
+                    SimpleNotification.success('Copied', ['**', currentItem.name, '** give command has been copied.'].join(''), itemImageSrc, {duration: 1200, position: 'bottom-left'});
                 })
                 .catch(error => {
-                    SimpleNotification.error('Error', ['Could not copy the item ID:\n', error].join(''), itemImageSrc, {duration: 1000, position: 'bottom-left'});
+                    SimpleNotification.error('Error', ['Could not copy the give command:\n', error].join(''), itemImageSrc, {duration: 1200, position: 'bottom-left'});
                 });
 
             });
