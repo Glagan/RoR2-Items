@@ -117,6 +117,8 @@
             imgContainer.className = 'column is-paddingless is-narrow';
             let itemImageSrc = ['img/', currentItem.img, '.png'].join('');
             let img = document.createElement('img');
+            img.width = 90;
+            img.height = 90;
             img.addEventListener('click', event => {
                 let give = 'give_item';
                 if (currentItem.rarity == 5 ||
