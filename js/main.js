@@ -22,6 +22,8 @@
             [59, 0, 'StickyBomb', 'Sticky Bomb', 'offense,on,hit', 'stickyBomb', '5% {+2.5%} chance on hit to attach a bomb to an enemy, detonating for 250% damage {+125%}.'],
             [60, 0, 'TreasureCache', 'Rusted Key', 'utility,box,locked', 'key', 'A hidden cache containing an item will appear in a random location in each stage {Increase rarity of the item}.', 'Defeat the Teleporter boss under 15 seconds.'],
             [61, 0, 'BossDamageBonus', 'Armor-Piercing Rounds', 'offense,boss,ammo,bullet,locked', 'bossDamage', 'Deal an additional 20% damage {+10%} to bosses.', 'Complete a Teleporter event.'],
+            [78, 0, 'ExecuteLowHealthElite', 'Old Guillotine', 'offense,boss,locked', 'guillotine', 'Instantly kill Elite Monsters below 20% {+5%} health.', 'Defeat 500 Elite Monsters.'],
+            [84, 0, 'BarrierOnKill', 'Topaz Brooch', 'defense,shield,on,kill', 'shieldBrooch', 'Gain a temporary barrier on kill for 20 health {+20}.'],
             // Uncommon
             [3, 1, 'Missile', 'AtG Missile Mk. 1', 'offense,on,hit', 'missile_mk', '10% chance to fire a missile that deals 300% {+300%} damage.'],
             [4, 1, 'ExplodeOnDeath', 'Will-O\'-the-wisp', 'offense,on,kill', 'wisp', 'On killing an enemy, spawn a lava pillar in a 12m {+2.4m} radius for 350% {+280%} base damage.'],
@@ -41,9 +43,10 @@
             [64, 1, 'FireRing', 'Kjaro\'s Band', 'offense,on,hit,locked', 'fireRing', '8% chance on hit to strike an ennemy with a runic flame tornado, dSealing 500% damage {+250%}.', 'Discover the hidden chamber in the Abandonned Aqueduct.'],
             [65, 1, 'SlowOnHit', 'Chronobauble', 'offense,on,hit', 'bauble', 'Slow enemies for -60% movement speed for 1s {+1s}.'],
             [76, 1, 'JumpBoost', 'Wax Quail', 'defense,movespeed,pigeon,locked', 'quail', 'Jumping while sprinting boosts you forward by 10m {+10m}.', 'Reach +300% movespeed (include sprinting).'],
+            [79, 1, 'EnergizedOnEquipmentUse', 'War Horn', 'offense,attack,speed,equipment,locked', 'warHorn', 'Activating your Equipment gives you +70% attack speed for 8s {+4s}', 'Complete 3 Combat Shrines in a single stage.'],
             // Rare
             [2, 2, 'Behemoth', 'Brilliant Behemoth', 'offense,explosion,on,hit', 'behemoth', 'All your attacks explode in a 4m {+1.5m} radius for a bonus 60% damage to nearby enemies.'],
-            [5, 2, 'Dagger', 'Ceremonial Dagger', 'offense,on,kill', 'dagger', 'Killing an enemy releases homing daggers.'],
+            [5, 2, 'Dagger', 'Ceremonial Dagger', 'offense,on,kill,tracking,attack', 'dagger', 'Killing an enemy releases homing daggers.'],
             [14, 2, 'Icicle', 'Frost Relic', 'offense,on,kill', 'ice', 'Killing an enemy surrounds you with 3 icicles that deal 3x33% damage.'],
             [15, 2, 'GhostOnKill', 'Happiest Mask', 'offense,on,kill', 'mask', 'Killing enemies has a 10% chance to spawn a ghost of the killed enemy with 500% damage. Last 30s {+30s}.'],
             [22, 2, 'FallBoots', 'H3AD-5T v2', 'defense,attack,fall', 'cuffs', 'Increase jump height.\nCreates a 10m radius kinetic explosion on hitting the ground, dealing 2300% base damage that scales up with the speed.\nRecharges in 10 {-50%} seconds.'],
@@ -55,12 +58,15 @@
             [51, 2, 'Talisman', 'Souldbound Catalyst', 'utility,equipment,locked', 'soul', 'Kills reduce equipment cooldown by 4s {+2s}.', 'Discover and activate 8 unique Newt Altars.'],
             [66, 2, 'ExtraLife', 'Dio\'s Best Friend', 'utility,bear,death,jojo,locked', 'dio', 'Upon Death, this item will be consumed and you will return to life with 3 seconds of invulnerability.', 'Stay alive for 30 consecutive minutes.'],
             [68, 2, 'UtilitySkillMagazine', 'Hardlight Afterburner', 'utility,charge',  'burner', 'Add +2 {+2} charges of your Utility skill.\nReduces Utility skill cooldown by 33%.'],
-            [69, 2, 'HeadHunter', 'Wake of Vultures', 'utility,useless,poe,headhunter', 'headhunter', 'Gain the power of any killed elite monster for 8s {+5s}.'],
+            [69, 2, 'HeadHunter', 'Wake of Vultures', 'utility,elite,poe,headhunter', 'headhunter', 'Gain the power of any killed elite monster for 8s {+5s}.'],
             [70, 2, 'KillEliteFrenzy', 'Brainstalks', 'offense,locked', 'brain', 'Upon killing an elite monster, enter a frenzy for 3s {+2s} where skills have no cooldowns.', 'Defeat an Elite boss on Monsoon difficulty.'],
             [75, 2, 'IncreaseHealing', 'Rejuvenation Rack', 'defense,heal,double,locked', 'horn', 'Heal +100% {+100%} more.', 'Without healing, reach and complete the 3rd Teleporter event.'],
+            [80, 2, 'BarrierOnOverHeal', 'Aegis', 'utility,heal,defense', 'fullBarrier', 'Healing past full grants you a temporary barrier for up to 20% {+20%} of your maximum health.'],
             // Unique
             [52, 3, 'Knurl', 'Titanic Knurl', 'defense,life', 'knurl', 'Increases maximum health by 40 {+40} and health regeneration by 1.6 {+1.6} health/second.'],
             [53, 3, 'BeetleGland', 'Queen\'s Gland', 'utility,invocation', 'beetle', 'Every 30 seconds, summon a Beetle Guard with bonus 300% damage and 100% health.\nCan have up to 1 {+1} Guards at a time.'],
+            [82, 3, 'TitanGoldDuringTP', 'Halcyon Seed', 'utility,invocation,boss,summon', 'goldenSeed', 'Summon Aurelionite during the teleporter event.\nIt has 100% {+50%} damage and 100% {+100%} health.'],
+            [83, 3, 'SprintWisp', 'Little Disciple', 'offense,tracking,sprint,attack', 'sprintingWisp', 'Fire a tracking wisp for 100% {+100%} damage.\nFires every 0.5 seconds while sprinting.'],
             // Lunar
             [43, 4, 'LunarDagger', 'Shaped Glass', 'offense,suicide', 'sword', 'Increase base damage by 100% {+100%}.\nReduce maximum health by 50% {+50%}.'],
             [44, 4, 'GoldOnHit', 'Brittle Crown', 'utility', 'crown', '30% chance on hit to gain 3 {+3} gold.\nLose gold equal to the amount you are hit for OR lose % gold equal to the % maximum health you lost.\nChooses the greater of the two.'],
@@ -70,6 +76,7 @@
             [3, 4, 'Meteor', 'Glowing Meteorite', 'offense,suicide,equipment,locked', 'meteorite', 'Rain meteors from the sky, damaging ALL characters for 600% damage per blast.\nLast 20 seconds.', 'Carry 5 Lunar items in a single run.'],
             [23, 4, 'BurnNearby', 'Helfire Tincture', 'offense,suicide,fire,equipment,locked', 'burn', 'Ignite ALL characters within 8m. Deal 5% of your maximum health/second as burning to yourself.\nThe burn is 0.5x stronger on allies, and 24x stronger on enemies.', 'Kill 15 enemies simultaneously.'],
             [26, 4, 'CrippleWard', 'Effigy of Grief', 'utility,equipment', 'slow', 'ALL characters are slowed by 50% and has their armor reduced by 20.'],
+            [28, 4, 'Tonic', 'Spinel Affliction', 'utility,buff,debuff,attack,speed,movespeed,health,regen', 'tonic', 'Drink the Tonic, gaining a boost for 15 seconds.\nIncreases damage by +100%.\nIncreases attack speed by +70%.\nIncreases armor by +20.\nIncreases maximum health by +50%.\nIncreases passive health regeneration by +300%.\nIncreases movespeed by +30%.\n\nWhen the tonic wears off, you have 20% chance to gain a Tonic Affliction, reducing all of your stats by -5% {-5%}', 'Discover and enter three unique portals.'],
             // Equipments
             [0, 5, 'CommandMissile', 'Disposable Missile Launcher', 'attack', 'missile', 'Fire a swarm of 12 missiles that deal 12x300% damage.'],
             [2, 5, 'Fruit', 'Foreign Fruit', 'defense,heal', 'fruit', 'Instantly heal for 50% of your maximum health.'],
@@ -82,6 +89,7 @@
             [20, 5, 'GoldGat', 'The Crowdfunder', 'offense,troll,locked', 'gatling', 'Fires a continuous barrage that deals 100% damage per bullet.\nCosts $1 per bullet. Costs increases over time.', 'Collect $30,480 total gold.'],
             [21, 5, 'PassiveHealing', 'Gnarled Woodsprite', 'defense,heal,locked', 'spirit', 'Gain a Woodsprite follower that heals for 1.5% of your maximum health/second.\nCan be sent to an ally to heal them for 10% of their maximum health.', 'Fully upgrade a Shrine of the Woods.'],
             [25, 5, 'Scanner', 'Radar Scanner', 'utility,scan,locked', 'radar', 'Reveal all interactables within 500m for 10 seconds.', 'Collect 10 Monster or Environment Logs.'],
+            [27, 5, 'Gateway', 'Eccentric Vase', 'utility,scan,locked', 'vase', 'Create a quantum tunnel of up to 1000m in length. Lasts 30 seconds.', 'Defeat the guardian of Gilded Coast without any beacons deactivating.'],
             // Drop
             [5, 5, 'AffixRed', 'Ifrit\'s Distinction', 'offense,fire,drop', 'fireAspect', 'Become an aspect of fire.', 'Drop from Fire Elite enemies.'],
             [6, 5, 'AffixBlue', 'Silent Between Two Strikes', 'offense,lightning,drop', 'lightningAspect', 'Become an aspect of lightning.', 'Drop from Lightning Elite enemies.'],
