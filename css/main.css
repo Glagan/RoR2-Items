@@ -2,14 +2,12 @@
     margin: 0;
     padding: 0;
 }
-
 html, body {
     min-height: 100vh;
     background-color: #252F38;
     overflow-x: hidden;
     overflow-y: auto;
 }
-
 body {
     color: white;
     text-shadow: 0 1px 1px black;
@@ -17,24 +15,154 @@ body {
 body .title {
     color: white;
 }
-
+.section {
+    padding: .75rem;
+}
 a:hover {
     color: white;
 }
-
-.is-sticky {
-    position: sticky;
-    top: 0;
-}
-
-.search .input::placeholder {
+.input::placeholder {
     color: black;
 }
 
-.search .title {
-    margin-bottom: 0.75rem;
+/* Fix and style Cards */
+.card {
+    border: 1px solid #4F6372;
+    background-color: #3E4E5B;
+    color: white;
+    border-radius: 4px 4px 0 0;
+    transition: all 200ms ease-in-out;
 }
 
+.card .card-header {
+    border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid #4F6372;
+}
+
+.card .card-header .card-header-title {
+    padding: .5rem;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.card .card-header .card-header-icon {
+    cursor: default;
+}
+
+.card .card-content {
+    padding: 0;
+    height: 90px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Image */
+.card .card-content .is-item-image {
+    font-size: 0;
+}
+.card .card-content .is-item-image img {
+    cursor: pointer;
+}
+
+/* Description */
+.card .card-content .is-item-description {
+    height: 90px;
+    white-space: pre-line;
+    overflow: hidden;
+    padding: .25rem;
+}
+.card:hover .card-content .is-item-description {
+    overflow: auto;
+}
+.card .card-content .is-item-description .is-stackable {
+    color: rgb(159, 164, 182);
+    font-size: 14px;
+    text-shadow: 1px 0 1px black;
+}
+.card .card-content .is-item-description .is-offense {
+    color: #E5C962;
+}
+.card .card-content .is-item-description .is-defense {
+    color: #9CE562;
+}
+.card .card-content .is-item-description .is-misc {
+    color: #95CDE5;
+}
+.card .card-content .is-item-description .is-debuff {
+    color: #E58262;
+}
+.card .card-content .is-item-description .button {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.card .card-content .is-unlock-description {
+    padding: .25rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: rgb(42, 54, 63);
+    opacity: 0;
+    cursor: pointer;
+    transform: scaleY(0);
+    transform-origin: 50% 0%;
+    transition: 100ms all ease-in-out;
+    white-space: pre-line;
+}
+.card .card-content .is-unlock-description.is-shown {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+/* Uncommon */
+.card.is-uncommon {
+    border: 1px solid hsl(141, 71%, 48%);
+}
+.card.is-uncommon .card-header {
+    border-bottom: 1px solid hsl(141, 71%, 48%);
+    background-color: #235A11;
+}
+
+/* Rare */
+.card.is-rare {
+    border: 1px solid hsl(12, 77%, 53%);
+}
+.card.is-rare .card-header {
+    border-bottom: 1px solid hsl(12, 77%, 53%);
+    background-color: #952D2B;
+}
+
+/* Unique */
+.card.is-unique {
+    border: 1px solid #DBE621;
+}
+.card.is-unique .card-header {
+    border-bottom: 1px solid #DBE621;
+    background-color: #758623;
+}
+
+/* Lunar */
+.card.is-lunar {
+    border: 1px solid hsl(188, 92%, 61%);
+}
+.card.is-lunar .card-header {
+    border-bottom: 1px solid hsl(188, 92%, 61%);
+    background-color: #074C69;
+}
+
+/* Equipment */
+.card.is-equipment {
+    border: 1px solid hsl(35, 73%, 54%);
+}
+.card.is-equipment .card-header {
+    border-bottom: 1px solid hsl(35, 73%, 54%);
+    background-color: rgb(160, 107, 23);
+}
+
+/*
 .items > .notification {
     text-align: center;
     font-size: 20px;
@@ -42,6 +170,10 @@ a:hover {
 }
 .items > .column {
     overflow: hidden;
+}
+
+.ror-item-name {
+    padding: .5rem 0;
 }
 
 .ror-item {
@@ -58,31 +190,21 @@ a:hover {
 .ror-item.uncommon {
     border: 2px solid hsl(141, 71%, 48%);
 }
-.ror-item.uncommon:hover {
-}
 
 .ror-item.rare {
     border: 2px solid hsl(12, 77%, 53%);
-}
-.ror-item.rare:hover {
 }
 
 .ror-item.unique {
     border: 2px solid hsl(63, 76%, 51%);
 }
-.ror-item.unique:hover {
-}
 
 .ror-item.lunar {
     border: 2px solid hsl(188, 92%, 61%);
 }
-.ror-item.lunar:hover {
-}
 
 .ror-item.equipment {
     border: 2px solid hsl(35, 73%, 54%);
-}
-.ror-item.equipment:hover {
 }
 
 
@@ -94,14 +216,14 @@ a:hover {
     overflow: auto;
 }
 .ror-item-description > * {
-    padding: 0 0.5rem;
+    padding: .5rem;
 }
 .ror-item-description > .notification {
-    margin: 0.25rem 0.5rem;
+    margin: .25rem .5rem;
 }
 
 .ror-item-description .per-stack {
     color: #8990A7;
     font-size: 14px;
     text-shadow: 1px 0 1px black;
-}
+}*/
