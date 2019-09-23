@@ -24,6 +24,7 @@
             [61, 0, 'BossDamageBonus', 'Armor-Piercing Rounds', 'offense,boss,ammo,bullet,locked', 'bossDamage', 'Deal an additional {offense:20%} damage {+10%} to bosses.', 'Complete a Teleporter event.'],
             [78, 0, 'ExecuteLowHealthElite', 'Old Guillotine', 'offense,boss,locked', 'guillotine', 'Instantly kill Elite Monsters below {debuff:20%} {+5%} {debuff:health}.', 'Defeat 500 Elite Monsters.'],
             [84, 0, 'BarrierOnKill', 'Topaz Brooch', 'defense,shield,on,kill', 'shieldBrooch', 'Gain a {defense:temporary barrier} on kill for {defense:20 health} {+20}.'],
+            [87, 0, 'NearbyDamageBonus', 'Focus Crystal', 'offense,closen,boost,damage', 'redCrystal', 'Increase damage to enemies withing {offense:13m} by {offense:15%} {+15%}.'],
             // Uncommon
             [3, 1, 'Missile', 'AtG Missile Mk. 1', 'offense,on,hit', 'missile_mk', '{offense:10%} chance to fire a missile that deals {offense:300%} {+300%} damage.'],
             [4, 1, 'ExplodeOnDeath', 'Will-O\'-the-wisp', 'offense,on,kill', 'wisp', 'On killing an enemy, spawn a {offense:lava pillar} in a {offense:12m} {+2.4m} radius for {offense:350%} {+280%} base damage.'],
@@ -44,6 +45,7 @@
             [65, 1, 'SlowOnHit', 'Chronobauble', 'offense,on,hit', 'bauble', '{misc:Slow} enemies for {misc:-60% movement speed} for {misc:2s} {+2s}.'],
             [76, 1, 'JumpBoost', 'Wax Quail', 'defense,movespeed,pigeon,locked', 'quail', '{defense:Jumping} while {defense:sprinting} boosts you forward by {defense:10m} {+10m}.', 'Reach +300% movespeed (include sprinting).'],
             [79, 1, 'EnergizedOnEquipmentUse', 'War Horn', 'offense,attack,speed,equipment,locked', 'warHorn', 'Activating your Equipment gives you {offense:+70% attack speed} for {offense:8s} {+4s}.', 'Complete 3 Combat Shrines in a single stage.'],
+            [86, 1, 'TPHealingNova', 'Lepton Daisy', 'defense,heal,flower,new', 'healFlower', 'Release a {defense:healing nova} during the Teleporter event, {defense:healing} all nearby allies for {defense:50%} of their maximum health. Occurs {defense:1} {+1} times.'],
             // Rare
             [2, 2, 'Behemoth', 'Brilliant Behemoth', 'offense,explosion,on,hit', 'behemoth', 'All your {offense:attacks explode} in a {offense:4m} {+1.5m} radius for a bonus {offense:60%} TOTAL damage to nearby enemies.'],
             [5, 2, 'Dagger', 'Ceremonial Dagger', 'offense,on,kill,tracking,attack', 'dagger', 'Killing an enemy fires out {offense:3 homing daggers} that deal {offense:150%} {+150%} base damage.'],
@@ -62,6 +64,7 @@
             [70, 2, 'KillEliteFrenzy', 'Brainstalks', 'offense,locked', 'brain', 'Upon killing an elite monster, {offense:enter a frenzy} for {offense:3s} {+2s} where {misc:skills have no cooldowns}.', 'Defeat an Elite boss on Monsoon difficulty.'],
             [75, 2, 'IncreaseHealing', 'Rejuvenation Rack', 'defense,heal,double,locked', 'horn', '{defense:Heal +100%} {+100%} more.', 'Without healing, reach and complete the 3rd Teleporter event.'],
             [80, 2, 'BarrierOnOverHeal', 'Aegis', 'utility,heal,defense', 'fullBarrier', 'Healing past full grants you a {defense:temporary barrier} for up to {defense:20%} {+20%} of your {defense:maximum health}.'],
+            [85, 2, 'ArmorReductionOnHit', 'Shattering Justice', 'offense,armor,break,hammer,hit', 'hammer', 'After hitting an enemy {offense:5} times, reduce their {offense:armor} by {offense:60} for {offense:8} {+8} seconds.'],
             // Unique
             [52, 3, 'Knurl', 'Titanic Knurl', 'defense,life', 'knurl', '{defense:Increases maximum health} by {defense:40} {+40} and {defense:health regeneration} by {defense:1.6} {+1.6} {defense:health / second}.'],
             [53, 3, 'BeetleGland', 'Queen\'s Gland', 'utility,invocation', 'beetle', 'Every 30 seconds, {misc:summon a Beetle Guard} with bonus {offense:300%} damage and {defense:100%} health.\nCan have up to {misc:1} {+1} Guards at a time.'],
@@ -73,6 +76,7 @@
             [49, 4, 'ShieldOnly', 'Transcendence', 'defense,chaos', 'transc', '{defense:Convert} all but {defense:1 health} into {defense:regenerating shields}.\n{defense:Gain 50%} {+25%} {defense:maximum health}.'],
             [71, 4, 'RepeatHeal', 'Corpsebloom', 'defense,heal,dot', 'flower', '{defense:Heal +100%} {+100%} more.\n{defense:All healing is applied over time}.\nCan {defense:heal} for a {defense:maximum} of {defense:10%} {-50%} of your {defense:health per second}.'],
             [74, 4, 'AutoCastEquipment', 'Gesture of the Drowned', 'utility,equipment,locked', 'fossil', '{misc:Reduce equipment cooldown} by {misc:50%} {+50%}.\nForces your Equipment to {misc:activate} whenever it is off {misc:cooldown}.', 'Kill 20 Hermit Crabs by chasing them off the edge of the map.'],
+            [88, 4, 'LunarUtilityReplacement', 'Strides of Heresy', 'utility,movement,skill,arm,speed,heal,defense', 'weirdArm', '{misc:Replace your Utility Skill} with {misc:Shadowfade}.\nFade away, becoming {misc:intangible} and gaining {misc:+30% movement speed}. {defense:Heal} for {defense:25%} {+25%} {defense:of your maximum health}. Lasts 3 {+3} seconds.', 'Kill 15 boss monsters in a single run.'],
             [3, 4, 'Meteor', 'Glowing Meteorite', 'offense,suicide,equipment,locked', 'meteorite', '{offense:Rain meteors} from the sky, damaging ALL characters for {offense:600% damage per blast}.\nLast 20 seconds.', 'Carry 5 Lunar items in a single run.'],
             [23, 4, 'BurnNearby', 'Helfire Tincture', 'offense,suicide,fire,equipment,locked', 'burn', 'Ignite ALL characters within 8m. Deal {offense:5% of your maximum health/second as burning} to yourself.\nThe burn is {offense:0.5x} stronger on allies, and {offense:24x} stronger on enemies.', 'Kill 15 enemies simultaneously.'],
             [26, 4, 'CrippleWard', 'Effigy of Grief', 'utility,equipment', 'slow', 'ALL characters are {misc:slowed by 50%} and has their {offense:armor reduced by 20}.'],
@@ -90,10 +94,14 @@
             [21, 5, 'PassiveHealing', 'Gnarled Woodsprite', 'defense,heal,locked', 'spirit', 'Gain a Woodsprite follower that heals for {defense:1.5% of your maximum health/second}.\nCan be sent to an ally to heal them for {defense:10% of their maximum health}.', 'Fully upgrade a Shrine of the Woods.'],
             [25, 5, 'Scanner', 'Radar Scanner', 'utility,scan,locked', 'radar', '{misc:Reveal} all interactables within 500m for {misc:10 seconds}.', 'Collect 10 Monster or Environment Logs.'],
             [27, 5, 'Gateway', 'Eccentric Vase', 'utility,scan,locked', 'vase', 'Create a {misc:quantum tunnel} of up to {misc:1000m} in length. Lasts 30 seconds.', 'Defeat the guardian of Gilded Coast without any beacons deactivating.'],
+            [30, 5, 'Cleanse', 'Blast Shower', 'utility,defense,cleanse,debuff', 'potThing', '{misc:Cleanse} all negative effects. Includes debuffs, damage over time, and nearby projectiles.\nCooldown: {misc:20s}', 'Die three fiery deaths'],
+            [31, 5, 'FireBallDash', 'Volcania Egg', 'utility,offense,detonate,movement', 'egg', 'Turn into a {offense:draconic fireball} for {offense:5} seconds. Deal {offense:500% damage} on impact.\nDetonates at the end for {offense:800% damage}.\nCooldown: {misc:30s}'],
             // Drop
             [5, 5, 'AffixRed', 'Ifrit\'s Distinction', 'offense,fire,drop', 'fireAspect', 'Become an aspect of fire.', 'Drop from Fire Elite enemies.'],
             [6, 5, 'AffixBlue', 'Silent Between Two Strikes', 'offense,lightning,drop', 'lightningAspect', 'Become an aspect of lightning.', 'Drop from Lightning Elite enemies.'],
             [9, 5, 'AffixWhite', 'Her Biting Embrace', 'offense,ice,drop', 'iceAspect', 'Become an aspect of ice.', 'Drop from Ice Elite enemies.'],
+            [32, 5, 'AffixHaunted', 'Affix Haunted', 'utility,defense,haunted,elite,drop', 'whiteSquare', 'Become an haunted aspect.\n{misc:(No in-game image yet)}', 'Drop from Haunter Elite enemies.'],
+            [29, 5, 'QuestVolatileBattery', 'Fuel Array', 'quest', 'fuelArray', 'Looks like it could power something.\n{offense:EXTREMELY unstable...}.\n{misc:(Not obtainable in-game, used for quest)}'],
         ];
         let itemObjects = [];
         let rarities = ['common', 'uncommon', 'rare', 'unique', 'lunar', 'equipment'];
