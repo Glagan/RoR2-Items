@@ -161,3 +161,8 @@ a:hover {
     border-bottom: 1px solid hsl(35, 73%, 54%);
     background-color: rgb(160, 107, 23);
 }
+
+/* Bulma Fix */
+.button.is-danger {
+	background-color: #e7234a;
+}
