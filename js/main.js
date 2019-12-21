@@ -25,6 +25,7 @@
             [78, 0, 'ExecuteLowHealthElite', 'Old Guillotine', 'offense,boss,locked', 'guillotine', 'Instantly kill Elite Monsters below {debuff:20%} {+5%} {debuff:health}.', 'Defeat 500 Elite Monsters.'],
             [84, 0, 'BarrierOnKill', 'Topaz Brooch', 'defense,shield,on,kill', 'shieldBrooch', 'Gain a {defense:temporary barrier} on kill for {defense:20 health} {+20}.'],
             [87, 0, 'NearbyDamageBonus', 'Focus Crystal', 'offense,closen,boost,damage', 'redCrystal', 'Increase damage to enemies withing {offense:13m} by {offense:15%} {+15%}.'],
+			[91, 0, 'RegenOnKill', 'Fresh Meat', 'utility,heal,steack,steak,raw,health', 'steak', 'Increase {defense:base health regeneration} by {offense:+2% hp/s} for {misc:3s} {+3s} after killing an ennemy.'],
             // Uncommon
             [3, 1, 'Missile', 'AtG Missile Mk. 1', 'offense,on,hit', 'missile_mk', '{offense:10%} chance to fire a missile that deals {offense:300%} {+300%} damage.'],
             [4, 1, 'ExplodeOnDeath', 'Will-O\'-the-wisp', 'offense,on,kill', 'wisp', 'On killing an enemy, spawn a {offense:lava pillar} in a {offense:12m} {+2.4m} radius for {offense:350%} {+280%} base damage.'],
@@ -46,6 +47,8 @@
             [76, 1, 'JumpBoost', 'Wax Quail', 'defense,movespeed,pigeon,locked', 'quail', '{defense:Jumping} while {defense:sprinting} boosts you forward by {defense:10m} {+10m}.', 'Reach +300% movespeed (include sprinting).'],
             [79, 1, 'EnergizedOnEquipmentUse', 'War Horn', 'offense,attack,speed,equipment,locked', 'warHorn', 'Activating your Equipment gives you {offense:+70% attack speed} for {offense:8s} {+4s}.', 'Complete 3 Combat Shrines in a single stage.'],
             [86, 1, 'TPHealingNova', 'Lepton Daisy', 'defense,heal,flower,new', 'healFlower', 'Release a {defense:healing nova} during the Teleporter event, {defense:healing} all nearby allies for {defense:50%} of their maximum health. Occurs {defense:1} {+1} times.'],
+			[90, 1, 'Thorns', 'Razorwire', 'offense,on,hit,radius,new', 'razorHeadband', 'Getting hit causes you to explode in a burst of razors, dealing {offense:160% damage}.\nHits up to {offense:5} {+2} targets in a {offense:25m} {+10m} radius.'],
+			[94, 1, 'BonusGoldPackOnKill', 'Ghor\'s Tome', 'utility,gold,book,treasure,flesh,new', 'goldBook', '{misc:4%} {+4%} chance on kill to drop a treasure worth {misc:25$}. {misc:Scales over time.}'],
             // Rare
             [2, 2, 'Behemoth', 'Brilliant Behemoth', 'offense,explosion,on,hit', 'behemoth', 'All your {offense:attacks explode} in a {offense:4m} {+1.5m} radius for a bonus {offense:60%} TOTAL damage to nearby enemies.'],
             [5, 2, 'Dagger', 'Ceremonial Dagger', 'offense,on,kill,tracking,attack', 'dagger', 'Killing an enemy fires out {offense:3 homing daggers} that deal {offense:150%} {+150%} base damage.'],
@@ -65,11 +68,15 @@
             [75, 2, 'IncreaseHealing', 'Rejuvenation Rack', 'defense,heal,double,locked', 'horn', '{defense:Heal +100%} {+100%} more.', 'Without healing, reach and complete the 3rd Teleporter event.'],
             [80, 2, 'BarrierOnOverHeal', 'Aegis', 'utility,heal,defense', 'fullBarrier', 'Healing past full grants you a {defense:temporary barrier} for up to {defense:20%} {+20%} of your {defense:maximum health}.'],
             [85, 2, 'ArmorReductionOnHit', 'Shattering Justice', 'offense,armor,break,hammer,hit', 'hammer', 'After hitting an enemy {offense:5} times, reduce their {offense:armor} by {offense:60} for {offense:8} {+8} seconds.'],
+			[95, 2, 'LaserTurbine', 'Resonance Disc', 'offense,charge,piercing,explode,new', 'disc', 'Killing enemies charges the Resonance Disc. The disc launches itself toward a target for {offense:300%} base damage {+300%}, piercing all enemies it doesn\'t kill, and then explodes for {offense:1000%} base damage {+1000%}.\nReturns to the user, striking all enemies along the way the for {offense:300%} base damage {+300%}.'],
             // Unique
             [52, 3, 'Knurl', 'Titanic Knurl', 'defense,life', 'knurl', '{defense:Increases maximum health} by {defense:40} {+40} and {defense:health regeneration} by {defense:1.6} {+1.6} {defense:health / second}.'],
             [53, 3, 'BeetleGland', 'Queen\'s Gland', 'utility,invocation', 'beetle', 'Every 30 seconds, {misc:summon a Beetle Guard} with bonus {offense:300%} damage and {defense:100%} health.\nCan have up to {misc:1} {+1} Guards at a time.'],
             [82, 3, 'TitanGoldDuringTP', 'Halcyon Seed', 'utility,invocation,boss,summon', 'goldenSeed', 'Summon {offense:Aurelionite} during the teleporter event.\nIt has {offense:100%} {+50%} {offense:damage} and {defense:100%} {+100%} {defense:health}.'],
             [83, 3, 'SprintWisp', 'Little Disciple', 'offense,tracking,sprint,attack', 'sprintingWisp', 'Fire a {offense:tracking wisp} for {offense:100%} {+100%} {offense:damage}.\nFires every 0.5 seconds while sprinting.'],
+			[92, 3, 'Pearl', 'Pearl', 'defense,health,maximum,new', 'pearl', 'Increases {defense:maximum health} by {defense:10%} {+10%}.'],
+            [93, 3, 'ShinyPearl', 'Irradiant Pearl', 'defense,boost,statistics,new', 'shinyPearl', 'Increases {misc:ALL stats} by {misc:10%} {+10%}.'],
+			[97, 3, 'NovaOnLowHealth', 'Genesis Loop', 'low,health,nova,explode,recharge,cooldown,new', 'weirdTail', 'Falling below {debuff:25% health} causes you to explode, dealing {offense:6000% base damage}. Recharges every {misc:30 seconds} {-50%}.'],
             // Lunar
             [43, 4, 'LunarDagger', 'Shaped Glass', 'offense,suicide', 'sword', 'Increase base damage by {offense:100%} {+100%}.\n{defense:Reduce maximum health by 50%} {+50%}.'],
             [44, 4, 'GoldOnHit', 'Brittle Crown', 'utility', 'crown', '{misc:30% chance on hit} to gain {misc:3} {+3} {misc:gold}.\n{debuff:Lose gold} equal to {debuff:100%} {+100%} of amount your are hit for OR lose % gold equal to {debuff:100%} {+100%} of the maximum health % you lost.\nChooses the greater of the two.'],
@@ -77,6 +84,8 @@
             [71, 4, 'RepeatHeal', 'Corpsebloom', 'defense,heal,dot', 'flower', '{defense:Heal +100%} {+100%} more.\n{defense:All healing is applied over time}.\nCan {defense:heal} for a {defense:maximum} of {defense:10%} {-50%} of your {defense:health per second}.'],
             [74, 4, 'AutoCastEquipment', 'Gesture of the Drowned', 'utility,equipment,locked', 'fossil', '{misc:Reduce equipment cooldown} by {misc:50%} {+50%}.\nForces your Equipment to {misc:activate} whenever it is off {misc:cooldown}.', 'Kill 20 Hermit Crabs by chasing them off the edge of the map.'],
             [88, 4, 'LunarUtilityReplacement', 'Strides of Heresy', 'utility,movement,skill,arm,speed,heal,defense', 'weirdArm', '{misc:Replace your Utility Skill} with {misc:Shadowfade}.\nFade away, becoming {misc:intangible} and gaining {misc:+30% movement speed}. {defense:Heal} for {defense:25%} {+25%} {defense:of your maximum health}. Lasts 3 {+3} seconds.', 'Kill 15 boss monsters in a single run.'],
+			[96, 4, 'LunarPrimaryReplacement', 'Visions of Heresy', 'active,primary,replace,offense,damage,recharge,cooldown,skill,orb,new', 'weirdOrb', '{misc:Replace your Primary Skill} with {misc:Hungering Gaze}.\nFire a flurry of {misc:tracking shards} that detonate after a delay, dealing {offense:120%} base damage. Hold up to 12 charges {+12} that reload after 2 seconds {+2}.'],
+			[98, 4, 'LunarTrinket', 'Beads of Fealty', 'secret,unlock,zone,no,effect,new', 'beads', 'Seems to do nothing... {debuff:but...}', ''],
             [3, 4, 'Meteor', 'Glowing Meteorite', 'offense,suicide,equipment,locked', 'meteorite', '{offense:Rain meteors} from the sky, damaging ALL characters for {offense:600% damage per blast}.\nLast 20 seconds.', 'Carry 5 Lunar items in a single run.'],
             [23, 4, 'BurnNearby', 'Helfire Tincture', 'offense,suicide,fire,equipment,locked', 'burn', 'Ignite ALL characters within 8m. Deal {offense:5% of your maximum health/second as burning} to yourself.\nThe burn is {offense:0.5x} stronger on allies, and {offense:24x} stronger on enemies.\nCooldown: {misc:45s}', 'Kill 15 enemies simultaneously.'],
             [26, 4, 'CrippleWard', 'Effigy of Grief', 'utility,equipment', 'slow', 'ALL characters are {misc:slowed by 50%} and has their {offense:armor reduced by 20}.\nCooldown: {misc:45s}'],
@@ -96,6 +105,7 @@
             [27, 5, 'Gateway', 'Eccentric Vase', 'utility,scan,locked', 'vase', 'Create a {misc:quantum tunnel} of up to {misc:1000m} in length. Lasts 30 seconds.\nCooldown: {misc:100s}', 'Defeat the guardian of Gilded Coast without any beacons deactivating.'],
             [30, 5, 'Cleanse', 'Blast Shower', 'utility,defense,cleanse,debuff', 'potThing', '{misc:Cleanse} all negative effects. Includes debuffs, damage over time, and nearby projectiles.\nCooldown: {misc:20s}', 'Die three fiery deaths'],
             [31, 5, 'FireBallDash', 'Volcania Egg', 'utility,offense,detonate,movement', 'egg', 'Turn into a {offense:draconic fireball} for {offense:5} seconds. Deal {offense:500% damage} on impact.\nDetonates at the end for {offense:800% damage}.\nCooldown: {misc:30s}'],
+			[33, 5, 'GainArmor', 'Jade Elephant', 'utility,defense,resistance,armor,new', 'elephant', 'Gain {offense:500 armor} for {misc:5 seconds}.\nCooldown: {misc:45s}'],
             // Drop
             [5, 5, 'AffixRed', 'Ifrit\'s Distinction', 'offense,fire,drop', 'fireAspect', 'Become an aspect of fire.', 'Drop from Fire Elite enemies.'],
             [6, 5, 'AffixBlue', 'Silent Between Two Strikes', 'offense,lightning,drop', 'lightningAspect', 'Become an aspect of lightning.', 'Drop from Lightning Elite enemies.'],
