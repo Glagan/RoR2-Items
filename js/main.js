@@ -100,9 +100,13 @@
 			name.className = "card-header-title is-size-4";
 			name.title = this.name;
 			name.textContent = this.name;
-			let itemID = document.createElement("span");
-			itemID.className = "card-header-icon is-hidden-touch";
-			itemID.textContent = ['#', this.id].join('');
+			header.appendChild(name);
+			if (this.id > 0) {
+				let itemID = document.createElement("span");
+				itemID.className = "card-header-icon is-hidden-touch";
+				itemID.textContent = ['#', this.id].join('');
+				header.appendChild(itemID);
+			}
 			// Content
 			let content = document.createElement("div");
 			content.className = "card-content";
@@ -150,8 +154,6 @@
 				descriptionColumn.appendChild(unlockButton);
 			}
 			// Append
-			header.appendChild(name);
-			header.appendChild(itemID);
 			content.appendChild(columns);
 			columns.appendChild(imageColumn);
 			imageColumn.appendChild(image);
@@ -173,6 +175,7 @@
 	};
 	Item.LUNAR_EQUIPMENTS = [3, 23, 26];
 	let itemObjects = [
+		// Common
 		new Item(0, Item.RARITY.COMMON, 'Syringe', 'Soldier\'s Syringe', 'offense,speed', 'syringe', 'Increase {offense:Attack Speed} by {offense:15%} {+15%}.'),
 		new Item(1, Item.RARITY.COMMON, 'Bear', 'Tougher Times', 'defense,block,locked', 'bear', '{defense:15%} {+15%} chance to {defense:block} incoming damage.\n{misc:Unaffected by the luck}.', 'Die 5 times.'),
 		new Item(6, Item.RARITY.COMMON, 'Tooth', 'Monster Tooth', 'defense,heal,on,kill', 'monsterTooth', 'Killing an ennemy spawns a {defense:healing orb} that {defense:heals} for {defense:6} {+6} {defense:health}.'),
@@ -193,10 +196,12 @@
 		new Item(59, Item.RARITY.COMMON, 'StickyBomb', 'Sticky Bomb', 'offense,on,hit', 'stickyBomb', '{offense:5%} {+2.5%} chance on hit to attach a {offense:bomb} to an enemy, detonating for {offense:180%} TOTAL damage.'),
 		new Item(60, Item.RARITY.COMMON, 'TreasureCache', 'Rusted Key', 'utility,box,locked', 'key', 'A {misc:hidden cache} containing an item will appear in a random location {misc:on each stage} {Increase rarity of the item}.', 'Defeat the Teleporter boss under 15 seconds.'),
 		new Item(61, Item.RARITY.COMMON, 'BossDamageBonus', 'Armor-Piercing Rounds', 'offense,boss,ammo,bullet,locked', 'bossDamage', 'Deal an additional {offense:20%} damage {+10%} to bosses.', 'Complete a Teleporter event.'),
-		new Item(78, Item.RARITY.COMMON, 'ExecuteLowHealthElite', 'Old Guillotine', 'offense,boss,locked', 'guillotine', 'Instantly kill Elite Monsters below {debuff:20%} {+5%} {debuff:health}.', 'Defeat 500 Elite Monsters.'),
 		new Item(84, Item.RARITY.COMMON, 'BarrierOnKill', 'Topaz Brooch', 'defense,shield,on,kill', 'shieldBrooch', 'Gain a {defense:temporary barrier} on kill for {defense:20 health} {+20}.'),
 		new Item(87, Item.RARITY.COMMON, 'NearbyDamageBonus', 'Focus Crystal', 'offense,closen,boost,damage', 'redCrystal', 'Increase damage to enemies withing {offense:13m} by {offense:15%} {+15%}.'),
 		new Item(91, Item.RARITY.COMMON, 'RegeOnKill', 'Fresh Meat', 'utility,heal,steack,steak,raw,health', 'steak', 'Increase {defense:base health regeneration} by {offense:+2% hp/s} for {misc:3s} {+3s} after killing an ennemy.'),
+		new Item(102, Item.RARITY.COMMON, '', 'Repulsion Armor Plate', 'defense,armor,flat,reduction', 'armor', 'Reduce all {offense:incoming damage} by {offense:5} {+5}. Cannot be reduced below {offense:1}.'),
+		new Item(0, Item.RARITY.COMMON, '', 'Item Scrap, White', 'utility,3d,printer,white', 'scraps1', 'Does nothing. Prioritized when used with 3D Printers.'),
+		// Uncommon
 		new Item(3, Item.RARITY.UNCOMMON, 'Missile', 'AtG Missile Mk. 1', 'offense,on,hit', 'missile_mk', '{offense:10%} chance to fire a missile that deals {offense:300%} {+300%} damage.'),
 		new Item(4, Item.RARITY.UNCOMMON, 'ExplodeOnDeath', 'Will-O\'-the-wisp', 'offense,on,kill', 'wisp', 'On killing an enemy, spawn a {offense:lava pillar} in a {offense:12m} {+2.4m} radius for {offense:350%} {+280%} base damage.'),
 		new Item(9, Item.RARITY.UNCOMMON, 'Feather', 'Hopoo Feather', 'utility', 'feather', 'Gain {misc:+1} {+1} maximum {misc:jump count}.'),
@@ -215,10 +220,15 @@
 		new Item(64, Item.RARITY.UNCOMMON, 'FireRing', 'Kjaro\'s Band', 'offense,on,hit,locked', 'fireRing', '{offense:8%} chance on hit to strike an ennemy with a {offense:runic flame tornado}, dealing {offense:500%} TOTAL damage {+250%}.', 'Discover the hidden chamber in the Abandonned Aqueduct.'),
 		new Item(65, Item.RARITY.UNCOMMON, 'SlowOnHit', 'Chronobauble', 'offense,on,hit', 'bauble', '{misc:Slow} enemies for {misc:-60% movement speed} for {misc:2s} {+2s}.'),
 		new Item(76, Item.RARITY.UNCOMMON, 'JumpBoost', 'Wax Quail', 'defense,movespeed,pigeon,locked', 'quail', '{defense:Jumping} while {defense:sprinting} boosts you forward by {defense:10m} {+10m}.', 'Reach +300% movespeed (include sprinting).'),
+		new Item(78, Item.RARITY.UNCOMMON, 'ExecuteLowHealthElite', 'Old Guillotine', 'offense,boss,locked', 'guillotine', 'Instantly kill Elite Monsters below {debuff:13%} {+13%} {debuff:health}.', 'Defeat 500 Elite Monsters.'),
 		new Item(79, Item.RARITY.UNCOMMON, 'EnergizedOnEquipmentUse', 'War Horn', 'offense,attack,speed,equipment,locked', 'warHorn', 'Activating your Equipment gives you {offense:+70% attack speed} for {offense:8s} {+4s}.', 'Complete 3 Combat Shrines in a single stage.'),
 		new Item(86, Item.RARITY.UNCOMMON, 'TPHealingNova', 'Lepton Daisy', 'defense,heal,flower', 'healFlower', 'Release a {defense:healing nova} during the Teleporter event, {defense:healing} all nearby allies for {defense:50%} of their maximum health. Occurs {defense:1} {+1} times.'),
-		new Item(90, Item.RARITY.UNCOMMON, 'Thorns', 'Razorwire', 'offense,on,hit,radius,new', 'razorHeadband', 'Getting hit causes you to explode in a burst of razors, dealing {offense:160% damage}.\nHits up to {offense:5} {+2} targets in a {offense:25m} {+10m} radius.'),
-		new Item(94, Item.RARITY.UNCOMMON, 'BonusGoldPackOnKill', 'Ghor\'s Tome', 'utility,gold,book,treasure,flesh,new', 'goldBook', '{misc:4%} {+4%} chance on kill to drop a treasure worth {misc:25$}. {misc:Scales over time.}'),
+		new Item(90, Item.RARITY.UNCOMMON, 'Thorns', 'Razorwire', 'offense,on,hit,radius', 'razorHeadband', 'Getting hit causes you to explode in a burst of razors, dealing {offense:160% damage}.\nHits up to {offense:5} {+2} targets in a {offense:25m} {+10m} radius.'),
+		new Item(94, Item.RARITY.UNCOMMON, 'BonusGoldPackOnKill', 'Ghor\'s Tome', 'utility,gold,book,treasure,flesh', 'goldBook', '{misc:4%} {+4%} chance on kill to drop a treasure worth {misc:25$}. {misc:Scales over time.}'),
+		new Item(103, Item.RARITY.UNCOMMON, '', 'Squid Polyp', 'offense,summon,turret,squid,auto', 'squidTurret', 'Activating an interactable summons a {offense:Squid Turret} that attacks nearby enemies at {offense:100%} {+100%} {offense:attack speed}. Lasts {misc:30} seconds.'),
+		new Item(104, Item.RARITY.UNCOMMON, '', 'Death Mark', 'offense,mark,death,debuff,increased,damage', 'deathMark', 'Enemies with {offense:4} or more debuffs are {offense:marked for death}, increasing damage taken by {offense:50%} from all sources for {misc:7} {+7} seconds.'),
+		new Item(0, Item.RARITY.UNCOMMON, '', 'Item Scrap, Green', 'utility,3d,green', 'scraps2', 'Does nothing. Prioritized when used with 3D Printers.'),
+		// Rare
 		new Item(2, Item.RARITY.RARE, 'Behemoth', 'Brilliant Behemoth', 'offense,explosion,on,hit', 'behemoth', 'All your {offense:attacks explode} in a {offense:4m} {+1.5m} radius for a bonus {offense:60%} TOTAL damage to nearby enemies.'),
 		new Item(5, Item.RARITY.RARE, 'Dagger', 'Ceremonial Dagger', 'offense,on,kill,tracking,attack', 'dagger', 'Killing an enemy fires out {offense:3 homing daggers} that deal {offense:150%} {+150%} base damage.'),
 		new Item(14, Item.RARITY.RARE, 'Icicle', 'Frost Relic', 'offense,on,kill', 'ice', 'Killing an enemy surrounds you with an {offense:ice storm} that deals {offense:600% damage per second}.\nThe storm {offense:grows with every kill}, increasing it\'s radius by {offense:1m}.\nStacks up to {offense:6m} {+6m}.'),
@@ -237,26 +247,41 @@
 		new Item(75, Item.RARITY.RARE, 'IncreaseHealing', 'Rejuvenation Rack', 'defense,heal,double,locked', 'horn', '{defense:Heal +100%} {+100%} more.', 'Without healing, reach and complete the 3rd Teleporter event.'),
 		new Item(80, Item.RARITY.RARE, 'BarrierOnOverHeal', 'Aegis', 'utility,heal,defense', 'fullBarrier', 'Healing past full grants you a {defense:temporary barrier} for up to {defense:20%} {+20%} of your {defense:maximum health}.'),
 		new Item(85, Item.RARITY.RARE, 'ArmorReductionOnHit', 'Shattering Justice', 'offense,armor,break,hammer,hit', 'hammer', 'After hitting an enemy {offense:5} times, reduce their {offense:armor} by {offense:60} for {offense:8} {+8} seconds.'),
-		new Item(95, Item.RARITY.RARE, 'LaserTurbine', 'Resonance Disc', 'offense,charge,piercing,explode,new', 'disc', 'Killing enemies charges the Resonance Disc. The disc launches itself toward a target for {offense:300%} base damage {+300%}, piercing all enemies it doesn\'t kill, and then explodes for {offense:1000%} base damage {+1000%}.\nReturns to the user, striking all enemies along the way the for {offense:300%} base damage {+300%}.'),
+		new Item(95, Item.RARITY.RARE, 'LaserTurbine', 'Resonance Disc', 'offense,charge,piercing,explode', 'disc', 'Killing enemies charges the Resonance Disc. The disc launches itself toward a target for {offense:300%} base damage {+300%}, piercing all enemies it doesn\'t kill, and then explodes for {offense:1000%} base damage {+1000%}.\nReturns to the user, striking all enemies along the way the for {offense:300%} base damage {+300%}.'),
+		new Item(105, Item.RARITY.RARE, '', 'Interstellar Desk Plant', 'heal,defense,on kill', 'deskPlant', 'On kill, plant a {defense:healing} fruit seed that grows into a plant after {misc:5}seconds.\nThe plant {defense:heals} for {defense:10%} of {defense:maximum health} every second to all allies withing {defense:5m} {+5m}. Last {misc:10} seconds.'),
+		new Item(0, Item.RARITY.RARE, '', 'Defensive Microbots', 'defense,projectile,protection,shield', 'microbot', 'Shoot down {offense:1} {+1} projectiles within {offense:20m} every {offense:0.5 seconds}. {misc:Recharge rate scales with attack speed}.'),
+		new Item(0, Item.RARITY.RARE, '', 'Item Scrap, Red', 'utility,3d,rare,red', 'scraps3', 'Does nothing. Prioritized when used with 3D Printers.'),
+		// Unique
 		new Item(52, Item.RARITY.UNIQUE, 'Knurl', 'Titanic Knurl', 'defense,life', 'knurl', '{defense:Increases maximum health} by {defense:40} {+40} and {defense:health regeneration} by {defense:1.6} {+1.6} {defense:health / second}.'),
 		new Item(53, Item.RARITY.UNIQUE, 'BeetleGland', 'Queen\'s Gland', 'utility,invocation', 'beetle', 'Every 30 seconds, {misc:summon a Beetle Guard} with bonus {offense:300%} damage and {defense:100%} health.\nCan have up to {misc:1} {+1} Guards at a time.'),
 		new Item(82, Item.RARITY.UNIQUE, 'TitanGoldDuringTP', 'Halcyon Seed', 'utility,invocation,boss,summon', 'goldenSeed', 'Summon {offense:Aurelionite} during the teleporter event.\nIt has {offense:100%} {+50%} {offense:damage} and {defense:100%} {+100%} {defense:health}.'),
 		new Item(83, Item.RARITY.UNIQUE, 'SprintWisp', 'Little Disciple', 'offense,tracking,sprint,attack', 'sprintingWisp', 'Fire a {offense:tracking wisp} for {offense:100%} {+100%} {offense:damage}.\nFires every 0.5 seconds while sprinting.'),
-		new Item(92, Item.RARITY.UNIQUE, 'Pearl', 'Pearl', 'defense,health,maximum,new', 'pearl', 'Increases {defense:maximum health} by {defense:10%} {+10%}.'),
-		new Item(93, Item.RARITY.UNIQUE, 'ShinyPearl', 'Irradiant Pearl', 'defense,boost,statistics,new', 'shinyPearl', 'Increases {misc:ALL stats} by {misc:10%} {+10%}.'),
-		new Item(97, Item.RARITY.UNIQUE, 'NovaOnLowHealth', 'Genesis Loop', 'low,health,nova,explode,recharge,cooldown,new', 'weirdTail', 'Falling below {debuff:25% health} causes you to explode, dealing {offense:6000% base damage}. Recharges every {misc:30 seconds} {-50%}.'),
+		new Item(92, Item.RARITY.UNIQUE, 'Pearl', 'Pearl', 'defense,health,maximum', 'pearl', 'Increases {defense:maximum health} by {defense:10%} {+10%}.'),
+		new Item(93, Item.RARITY.UNIQUE, 'ShinyPearl', 'Irradiant Pearl', 'defense,boost,statistics', 'shinyPearl', 'Increases {misc:ALL stats} by {misc:10%} {+10%}.'),
+		new Item(97, Item.RARITY.UNIQUE, 'NovaOnLowHealth', 'Genesis Loop', 'low,health,nova,explode,recharge,cooldown', 'weirdTail', 'Falling below {debuff:25% health} causes you to explode, dealing {offense:6000% base damage}. Recharges every {misc:30 seconds} {-50%}.'),
+		new Item(101, Item.RARITY.UNIQUE, '', 'Artifact Key', 'activation', 'artifactKey', 'A stone shard with immense power.'),
+		new Item(0, Item.RARITY.UNIQUE, '', 'Molten Perforator', 'offense,magma,on hit', 'magmaTooth', '{offense:10%} chance on hit to call forth {offense:3 magma balls} from an enemy, dealing {offense:300%} {+300%} damage each.'),
+		new Item(0, Item.RARITY.UNIQUE, '', 'Shatterspleen', 'offense,critical hit,bleed,explode,on death', 'critBleed', '{offense:Critical Strikes bleed} enemies for {offense:240%} base damage. {offense:Bleeding} enemies {offense:explode} on death for {offense:400%} {+400%} damage, plus an additional {offense:15%} {+15%} of their maximum health.'),
+		new Item(0, Item.RARITY.UNIQUE, '', 'Mired Urn', 'offense,heal,slow,near,proximity', 'tarUrn', 'While in combat, the nearest 1 {+1} characters to you within {offense:13m} whill be \'tethered\' to you, dealing {offense:100%} damage per second, applying {offense:tar}, and {defense:healing} your for {defense:100%} of the damage dealt.'),
+		new Item(0, Item.RARITY.UNIQUE, '', 'Item Scrap, Yellow', 'utility,3d,unique,yelllow', 'scraps4', 'Does nothing. Prioritized when used with 3D Printers.'),
+		// Lunar
 		new Item(43, Item.RARITY.LUNAR, 'LunarDagger', 'Shaped Glass', 'offense,suicide', 'sword', 'Increase base damage by {offense:100%} {+100%}.\n{defense:Reduce maximum health by 50%} {+50%}.'),
 		new Item(44, Item.RARITY.LUNAR, 'GoldOnHit', 'Brittle Crown', 'utility', 'crown', '{misc:30% chance on hit} to gain {misc:3} {+3} {misc:gold}.\n{debuff:Lose gold} equal to {debuff:100%} {+100%} of amount your are hit for OR lose % gold equal to {debuff:100%} {+100%} of the maximum health % you lost.\nChooses the greater of the two.'),
 		new Item(49, Item.RARITY.LUNAR, 'ShieldOnly', 'Transcendence', 'defense,chaos', 'transc', '{defense:Convert} all but {defense:1 health} into {defense:regenerating shields}.\n{defense:Gain 50%} {+25%} {defense:maximum health}.'),
 		new Item(71, Item.RARITY.LUNAR, 'RepeatHeal', 'Corpsebloom', 'defense,heal,dot', 'flower', '{defense:Heal +100%} {+100%} more.\n{defense:All healing is applied over time}.\nCan {defense:heal} for a {defense:maximum} of {defense:10%} {-50%} of your {defense:health per second}.'),
 		new Item(74, Item.RARITY.LUNAR, 'AutoCastEquipment', 'Gesture of the Drowned', 'utility,equipment,locked', 'fossil', '{misc:Reduce equipment cooldown} by {misc:50%} {+50%}.\nForces your Equipment to {misc:activate} whenever it is off {misc:cooldown}.', 'Kill 20 Hermit Crabs by chasing them off the edge of the map.'),
 		new Item(88, Item.RARITY.LUNAR, 'LunarUtilityReplacement', 'Strides of Heresy', 'utility,movement,skill,arm,speed,heal,defense', 'weirdArm', '{misc:Replace your Utility Skill} with {misc:Shadowfade}.\nFade away, becoming {misc:intangible} and gaining {misc:+30% movement speed}. {defense:Heal} for {defense:25%} {+25%} {defense:of your maximum health}. Lasts 3 {+3} seconds.', 'Kill 15 boss monsters in a single run.'),
-		new Item(96, Item.RARITY.LUNAR, 'LunarPrimaryReplacement', 'Visions of Heresy', 'active,primary,replace,offense,damage,recharge,cooldown,skill,orb,new', 'weirdOrb', '{misc:Replace your Primary Skill} with {misc:Hungering Gaze}.\nFire a flurry of {misc:tracking shards} that detonate after a delay, dealing {offense:120%} base damage. Hold up to 12 charges {+12} that reload after 2 seconds {+2}.'),
-		new Item(98, Item.RARITY.LUNAR, 'LunarTrinket', 'Beads of Fealty', 'secret,unlock,zone,no,effect,new', 'beads', 'Seems to do nothing... {debuff:but...}', 'Unlock the new zone from the "Hidden Realms" update when you obliterate with this item.'),
+		new Item(96, Item.RARITY.LUNAR, 'LunarPrimaryReplacement', 'Visions of Heresy', 'active,primary,replace,offense,damage,recharge,cooldown,skill,orb', 'weirdOrb', '{misc:Replace your Primary Skill} with {misc:Hungering Gaze}.\nFire a flurry of {misc:tracking shards} that detonate after a delay, dealing {offense:120%} base damage. Hold up to 12 charges {+12} that reload after 2 seconds {+2}.'),
+		new Item(98, Item.RARITY.LUNAR, 'LunarTrinket', 'Beads of Fealty', 'secret,unlock,zone,no,effect', 'beads', 'Seems to do nothing... {debuff:but...}', 'Unlock the new zone from the "Hidden Realms" update when you obliterate with this item.'),
+		new Item(107, Item.RARITY.LUNAR, '', 'Focused Convergence', 'utility,teleporter,event,smaller,faster', 'orb', 'Teleporters charge {misc:30%} {+30%} {misc:faster}, but the size of the Teleporter zone is {debuff:50%} {-50%} smaller.'),
+		new Item(0, Item.RARITY.LUNAR, '', 'Defiant Gouge', 'offense,summon,shrine,on use', 'tools', 'Using a Shrine summons {debuff:enemies} nearby. {misc:Scales over time}.'),
+		new Item(0, Item.RARITY.LUNAR, '', 'Mercurial Rachis', 'offense,power,zone,damage', 'spin', 'Creates a Ward of Power in a random location nearby that buffs both enemies and allies within {misc:16m} {+50%}, causing them to deal {offense:+50%} damage.'),
+		new Item(0, Item.RARITY.LUNAR, '', 'Purity', 'utility,cooldown,reduction,bad luck,reroll', 'snowflake', 'All skill cooldowns are reduced by {misc:2} {+1} seconds. All random effects are rolled {misc:+1} {+1} times for an {debuff:unfavorable outcome}.'),
 		new Item(3, Item.RARITY.LUNAR, 'Meteor', 'Glowing Meteorite', 'offense,suicide,equipment,locked', 'meteorite', '{offense:Rain meteors} from the sky, damaging ALL characters for {offense:600% damage per blast}.\nLast 20 seconds.', 'Carry 5 Lunar items in a single run.'),
 		new Item(23, Item.RARITY.LUNAR, 'BurnNearby', 'Helfire Tincture', 'offense,suicide,fire,equipment,locked', 'burn', 'Ignite ALL characters within 8m. Deal {offense:5% of your maximum health/second as burning} to yourself.\nThe burn is {offense:0.5x} stronger on allies, and {offense:24x} stronger on enemies.\nCooldown: {misc:45s}', 'Kill 15 enemies simultaneously.'),
 		new Item(26, Item.RARITY.LUNAR, 'CrippleWard', 'Effigy of Grief', 'utility,equipment', 'slow', 'ALL characters are {misc:slowed by 50%} and has their {offense:armor reduced by 20}.\nCooldown: {misc:45s}'),
 		new Item(28, Item.RARITY.LUNAR, 'Tonic', 'Spinel Affliction', 'utility,buff,debuff,attack,speed,movespeed,health,regen', 'tonic', 'Drink the Tonic, gaining a boost for 15 seconds.\nIncreases {offense:damage} by {offense:+100%}.\nIncreases {offense:attack speed} by {offense:+70%}.\nIncreases {offense:armor} by {offense:+20}.\nIncreases {defense:maximum health} by {defense:+50%}.\nIncreases {defense:passive health regeneration} by {defense:+300%}.\nIncreases {misc:movespeed} by {misc:+30%}.\nWhen the tonic wears off, you have {debuff:20%} chance to gain a {debuff:Tonic Affliction, reducing all of your stats} by {debuff:-5%} {-5%}', 'Discover and enter three unique portals.'),
+		// Equipments
 		new Item(0, Item.RARITY.EQUIPMENT, 'CommandMissile', 'Disposable Missile Launcher', 'attack', 'missile', 'Fire a swarm of {offense:12} missiles that deal {offense:12x300%} damage.\nCooldown: {misc:45s}'),
 		new Item(2, Item.RARITY.EQUIPMENT, 'Fruit', 'Foreign Fruit', 'defense,heal', 'fruit', 'Instantly heal for {defense:50% of your maximum health}.\nCooldown: {misc:45s}'),
 		new Item(11, Item.RARITY.EQUIPMENT, 'Blackhole', 'Blackhole', 'offense,stack', 'blackhole', 'Fire a black hole that {misc:draws enemies within 30m into it\'s center}.\nLast 10 seconds.\nCooldown: {misc:60s}'),
@@ -271,16 +296,21 @@
 		new Item(27, Item.RARITY.EQUIPMENT, 'Gateway', 'Eccentric Vase', 'utility,scan,locked', 'vase', 'Create a {misc:quantum tunnel} of up to {misc:1000m} in length. Lasts 30 seconds.\nCooldown: {misc:100s}', 'Defeat the guardian of Gilded Coast without any beacons deactivating.'),
 		new Item(30, Item.RARITY.EQUIPMENT, 'Cleanse', 'Blast Shower', 'utility,defense,cleanse,debuff', 'potThing', '{misc:Cleanse} all negative effects. Includes debuffs, damage over time, and nearby projectiles.\nCooldown: {misc:20s}', 'Die three fiery deaths'),
 		new Item(31, Item.RARITY.EQUIPMENT, 'FireBallDash', 'Volcania Egg', 'utility,offense,detonate,movement', 'egg', 'Turn into a {offense:draconic fireball} for {offense:5} seconds. Deal {offense:500% damage} on impact.\nDetonates at the end for {offense:800% damage}.\nCooldown: {misc:30s}'),
-		new Item(33, Item.RARITY.EQUIPMENT, 'GainArmor', 'Jade Elephant', 'utility,defense,resistance,armor,new', 'elephant', 'Gain {offense:500 armor} for {misc:5 seconds}.\nCooldown: {misc:45s}'),
-		new Item(5, Item.RARITY.EQUIPMENT, 'AffixRed', 'Ifrit\'s Distinction', 'offense,fire,drop', 'fireAspect', 'Become an aspect of fire.', 'Drop from Fire Elite enemies.'),
-		new Item(6, Item.RARITY.EQUIPMENT, 'AffixBlue', 'Silent Between Two Strikes', 'offense,lightning,drop', 'lightningAspect', 'Become an aspect of lightning.', 'Drop from Lightning Elite enemies.'),
-		new Item(9, Item.RARITY.EQUIPMENT, 'AffixWhite', 'Her Biting Embrace', 'offense,ice,drop', 'iceAspect', 'Become an aspect of ice.', 'Drop from Ice Elite enemies.'),
-		new Item(10, Item.RARITY.EQUIPMENT, 'AffixPoison', 'N\'kuhana\'s Retort', 'offense,malachite,debuff,heal', 'affixMalachite', 'Become an aspect of corruption.', 'Drop from Malachite Elite enemies.'),
+		new Item(33, Item.RARITY.EQUIPMENT, 'GainArmor', 'Jade Elephant', 'utility,defense,resistance,armor', 'elephant', 'Gain {offense:500 armor} for {misc:5 seconds}.\nCooldown: {misc:45s}'),
+		new Item(0, Item.RARITY.EQUIPMENT, '', 'Sawmerang', 'offense,boomerang', 'metalSpin', 'Throw {offense:three large saw blades} that slice through enemies for {offense:3x400%} damage.\nAlso deals an additional {offense:3x100% damage per second} while {offense:bleeding} enemies.\nCan {offense:strike} enemies again on the way back.\nCooldown: {misc:45s}'),
+		new Item(0, Item.RARITY.EQUIPMENT, '', 'Recycler', 'utility,reroll,recycle,transform', 'recycler', '{misc:Transform} an Item or Equipment into a different one. {misc:Can only be converted in the same tier one time}.\nCooldown: {misc:45s}'),
+		new Item(0, Item.RARITY.EQUIPMENT, '', 'Super Massive Leech', 'defense,heal,leech,on hit', 'leech', '{defense:Heal} for {defense:20%} of the {offense:damage} you deal. Lasts {defense:8} seconds.\nCooldown: {misc:60s}'),
+		new Item(0, Item.RARITY.EQUIPMENT, '', 'Gorag\'s Opus', 'utility,offense,frenzy,movement speed,attack speed', 'drum', 'All allies enter a {offense:frenzy} for {misc:7} seconds. Increases {misc:movement speed} by {misc:50%} and {offense:attack speed} by {offense:100%}.\nCooldown: {misc:60s}'),
+		new Item(0, Item.RARITY.EQUIPMENT, '', 'Forgive Me Please', 'offense,trigger,on kill', 'voodoo', 'Throw a cursed doll out that {offense:triggers} any {offense:On-kill} effects you have every {misc:1} second for {misc:8} seconds.\nCooldown: {misc:60s}'),
+		//new Item(5, Item.RARITY.EQUIPMENT, 'AffixRed', 'Ifrit\'s Distinction', 'offense,fire,drop', 'fireAspect', 'Become an aspect of fire.', 'Drop from Fire Elite enemies.'),
+		//new Item(6, Item.RARITY.EQUIPMENT, 'AffixBlue', 'Silent Between Two Strikes', 'offense,lightning,drop', 'lightningAspect', 'Become an aspect of lightning.', 'Drop from Lightning Elite enemies.'),
+		//new Item(9, Item.RARITY.EQUIPMENT, 'AffixWhite', 'Her Biting Embrace', 'offense,ice,drop', 'iceAspect', 'Become an aspect of ice.', 'Drop from Ice Elite enemies.'),
+		//new Item(10, Item.RARITY.EQUIPMENT, 'AffixPoison', 'N\'kuhana\'s Retort', 'offense,malachite,debuff,heal', 'affixMalachite', 'Become an aspect of corruption.', 'Drop from Malachite Elite enemies.'),
 		//new Item(32, Item.RARITY.EQUIPMENT, 'AffixHaunted', 'Affix Haunted', 'utility,defense,haunted,elite,drop', 'whiteSquare', 'Become an haunted aspect.\n{misc:(No in-game image yet)}', 'Drop from Haunter Elite enemies.'),
-		new Item(29, Item.RARITY.EQUIPMENT, 'QuestVolatileBattery', 'Fuel Array', 'quest', 'fuelArray', 'Looks like it could power something.\n{offense:EXTREMELY unstable...}.\n{misc:(Not obtainable in-game, used for quest)}'),
+		//new Item(29, Item.RARITY.EQUIPMENT, 'QuestVolatileBattery', 'Fuel Array', 'quest', 'fuelArray', 'Looks like it could power something.\n{offense:EXTREMELY unstable...}.\n{misc:(Not obtainable in-game, used for quest)}'),
 	];
-	let itemObjectsCount = itemObjects.length;
-	let noResult = document.getElementById("noResult");
+	const itemObjectsCount = itemObjects.length;
+	const noResult = document.getElementById("noResult");
 
 	function search(query) {
 		query = query.trim().toLowerCase();
