@@ -40,18 +40,27 @@
 				</a>
 			</div>
 		</div>
-		<form class="flex flex-nowrap sticky top-0 py-3 bg-gray-700 shadow-b" @submit.prevent="">
-			<button
-				class="rounded-l-md bg-red-600 text-white border-2 border-red-700 py-1 px-2"
-				@click.prevent="clearFilter"
-			>
-				Clear
-			</button>
-			<input
-				class="flex-grow text-black placeholder-gray-500 border border-gray-200 rounded-r-md p-2 focus:border-light-blue-500 focus:ring-2 focus:ring-light-blue-500"
-				v-model="filter"
-				@keydown.enter.prevent=""
-			/>
+		<form class="flex flex-col flex-wrap sticky top-0 py-3 bg-gray-700 shadow-b" @submit.prevent="">
+			<div class="flex flex-row flex-nowrap mb-1">
+				<button class="filter all" :class="filterClass('all')" @click="selectTypeFilter('all')">All</button>
+				<button class="filter items" :class="filterClass(0)" @click="selectTypeFilter(0)">Items</button>
+				<button class="filter equipments" :class="filterClass(1)" @click="selectTypeFilter(1)">
+					Equipments
+				</button>
+			</div>
+			<div class="flex flew-row flex-nowrap">
+				<button
+					class="rounded-l-md bg-red-600 text-white border-2 border-red-700 py-1 px-2"
+					@click.prevent="clearFilter"
+				>
+					Clear
+				</button>
+				<input
+					class="flex-grow text-black placeholder-gray-500 border border-gray-200 rounded-r-md p-2 focus:border-light-blue-500 focus:ring-2 focus:ring-light-blue-500"
+					v-model="strFilter"
+					@keydown.enter.prevent=""
+				/>
+			</div>
 		</form>
 		<div class="body flex flex-row flex-wrap items-start justify-around mt-1">
 			<Item v-for="(item, index) in items" :key="index" :item="item" v-on:showModal="showModal" />
@@ -64,6 +73,7 @@
 import Item from './components/Item.vue';
 import Modal from './components/Modal.vue';
 import list from './assets/list.json';
+import { ItemType, Rarity } from './definition';
 
 /**
  * Additional hidden equipments:
@@ -81,12 +91,14 @@ export default {
 		return {
 			list: [],
 			lunarEquipments: [3, 23, 26],
-			filter: '',
+			strFilter: '',
+			typeFilter: 'all',
 			updateLink: 'https://store.steampowered.com/news/app/632360/view/2927867089366037940',
 		} as {
 			list: ItemDescription[];
 			lunarEquipments: number[];
-			filter: string;
+			strFilter: string;
+			typeFilter: 'all' | ItemType;
 			updateLink: string;
 		};
 	},
@@ -113,36 +125,60 @@ export default {
 		load() {
 			for (const i of list) {
 				const item = i as RawItemDescription;
-				this.list.push({
+				const description: ItemDescription = {
 					id: item[0],
 					rarity: item[1],
 					stringRarity: this.rarityToString(item[1]),
+					type: ItemType.ITEM,
 					uid: item[2],
 					name: item[3],
 					tags: item[4],
 					image: item[5],
 					description: item[6],
 					unlock: item[7],
-				});
+				};
+				if (
+					description.rarity == Rarity.EQUIPMENT ||
+					(description.rarity == Rarity.LUNAR && this.lunarEquipments.indexOf(description.id) >= 0)
+				) {
+					description.type = ItemType.EQUIPMENT;
+				}
+				this.list.push(description);
 			}
 		},
 		clearFilter() {
-			this.filter = '';
+			this.strFilter = '';
+		},
+		selectTypeFilter(type: 'all' | ItemType) {
+			this.typeFilter = type;
 		},
 		showModal(item: ItemDescription) {
 			(this.$refs.modal as typeof Modal).show(item);
+		},
+		filterClass(which: 'all' | ItemType): string[] {
+			const classes: string[] = [];
+			if (which == 'all' && this.typeFilter == 'all') {
+				classes.push('active');
+			} else if (which == ItemType.ITEM && this.typeFilter == ItemType.ITEM) {
+				classes.push('active');
+			} else if (which == ItemType.EQUIPMENT && this.typeFilter == ItemType.EQUIPMENT) {
+				classes.push('active');
+			}
+			return classes;
 		},
 	},
 	computed: {
 		items(): ItemDescription[] {
 			return this.list.filter((item: ItemDescription) => {
 				return (
-					item.name.indexOf(this.filter) >= 0 ||
-					item.tags.indexOf(this.filter) >= 0 ||
-					item.uid.indexOf(this.filter) >= 0 ||
-					item.description.indexOf(this.filter) >= 0 ||
-					item.image.indexOf(this.filter) >= 0 ||
-					item.stringRarity.indexOf(this.filter) >= 0
+					(this.strFilter == '' ||
+						item.name.indexOf(this.strFilter) >= 0 ||
+						item.tags.indexOf(this.strFilter) >= 0 ||
+						item.uid.indexOf(this.strFilter) >= 0 ||
+						item.description.indexOf(this.strFilter) >= 0 ||
+						item.image.indexOf(this.strFilter) >= 0 ||
+						item.stringRarity.indexOf(this.strFilter) >= 0) &&
+					(this.typeFilter == 'all' || this.typeFilter == item.type)
 				);
 			});
 		},

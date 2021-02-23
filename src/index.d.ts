@@ -1,16 +1,8 @@
-declare const enum Rarity {
-	COMMON,
-	UNCOMMON,
-	RARE,
-	UNIQUE,
-	LUNAR,
-	EQUIPMENT,
-}
-
 interface ItemDescription {
 	id: number;
-	rarity: Rarity;
+	rarity: import('./definition').Rarity;
 	stringRarity: string;
+	type: import('./definition').ItemType;
 	uid: string;
 	name: string;
 	tags: string;
@@ -21,7 +13,7 @@ interface ItemDescription {
 
 type RawItemDescription = [
 	id: number,
-	rarity: Rarity,
+	rarity: import('./definition').Rarity,
 	uid: string,
 	name: string,
 	tags: string,

@@ -25,43 +25,6 @@
 	text-shadow: 1px 1px 1px black;
 }
 
-.border-common {
-	border-color: #4f6372;
-}
-.bg-common {
-	background-color: #3e4e5b;
-}
-.border-uncommon {
-	border-color: #23d160;
-}
-.bg-uncommon {
-	background-color: #235a11;
-}
-.border-rare {
-	border-color: #e3502b;
-}
-.bg-rare {
-	background-color: #952d2b;
-}
-.border-unique {
-	border-color: #dbe621;
-}
-.bg-unique {
-	background-color: #758623;
-}
-.border-lunar {
-	border-color: #40dff7;
-}
-.bg-lunar {
-	background-color: #074c69;
-}
-.border-equipment {
-	border-color: #df9834;
-}
-.bg-equipment {
-	background-color: #a06b17;
-}
-
 .shadow-b {
 	box-shadow: 0 8px 4px -4px #374151; /* gray-700 */
 }
@@ -84,4 +47,30 @@ body.modal-active {
 	.xl\:w-32p {
 		width: 32%;
 	}
+}
+
+/* Filters */
+
+.filter {
+	@apply mr-2 p-1 rounded-md transition-colors;
+	min-width: 4rem;
+}
+
+.all {
+	@apply hover:bg-gray-600;
+}
+.all.active {
+	@apply bg-gray-600;
+}
+.items {
+	@apply hover:bg-blue-600;
+}
+.items.active {
+	@apply bg-blue-600;
+}
+.equipments {
+	@apply hover:bg-equipment;
+}
+.equipments.active {
+	@apply bg-equipment;
 }

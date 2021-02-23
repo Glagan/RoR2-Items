@@ -53,7 +53,7 @@ export default {
 			return false; // return this.$store.state.lunarEquipments.indexOf(this.item.id) >= 0;
 		},
 		border(): string {
-			return `border-${this.item.stringRarity}`;
+			return `border-${this.item.stringRarity}-light`;
 		},
 		background(): string {
 			return `bg-${this.item.stringRarity}`;
