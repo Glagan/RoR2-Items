@@ -65,3 +65,7 @@
 .bg-equipment {
 	background-color: #a06b17;
 }
+
+.shadow-b {
+	box-shadow: 0 8px 4px -4px #374151; /* gray-700 */
+}
