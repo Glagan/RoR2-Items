@@ -24,6 +24,7 @@ declare module '@vue/runtime-core' {
 
 	interface State {
 		list: Item[];
+		lunarEquipments: number[];
 	}
 
 	interface ComponentCustomProperties {

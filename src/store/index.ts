@@ -27,6 +27,7 @@ import list from '../assets/list.json';
 export default createStore({
 	state: {
 		list: [],
+		lunarEquipments: [3, 23, 26],
 	},
 	mutations: {
 		addItem(state, item: Item) {
