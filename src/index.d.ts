@@ -2,7 +2,6 @@ interface ItemDescription {
 	id: number;
 	rarity: import('./definition').Rarity;
 	stringRarity: string;
-	type: import('./definition').ItemType;
 	uid: string;
 	name: string;
 	tags: string;

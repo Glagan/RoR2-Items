@@ -19,7 +19,7 @@
 		</h1>
 		<div class="w-full mb-1 overflow-hidden bg-green-50 text-green-600 rounded-md shadow-md">
 			<div class="p-4 flex items-center border-l-4 border-green-600 tracking-normal">
-				<unicon class="mr-2" name="check-circle" width="28" height="28" fill="#059669"></unicon>
+				<unicon class="mr-2" name="check-circle" width="36" height="36" fill="#059669"></unicon>
 				Up to date with version <b class="inline-block mx-1">1.0.3.1</b> (December 15th 2020).
 				<a
 					:href="updateLink"
@@ -40,13 +40,17 @@
 				</a>
 			</div>
 		</div>
-		<form class="flex flex-col flex-wrap sticky top-0 py-3 bg-gray-700 shadow-b" @submit.prevent="">
+		<form class="flex flex-col flex-wrap sticky top-0 py-3 bg-gray-600 shadow-b" @submit.prevent="">
 			<div class="flex flex-row flex-nowrap mb-1">
-				<button class="filter all" :class="filterClass('all')" @click="selectTypeFilter('all')">All</button>
-				<button class="filter items" :class="filterClass(0)" @click="selectTypeFilter(0)">Items</button>
-				<button class="filter equipments" :class="filterClass(1)" @click="selectTypeFilter(1)">
-					Equipments
-				</button>
+				<FilterButton rarity="all" name="All" :selected="selectedRarity" v-on:selectRarity="selectRarity" />
+				<FilterButton
+					v-for="(item, index) in rarities"
+					:rarity="index"
+					:name="item"
+					:key="index"
+					:selected="selectedRarity"
+					v-on:selectRarity="selectRarity"
+				/>
 			</div>
 			<div class="flex flew-row flex-nowrap">
 				<button
@@ -58,6 +62,7 @@
 				<input
 					class="flex-grow text-black placeholder-gray-500 border border-gray-200 rounded-r-md p-2 focus:border-light-blue-500 focus:ring-2 focus:ring-light-blue-500"
 					v-model="strFilter"
+					placeholder="Search name, tags, rarity and description"
 					@keydown.enter.prevent=""
 				/>
 			</div>
@@ -74,6 +79,7 @@ import Item from './components/Item.vue';
 import Modal from './components/Modal.vue';
 import list from './assets/list.json';
 import { ItemType, Rarity } from './definition';
+import FilterButton from './components/FilterButton.vue';
 
 /**
  * Additional hidden equipments:
@@ -86,20 +92,22 @@ import { ItemType, Rarity } from './definition';
  */
 
 export default {
-	components: { Item, Modal },
+	components: { FilterButton, Item, Modal },
 	data() {
 		return {
 			list: [],
 			lunarEquipments: [3, 23, 26],
 			strFilter: '',
-			typeFilter: 'all',
+			rarityFilter: 'all',
 			updateLink: 'https://store.steampowered.com/news/app/632360/view/2927867089366037940',
+			rarities: ['Common', 'Uncommon', 'Rare', 'Unique', 'Lunar', 'Equipment'],
 		} as {
 			list: ItemDescription[];
 			lunarEquipments: number[];
 			strFilter: string;
-			typeFilter: 'all' | ItemType;
+			rarityFilter: 'all' | Rarity;
 			updateLink: string;
+			rarities: string[];
 		};
 	},
 	created() {
@@ -125,50 +133,32 @@ export default {
 		load() {
 			for (const i of list) {
 				const item = i as RawItemDescription;
-				const description: ItemDescription = {
+				this.list.push({
 					id: item[0],
 					rarity: item[1],
 					stringRarity: this.rarityToString(item[1]),
-					type: ItemType.ITEM,
 					uid: item[2],
 					name: item[3],
 					tags: item[4],
 					image: item[5],
 					description: item[6],
 					unlock: item[7],
-				};
-				if (
-					description.rarity == Rarity.EQUIPMENT ||
-					(description.rarity == Rarity.LUNAR && this.lunarEquipments.indexOf(description.id) >= 0)
-				) {
-					description.type = ItemType.EQUIPMENT;
-				}
-				this.list.push(description);
+				});
 			}
 		},
 		clearFilter() {
 			this.strFilter = '';
 		},
-		selectTypeFilter(type: 'all' | ItemType) {
-			this.typeFilter = type;
+		selectRarity(type: 'all' | Rarity) {
+			this.rarityFilter = type;
 		},
 		showModal(item: ItemDescription) {
 			(this.$refs.modal as typeof Modal).show(item);
 		},
-		filterClass(which: 'all' | ItemType): string[] {
-			const classes: string[] = [];
-			if (which == 'all' && this.typeFilter == 'all') {
-				classes.push('active');
-			} else if (which == ItemType.ITEM && this.typeFilter == ItemType.ITEM) {
-				classes.push('active');
-			} else if (which == ItemType.EQUIPMENT && this.typeFilter == ItemType.EQUIPMENT) {
-				classes.push('active');
-			}
-			return classes;
-		},
 	},
 	computed: {
 		items(): ItemDescription[] {
+			console.log('this.rarityFilter', this.rarityFilter);
 			return this.list.filter((item: ItemDescription) => {
 				return (
 					(this.strFilter == '' ||
@@ -178,9 +168,12 @@ export default {
 						item.description.indexOf(this.strFilter) >= 0 ||
 						item.image.indexOf(this.strFilter) >= 0 ||
 						item.stringRarity.indexOf(this.strFilter) >= 0) &&
-					(this.typeFilter == 'all' || this.typeFilter == item.type)
+					(this.rarityFilter == 'all' || this.rarityFilter == item.rarity)
 				);
 			});
+		},
+		selectedRarity(): 'all' | Rarity {
+			return this.rarityFilter;
 		},
 	},
 };

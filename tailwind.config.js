@@ -1,6 +1,8 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
 	purge: {
-		enabled: true,
+		enabled: false,
 		content: ['index.html', 'src/**/*.vue'],
 	},
 	darkMode: false, // or 'media' or 'class'
@@ -19,6 +21,13 @@ module.exports = {
 				'lunar-light': '#40dff7',
 				equipment: '#a06b17',
 				'equipment-light': '#df9834',
+			},
+			width: {
+				'32p': '32%',
+				'48p': '48%',
+			},
+			boxShadow: {
+				b: `0 8px 4px -4px ${colors.gray['600']}`,
 			},
 		},
 	},
