@@ -45,12 +45,12 @@ export default {
 			navigator.clipboard.writeText(`${command} ${this.item.id} 1`);
 		},
 		toggleModal() {
-			this.$store.commit('modal/show', this.item);
+			this.$emit('showModal', this.item);
 		},
 	},
 	computed: {
 		isLunarEquipment(): boolean {
-			return this.$store.state.lunarEquipments.indexOf(this.item.id) >= 0;
+			return false; // return this.$store.state.lunarEquipments.indexOf(this.item.id) >= 0;
 		},
 		border(): string {
 			return `border-${this.item.stringRarity}`;

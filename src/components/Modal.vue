@@ -4,14 +4,14 @@
 		ref="modal"
 		class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center cursor-pointer"
 		tabindex="0"
-		@keydown.esc="hideModal"
+		@keydown.esc="hide"
 	>
-		<div class="modal-overlay absolute w-full h-full bg-gray-800 opacity-90" @click="hideModal"></div>
+		<div class="modal-overlay absolute w-full h-full bg-gray-800 opacity-90" @click="hide"></div>
 
 		<div class="modal-container w-11/12 md:max-w-md mx-auto shadow-lg z-50 overflow-y-auto">
 			<div
 				class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50"
-				@click="hideModal"
+				@click="hide"
 			>
 				<unicon name="times" width="18" height="18" fill="white"></unicon>
 				<span class="text-sm">(Esc)</span>
@@ -30,7 +30,7 @@
 				<div class="flex justify-end p-2 border-t border-white bg-gray-700">
 					<button
 						class="modal-close py-1 p-2 rounded-md border border-blue-800 bg-blue-600 transition hover:border-blue-900 hover:bg-blue-700"
-						@click="hideModal"
+						@click="hide"
 					>
 						Close
 					</button>
@@ -42,26 +42,32 @@
 
 <script lang="ts">
 export default {
-	computed: {
-		visible() {
-			return this.$store.state.modal.visible;
-		},
-		item() {
-			return this.$store.state.modal.item;
-		},
+	data() {
+		return {
+			visible: false,
+			item: {},
+		} as {
+			visible: boolean;
+			item: ItemDescription;
+		};
 	},
 	methods: {
-		hideModal() {
-			this.$store.commit('modal/hide');
+		show(item: ItemDescription) {
+			this.item = item;
+			this.visible = true;
+		},
+		hide() {
+			this.visible = false;
 		},
 	},
 	watch: {
 		visible(to, from) {
 			if (to != from) {
-				this.$refs.modal.classList.toggle('opacity-0');
-				this.$refs.modal.classList.toggle('pointer-events-none');
+				const modal = this.$refs.modal as HTMLElement;
+				modal.classList.toggle('opacity-0');
+				modal.classList.toggle('pointer-events-none');
 				document.body.classList.toggle('modal-active');
-				if (to) this.$refs.modal.focus();
+				if (to) modal.focus();
 			}
 		},
 	},
