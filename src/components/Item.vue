@@ -1,10 +1,20 @@
 <template>
 	<div
-		class="flex flex-col flex-nowrap overflow-hidden w-32 mb-4 rounded-md border shadow-md"
+		class="flex flex-col flex-nowrap overflow-hidden w-32 mb-4 rounded-md rounded-bl-none border shadow-md transition hover:shadow-xl"
 		:class="[border, background]"
 	>
-		<div class="flex items-center justify-between p-2 text-xl border-b" :class="[border]">
-			{{ item.name }} <span v-if="item.id">#{{ item.id }}</span>
+		<div class="flex items-center content-center justify-between p-2 text-xl border-b" :class="[border]">
+			{{ item.name }}
+			<div>
+				<button
+					class="p-1 mr-1 rounded-md text-sm border border-blue-800 bg-blue-600 transition hover:border-blue-900 hover:bg-blue-700"
+					v-if="item.unlock"
+					@click.prevent="toggleModal"
+				>
+					Unlock
+				</button>
+				<span v-if="item.id">#{{ item.id }}</span>
+			</div>
 		</div>
 		<div class="item-body flex flex-row flex-nowrap">
 			<div class="flex-grow-0 flex-shrink-0 border-r" :class="[border]">
@@ -33,22 +43,9 @@ export default {
 				command = 'give_equip';
 			}
 			navigator.clipboard.writeText(`${command} ${this.item.id} 1`);
-			/*.then(() => {
-					SimpleNotification.success(
-						'Copied',
-						['**', this.name, '** give command has been copied.'].join(''),
-						imageSrc,
-						{ duration: 1200, position: 'bottom-left' }
-					);
-				})
-				.catch((error) => {
-					SimpleNotification.error(
-						'Error',
-						['Could not copy the give command:\n', error].join(''),
-						imageSrc,
-						{ duration: 1200, position: 'bottom-left' }
-					);
-				});*/
+		},
+		toggleModal() {
+			this.$store.commit('modal/show', this.item);
 		},
 	},
 	computed: {

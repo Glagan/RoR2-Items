@@ -23,10 +23,16 @@ declare module '@vue/runtime-core' {
 		unlock?: string;
 	}
 
+	export interface ModalState {
+		visible: boolean;
+		item: Item;
+	}
+
 	interface State {
 		list: Item[];
 		lunarEquipments: number[];
 		filter: string;
+		modal: ModalState;
 	}
 
 	interface ComponentCustomProperties {

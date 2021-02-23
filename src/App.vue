@@ -29,15 +29,16 @@
 			<Item v-for="(item, index) in items" :key="index" :item="item" />
 		</div>
 	</div>
-	{{ $store.count }}
+	<Modal />
 </template>
 
 <script lang="ts">
 import Item from './components/Item.vue';
+import Modal from './components/Modal.vue';
 import store from './store';
 
 export default {
-	components: { Item },
+	components: { Item, Modal },
 	store,
 	created() {
 		this.$store.dispatch('load');

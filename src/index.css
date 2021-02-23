@@ -69,3 +69,11 @@
 .shadow-b {
 	box-shadow: 0 8px 4px -4px #374151; /* gray-700 */
 }
+
+.modal {
+	transition: opacity 0.25s ease;
+}
+body.modal-active {
+	overflow-x: hidden;
+	overflow-y: visible !important;
+}

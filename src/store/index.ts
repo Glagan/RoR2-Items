@@ -1,18 +1,7 @@
 import { Item, Rarity } from 'vue';
 import { createStore } from 'vuex';
 import list from '../assets/list.json';
-
-/**
- * list.json format:
- * 	id
- * 	rarity
- * 	in-game id
- * 	name
- * 	tags
- * 	image
- * 	description
- * 	[optional] unlock
- */
+import modal from './modal';
 
 /**
  * Additional hidden equipments:
@@ -70,6 +59,17 @@ export default createStore({
 		},
 	},
 	actions: {
+		/**
+		 * list.json format:
+		 * 	id
+		 * 	rarity
+		 * 	in-game id
+		 * 	name
+		 * 	tags
+		 * 	image
+		 * 	description
+		 * 	[optional] unlock
+		 */
 		load({ commit }) {
 			for (const item of list) {
 				commit('addItem', {
@@ -86,4 +86,5 @@ export default createStore({
 			}
 		},
 	},
+	modules: { modal },
 });
