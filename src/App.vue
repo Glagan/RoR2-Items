@@ -17,7 +17,7 @@
 				</a>
 			</div>
 		</h1>
-		<div class="w-full mb-1 overflow-hidden bg-green-50 text-green-600 rounded-md shadow-md">
+		<div class="alert w-full mb-1 overflow-hidden bg-green-50 text-green-600 rounded-md shadow-md">
 			<div class="p-4 flex items-center border-l-4 border-green-600 tracking-normal">
 				<unicon class="mr-2" name="check-circle" width="36" height="36" fill="#059669"></unicon>
 				Up to date with version <b class="inline-block mx-1">1.0.3.1</b> (December 15th 2020).
@@ -40,8 +40,8 @@
 				</a>
 			</div>
 		</div>
-		<form class="flex flex-col flex-wrap sticky top-0 py-3 bg-gray-600 shadow-b" @submit.prevent="">
-			<div class="flex flex-row flex-nowrap mb-1">
+		<form class="flex flex-col flex-wrap sticky top-0 py-2 bg-gray-600 shadow-b" @submit.prevent="">
+			<div class="flex flex-row flex-nowrap mb-2">
 				<FilterButton rarity="all" name="All" :selected="selectedRarity" v-on:selectRarity="selectRarity" />
 				<FilterButton
 					v-for="(item, index) in rarities"
@@ -54,13 +54,13 @@
 			</div>
 			<div class="flex flew-row flex-nowrap">
 				<button
-					class="rounded-l-md bg-red-600 text-white border-2 border-red-700 py-1 px-2"
+					class="rounded-l-md bg-red-600 text-white border-2 border-red-700 py-1 px-2 focus:border-red-800 focus:ring focus:ring-red-800"
 					@click.prevent="clearFilter"
 				>
 					Clear
 				</button>
 				<input
-					class="flex-grow text-black placeholder-gray-500 border border-gray-200 rounded-r-md p-2 focus:border-light-blue-500 focus:ring-2 focus:ring-light-blue-500"
+					class="flex-grow text-black placeholder-gray-500 border border-gray-200 rounded-r-md p-2 focus:border-blue-800 focus:ring focus:ring-blue-800"
 					v-model="strFilter"
 					placeholder="Search name, tags, rarity and description"
 					@keydown.enter.prevent=""
@@ -68,7 +68,17 @@
 			</div>
 		</form>
 		<div class="body flex flex-row flex-wrap items-start justify-around mt-1">
-			<Item v-for="(item, index) in items" :key="index" :item="item" v-on:showModal="showModal" />
+			<template v-if="items.length > 0">
+				<Item v-for="(item, index) in items" :key="index" :item="item" v-on:showModal="showModal" />
+			</template>
+			<template v-else>
+				<div class="alert w-full mb-1 overflow-hidden bg-blue-50 text-blue-600 rounded-md shadow-md">
+					<div class="p-4 flex items-center border-l-4 border-blue-600 tracking-normal">
+						<unicon class="mr-2" name="info-circle" width="36" height="36" fill="#2563EB"></unicon>
+						No Items found.
+					</div>
+				</div>
+			</template>
 		</div>
 	</div>
 	<Modal ref="modal" />
@@ -158,7 +168,6 @@ export default {
 	},
 	computed: {
 		items(): ItemDescription[] {
-			console.log('this.rarityFilter', this.rarityFilter);
 			return this.list.filter((item: ItemDescription) => {
 				return (
 					(this.strFilter == '' ||

@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.header,
-.body {
+body {
 	text-shadow: 0 1px 1px black;
+}
+
+.alert {
+	text-shadow: none;
 }
 
 .is-offense {
@@ -59,4 +62,9 @@ body.modal-active {
 }
 .equipment.active {
 	@apply bg-equipment;
+}
+
+input,
+button {
+	@apply transition focus:outline-none focus:border-blue-800 focus:ring focus:ring-blue-800;
 }

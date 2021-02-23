@@ -1,5 +1,5 @@
 <template>
-	<button class="filter mr-2 p-1 rounded-md transition-colors" :class="cssClass" @click.prevent="select">
+	<button class="filter mr-2 p-1 rounded-md" :class="cssClass" @click.prevent="select">
 		{{ name }}
 	</button>
 </template>
@@ -8,7 +8,7 @@
 export default {
 	props: {
 		selected: { type: [String, Number], required: true },
-		rarity: { type: Number, required: true },
+		rarity: { type: [String, Number], required: true },
 		name: { type: String, required: true },
 	},
 	methods: {

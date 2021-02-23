@@ -29,7 +29,7 @@
 				</div>
 				<div class="flex justify-end p-2 border-t border-white bg-gray-700">
 					<button
-						class="modal-close py-1 p-2 rounded-md border border-blue-800 bg-blue-600 transition hover:border-blue-900 hover:bg-blue-700"
+						class="modal-close py-1 p-2 rounded-md border border-blue-800 bg-blue-600 transition hover:border-blue-900 hover:bg-blue-700 focus:border-blue-800 focus:ring focus:ring-blue-800"
 						@click="hide"
 					>
 						Close
