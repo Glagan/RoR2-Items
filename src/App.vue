@@ -27,6 +27,14 @@
 					target="_blank"
 					class="flex items-center mx-1 text-blue-600"
 				>
+					<unicon
+						name="steam"
+						class="mr-1"
+						width="20"
+						height="20"
+						viewBox="0 0 233 233"
+						fill="inherit"
+					></unicon>
 					Last patch
 					<unicon name="external-link-alt" class="ml-1" width="16" height="16" fill="#2563EB"></unicon>
 				</a>
