@@ -32,6 +32,7 @@
 </template>
 
 <script lang="ts">
+import { Rarity } from '../definition';
 export default {
 	props: {
 		item: { type: Object, required: true },
@@ -52,11 +53,39 @@ export default {
 		isLunarEquipment(): boolean {
 			return false; // return this.$store.state.lunarEquipments.indexOf(this.item.id) >= 0;
 		},
+		// Keep full classname for Tailwind
 		border(): string {
-			return `border-${this.item.stringRarity}-light`;
+			switch (this.item.rarity) {
+				case Rarity.COMMON:
+					return `border-common-light`;
+				case Rarity.UNCOMMON:
+					return `border-uncommon-light`;
+				case Rarity.RARE:
+					return `border-rare-light`;
+				case Rarity.UNIQUE:
+					return `border-unique-light`;
+				case Rarity.LUNAR:
+					return `border-lunar-light`;
+			}
+			// case Rarity.EQUIPMENT:
+			return `border-equipment-light`;
 		},
+		// Keep full classname for Tailwind
 		background(): string {
-			return `bg-${this.item.stringRarity}`;
+			switch (this.item.rarity) {
+				case Rarity.COMMON:
+					return `bg-common`;
+				case Rarity.UNCOMMON:
+					return `bg-uncommon`;
+				case Rarity.RARE:
+					return `bg-rare`;
+				case Rarity.UNIQUE:
+					return `bg-unique`;
+				case Rarity.LUNAR:
+					return `bg-lunar`;
+			}
+			// case Rarity.EQUIPMENT:
+			return `bg-equipment`;
 		},
 		description(): string {
 			return this.item.description
