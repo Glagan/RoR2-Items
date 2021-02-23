@@ -26,7 +26,7 @@
 					@click="copyGive"
 				/>
 			</div>
-			<div class="flex-grow p-1 overflow-y-auto" v-html="description"></div>
+			<div class="flex-grow p-1 overflow-y-auto whitespace-pre-line" v-html="description"></div>
 		</div>
 	</div>
 </template>
