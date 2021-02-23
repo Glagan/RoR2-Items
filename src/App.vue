@@ -1,10 +1,21 @@
 <template>
 	<div class="container w-9/12 mx-auto p-2">
-		<h1 class="header flex flex-row items-center justify-between text-5xl mb-4">
+		<h1 class="header flex flex-row items-stretch justify-between text-5xl mb-4">
 			Risk of Rain 2 Items &amp; Equipments
-			<a href="https://github.com/Glagan/RoR2-Items" rel="noreferrer noopener">
-				<unicon name="github" width="48" height="48" fill="white"></unicon>
-			</a>
+			<div class="flex items-center">
+				<a href="https://ko-fi.com/Y8Y32X73U" target="_blank">
+					<img
+						height="36"
+						style="border: 0px; height: 36px"
+						src="https://cdn.ko-fi.com/cdn/kofi1.png?v=2"
+						border="0"
+						alt="Buy Me a Coffee at ko-fi.com"
+					/>
+				</a>
+				<a href="https://github.com/Glagan/RoR2-Items" rel="noreferrer noopener">
+					<unicon name="github" width="48" height="48" fill="white"></unicon>
+				</a>
+			</div>
 		</h1>
 		<div class="w-full mb-1 overflow-hidden bg-green-50 text-green-600 rounded-md shadow-md">
 			<div class="p-4 flex items-center border-l-4 border-green-600 tracking-normal">
