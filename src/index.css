@@ -23,6 +23,11 @@
 .is-debuff {
 	color: #e58262;
 }
+.is-stackable {
+	color: rgb(159, 164, 182);
+	font-size: 14px;
+	text-shadow: 1px 1px 1px black;
+}
 
 .border-common {
 	border-color: #4f6372;
