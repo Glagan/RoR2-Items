@@ -20,7 +20,16 @@
 		<div class="w-full mb-1 overflow-hidden bg-green-50 text-green-600 rounded-md shadow-md">
 			<div class="p-4 flex items-center border-l-4 border-green-600 tracking-normal">
 				<unicon class="mr-2" name="check-circle" width="28" height="28" fill="#059669"></unicon>
-				Up to date with version <b>1.0.1.1</b> (September 1st 2020).
+				Up to date with version <b class="inline-block mx-1">1.0.3.1</b> (December 15th 2020).
+				<a
+					:href="updateLink"
+					rel="noreferrer noopener"
+					target="_blank"
+					class="flex items-center mx-1 text-blue-600"
+				>
+					Last patch
+					<unicon name="external-link-alt" class="ml-1" width="16" height="16" fill="#2563EB"></unicon>
+				</a>
 			</div>
 		</div>
 		<form class="flex flex-nowrap sticky top-0 py-3 bg-gray-700 shadow-b" @submit.prevent="">
@@ -65,10 +74,12 @@ export default {
 			list: [],
 			lunarEquipments: [3, 23, 26],
 			filter: '',
+			updateLink: 'https://store.steampowered.com/news/app/632360/view/2927867089366037940',
 		} as {
 			list: ItemDescription[];
 			lunarEquipments: number[];
 			filter: string;
+			updateLink: string;
 		};
 	},
 	created() {
