@@ -1,48 +1,13 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Risk of Rain 2 Items & Equipments</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/simpleNotification.min.css">
-	<link rel="stylesheet" href="css/bulma.min.css">
-	<link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
-</head>
-<body>
-	<section class="section">
-		<div class="columns is-centered">
-			<div class="column is-four-fifths">
-				<div class="columns is-multiline">
-					<div class="column is-12">
-						<h1 class="title is-2">Risk of Rain 2 Items & Equipments <a href="https://github.com/Glagan/RoR2-Items">Github</a></h1>
-						<div class="message is-success">
-							<div class="message-body">Up to date with version <b>1.0.1.1</b> (September 1st 2020).</div>
-						</div>
-					</div>
-					<div class="column is-12 search">
-						<form class="field has-addons" id="form">
-							<p class="control">
-								<button type="reset" class="button is-danger" id="clearSearch">Clear</button>
-							</p>
-							<p class="control is-expanded">
-								<input class="input" name="search" id="search" type="text" placeholder="Search Item by Name, type or tag">
-							</p>
-							<p class="control">
-								<button type="button" class="button is-info">Search</button>
-							</p>
-						</form>
-					</div>
-				</div>
-				<div class="columns is-multiline items" id="items">
-					<div class="column is-12 is-hidden" id="noResult">
-						<div class="notification is-info">No result.<br>You can search by name, by rarity (<b>common</b>, <b>uncommon</b>, <b>rare</b>, <b>unique</b>, <b>lunar</b> or <b>equipment</b>) or by tags like <b>Attack</b>, <b>Speed</b></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<script src="js/simpleNotification.min.js"></script>
-	<script src="js/main.min.js"></script>
-</body>
+<html class="bg-gray-600 text-white" lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Risk of Rain 2 Items & Equipments</title>
+	</head>
+	<body>
+		<div id="app"></div>
+		<script type="module" src="/src/main.ts"></script>
+	</body>
 </html>

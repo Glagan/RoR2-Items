@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header,
+.body {
+	text-shadow: 0 1px 1px black;
+}
+
+.is-offense {
+	color: #e5c962;
+}
+.is-defense {
+	color: #9ce562;
+}
+.is-misc {
+	color: #95cde5;
+}
+.is-debuff {
+	color: #e58262;
+}
+.is-stackable {
+	color: rgb(159, 164, 182);
+	font-size: 14px;
+	text-shadow: 1px 1px 1px black;
+}
+
+.modal {
+	transition: opacity 0.25s ease;
+}
+body.modal-active {
+	overflow-x: hidden;
+	overflow-y: visible !important;
+}
+
+/* Filters */
+
+.filter {
+	min-width: 4rem;
+}
+
+.all.active {
+	@apply bg-gray-800;
+}
+.common.active {
+	@apply bg-common;
+}
+.uncommon.active {
+	@apply bg-uncommon;
+}
+.rare.active {
+	@apply bg-rare;
+}
+.unique.active {
+	@apply bg-unique;
+}
+.lunar.active {
+	@apply bg-lunar;
+}
+.equipment.active {
+	@apply bg-equipment;
+}
