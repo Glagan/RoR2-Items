@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+.w-32 {
+	width: 32%;
+}
+
+.header,
+.body {
+	text-shadow: 0 1px 1px black;
+}
+
 .is-offense {
 	color: #e5c962;
 }
@@ -39,10 +48,10 @@
 .bg-unique {
 	background-color: #758623;
 }
-.border-mystic {
+.border-lunar {
 	border-color: #40dff7;
 }
-.bg-mystic {
+.bg-lunar {
 	background-color: #074c69;
 }
 .border-equipment {
