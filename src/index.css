@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.is-offense {
+	color: #e5c962;
+}
+.is-defense {
+	color: #9ce562;
+}
+.is-misc {
+	color: #95cde5;
+}
+.is-debuff {
+	color: #e58262;
+}
+
+.border-common {
+	border-color: #4f6372;
+}
+.bg-common {
+	background-color: #3e4e5b;
+}
+.border-uncommon {
+	border-color: #23d160;
+}
+.bg-uncommon {
+	background-color: #235a11;
+}
+.border-rare {
+	border-color: #e3502b;
+}
+.bg-rare {
+	background-color: #952d2b;
+}
+.border-unique {
+	border-color: #dbe621;
+}
+.bg-unique {
+	background-color: #758623;
+}
+.border-mystic {
+	border-color: #40dff7;
+}
+.bg-mystic {
+	background-color: #074c69;
+}
+.border-equipment {
+	border-color: #df9834;
+}
+.bg-equipment {
+	background-color: #a06b17;
+}
