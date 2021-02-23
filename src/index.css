@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.w-32 {
-	width: 32%;
-}
-
 .header,
 .body {
 	text-shadow: 0 1px 1px black;
@@ -76,4 +72,16 @@
 body.modal-active {
 	overflow-x: hidden;
 	overflow-y: visible !important;
+}
+
+@media (min-width: 1024px) {
+	.lg\:w-48p {
+		width: 48%;
+	}
+}
+
+@media (min-width: 1280px) {
+	.xl\:w-32p {
+		width: 32%;
+	}
 }

@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="flex flex-col flex-nowrap overflow-hidden w-32 mb-4 rounded-md rounded-bl-none border shadow-md transition hover:shadow-xl"
+		class="flex flex-col flex-nowrap overflow-hidden w-full lg:w-48p xl:w-32p mb-4 rounded-md rounded-bl-none border shadow-md transition hover:shadow-xl"
 		:class="[border, background]"
 	>
 		<div class="flex items-center content-center justify-between p-2 text-xl border-b" :class="[border]">
