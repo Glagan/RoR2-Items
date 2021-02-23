@@ -55,27 +55,11 @@ export default {
 		isLunarEquipment(): boolean {
 			return this.$store.state.lunarEquipments.indexOf(this.item.id) >= 0;
 		},
-		rarity(): string {
-			switch (this.item.rarity) {
-				case 0:
-					return 'common';
-				case 1:
-					return 'uncommon';
-				case 2:
-					return 'rare';
-				case 3:
-					return 'unique';
-				case 4:
-					return 'lunar';
-			}
-			//case 5:
-			return 'equipment';
-		},
 		border(): string {
-			return `border-${this.rarity}`;
+			return `border-${this.item.stringRarity}`;
 		},
 		background(): string {
-			return `bg-${this.rarity}`;
+			return `bg-${this.item.stringRarity}`;
 		},
 		description(): string {
 			return this.item.description

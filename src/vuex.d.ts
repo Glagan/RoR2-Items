@@ -14,6 +14,7 @@ declare module '@vue/runtime-core' {
 	export interface Item {
 		id: number;
 		rarity: Rarity;
+		stringRarity: string;
 		uid: string;
 		name: string;
 		tags: string;
@@ -25,6 +26,7 @@ declare module '@vue/runtime-core' {
 	interface State {
 		list: Item[];
 		lunarEquipments: number[];
+		filter: string;
 	}
 
 	interface ComponentCustomProperties {
