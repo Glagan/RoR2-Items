@@ -17,12 +17,12 @@
 			</div>
 		</div>
 		<div class="item-body flex flex-row flex-nowrap">
-			<div class="flex-grow-0 flex-shrink-0 border-r" :class="[border]">
+			<div v-lazyload class="flex-grow-0 flex-shrink-0 border-r" :class="[border]">
 				<img
-					:src="`img/${item.image}.png`"
 					title="Click to copy give command"
 					width="90"
 					height="90"
+					:data-url="`img/${item.image}.png`"
 					@click="copyGive"
 				/>
 			</div>
@@ -33,6 +33,7 @@
 
 <script lang="ts">
 import { Rarity } from '../definition';
+
 export default {
 	props: {
 		item: { type: Object, required: true },
