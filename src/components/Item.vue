@@ -13,7 +13,7 @@
 				>
 					Unlock
 				</button>
-				<span v-if="item.id">#{{ item.id }}</span>
+				<span v-if="item.id >= 0">#{{ item.id }}</span>
 			</div>
 		</div>
 		<div class="item-body flex flex-row flex-nowrap">
