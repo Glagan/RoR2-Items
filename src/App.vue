@@ -69,7 +69,7 @@
 		</form>
 		<div class="body flex flex-row flex-wrap items-start justify-around mt-1">
 			<template v-if="items.length > 0">
-				<Item v-for="item in items" :key="item.id" :item="item" v-on:showModal="showModal" />
+				<Item v-for="item in items" :key="item.uid" :item="item" v-on:showModal="showModal" />
 			</template>
 			<template v-else>
 				<div class="alert w-full mb-1 overflow-hidden bg-blue-50 text-blue-600 rounded-md shadow-md">
@@ -88,7 +88,7 @@
 import Item from './components/Item.vue';
 import Modal from './components/Modal.vue';
 import list from './assets/list.json';
-import { ItemType, Rarity } from './definition';
+import { Rarity } from './definition';
 import FilterButton from './components/FilterButton.vue';
 
 /**
