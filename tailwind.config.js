@@ -1,5 +1,3 @@
-const colors = require('tailwindcss/colors');
-
 module.exports = {
 	purge: ['index.html', 'src/**/*.vue'],
 	darkMode: false, // or 'media' or 'class'
@@ -22,9 +20,6 @@ module.exports = {
 			width: {
 				'32p': '32%',
 				'48p': '48%',
-			},
-			boxShadow: {
-				b: `0 8px 4px -4px ${colors.gray['600']}`,
 			},
 		},
 	},

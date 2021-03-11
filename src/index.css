@@ -36,7 +36,9 @@ body.modal-active {
 	overflow-y: visible !important;
 }
 
-/* Filters */
+.search {
+	box-shadow: 0 8px 4px -4px #334155; /* gray-700 */
+}
 
 .filter {
 	min-width: 4rem;

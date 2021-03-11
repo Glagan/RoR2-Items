@@ -1,8 +1,27 @@
 <template>
 	<div class="container w-9/12 mx-auto p-2">
-		<h1 class="header flex flex-row items-stretch justify-between text-5xl mb-4">
-			Risk of Rain 2 Items &amp; Equipments
-			<div class="flex items-center">
+		<div class="mb-4 flex flex-row flex-nowrap justify-between items-center">
+			<div>
+				<a
+					title="Github Repository"
+					target="_blank"
+					href="https://github.com/Glagan/RoR2-Items"
+					rel="noreferrer noopener"
+				>
+					<span class="inline-block w-full text-lg text-gray-400">Glagan</span>
+					<span class="flex flex-row flex-nowrap items-center text-xl text-gray-200">
+						Risk of Rain 2 Items &amp; Equipments
+						<unicon
+							class="inline-block align-middle ml-1"
+							name="github"
+							width="20"
+							height="20"
+							fill="white"
+						></unicon>
+					</span>
+				</a>
+			</div>
+			<div class="hidden md:block">
 				<a href="https://ko-fi.com/Y8Y32X73U" target="_blank">
 					<img
 						height="36"
@@ -12,36 +31,45 @@
 						alt="Buy Me a Coffee at ko-fi.com"
 					/>
 				</a>
-				<a href="https://github.com/Glagan/RoR2-Items" rel="noreferrer noopener">
-					<unicon name="github" width="48" height="48" fill="white"></unicon>
-				</a>
-			</div>
-		</h1>
-		<div class="alert w-full mb-1 overflow-hidden bg-green-50 text-green-600 rounded-md shadow-md">
-			<div class="p-4 flex items-center border-l-4 border-green-600 tracking-normal">
-				<unicon class="mr-2" name="check-circle" width="36" height="36" fill="#059669"></unicon>
-				Up to date with version <b class="inline-block mx-1">1.0.3.1</b> (December 15th 2020).
-				<a
-					:href="updateLink"
-					rel="noreferrer noopener"
-					target="_blank"
-					class="flex items-center mx-1 text-blue-600"
-				>
-					<unicon
-						name="steam"
-						class="mr-1"
-						width="20"
-						height="20"
-						viewBox="0 0 233 233"
-						fill="inherit"
-					></unicon>
-					Last patch
-					<unicon name="external-link-alt" class="ml-1" width="16" height="16" fill="#2563EB"></unicon>
-				</a>
 			</div>
 		</div>
-		<form class="flex flex-col flex-wrap sticky top-0 py-2 bg-gray-600 shadow-b" @submit.prevent="">
-			<div class="flex flex-row flex-nowrap mb-2">
+		<div class="alert w-full mb-1 overflow-hidden bg-green-50 text-green-600 rounded-md shadow-md">
+			<div class="p-4 flex flex-row flex-nowrap items-center border-l-4 border-green-600 tracking-normal">
+				<unicon class="mr-2" name="check-circle" width="36" height="36" fill="#059669"></unicon>
+				<div>
+					<p>
+						Up to date with version <b class="inline-block mx-1">{{ version }}</b> ({{ date }}).
+					</p>
+					<p>
+						<a
+							:href="updateLink"
+							rel="noreferrer noopener"
+							target="_blank"
+							class="flex items-center text-blue-600"
+						>
+							<unicon
+								name="steam"
+								class="mr-1"
+								width="16"
+								height="16"
+								viewBox="0 0 233 233"
+								fill="inherit"
+							></unicon>
+							Last patch
+							<unicon
+								name="external-link-alt"
+								class="ml-1"
+								width="16"
+								height="16"
+								fill="#2563EB"
+							></unicon>
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<form class="search flex flex-col flex-wrap sticky top-0 py-2 bg-gray-700 shadow-b" @submit.prevent="">
+			<div class="flex flex-row flex-wrap mb-2">
 				<FilterButton rarity="all" name="All" :selected="selectedRarity" v-on:selectRarity="selectRarity" />
 				<FilterButton
 					v-for="(item, index) in rarities"
@@ -109,6 +137,8 @@ export default {
 			lunarEquipments: [3, 23, 26],
 			strFilter: '',
 			rarityFilter: 'all',
+			version: '1.0.3.1',
+			date: 'December 15th 2020',
 			updateLink: 'https://store.steampowered.com/news/app/632360/view/2927867089366037940',
 			rarities: ['Common', 'Uncommon', 'Rare', 'Unique', 'Lunar', 'Equipment'],
 		} as {
@@ -116,6 +146,8 @@ export default {
 			lunarEquipments: number[];
 			strFilter: string;
 			rarityFilter: 'all' | Rarity;
+			version: string;
+			date: string;
 			updateLink: string;
 			rarities: string[];
 		};
