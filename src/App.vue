@@ -33,41 +33,7 @@
 				</a>
 			</div>
 		</div>
-		<div class="alert w-full mb-1 overflow-hidden bg-green-50 text-green-600 rounded-md shadow-md">
-			<div class="p-4 flex flex-row flex-nowrap items-center border-l-4 border-green-600 tracking-normal">
-				<unicon class="mr-2" name="check-circle" width="36" height="36" fill="#059669"></unicon>
-				<div>
-					<p>
-						Up to date with version <b class="inline-block mx-1">{{ version }}</b> ({{ date }}).
-					</p>
-					<p>
-						<a
-							:href="updateLink"
-							rel="noreferrer noopener"
-							target="_blank"
-							class="flex items-center text-blue-600"
-						>
-							<unicon
-								name="steam"
-								class="mr-1"
-								width="16"
-								height="16"
-								viewBox="0 0 233 233"
-								fill="inherit"
-							></unicon>
-							Last patch
-							<unicon
-								name="external-link-alt"
-								class="ml-1"
-								width="16"
-								height="16"
-								fill="#2563EB"
-							></unicon>
-						</a>
-					</p>
-				</div>
-			</div>
-		</div>
+		<UpdateAlert />
 		<form class="search flex flex-col flex-wrap sticky top-0 py-2 bg-gray-700 shadow-b" @submit.prevent="">
 			<div class="flex flex-row flex-wrap mb-2">
 				<FilterButton rarity="all" name="All" :selected="selectedRarity" v-on:selectRarity="selectRarity" />
@@ -118,6 +84,7 @@ import Modal from './components/Modal.vue';
 import list from './assets/list.json';
 import { Rarity } from './definition';
 import FilterButton from './components/FilterButton.vue';
+import UpdateAlert from './components/UpdateAlert.vue';
 
 /**
  * Additional hidden equipments:
@@ -130,25 +97,19 @@ import FilterButton from './components/FilterButton.vue';
  */
 
 export default {
-	components: { FilterButton, Item, Modal },
+	components: { FilterButton, Item, Modal, UpdateAlert },
 	data() {
 		return {
 			list: [],
 			lunarEquipments: [3, 23, 26],
 			strFilter: '',
 			rarityFilter: 'all',
-			version: '1.0.3.1',
-			date: 'December 15th 2020',
-			updateLink: 'https://store.steampowered.com/news/app/632360/view/2927867089366037940',
 			rarities: ['Common', 'Uncommon', 'Rare', 'Unique', 'Lunar', 'Equipment'],
 		} as {
 			list: ItemDescription[];
 			lunarEquipments: number[];
 			strFilter: string;
 			rarityFilter: 'all' | Rarity;
-			version: string;
-			date: string;
-			updateLink: string;
 			rarities: string[];
 		};
 	},
