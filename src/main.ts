@@ -10,7 +10,7 @@ import {
 	uniExternalLinkAlt,
 	uniInfoCircle,
 	uniTimesCircle,
-} from 'vue-unicons/dist/icons';
+} from 'vue-unicons/icons';
 import { steam } from './icons/steam';
 import './index.css';
 
