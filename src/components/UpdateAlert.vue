@@ -64,9 +64,9 @@
 export default {
 	data() {
 		return {
-			version: '1.0.3.1',
-			date: 'December 15, 2020',
-			updateLink: 'https://store.steampowered.com/news/app/632360/view/2927867089366037940',
+			version: '1.1.0.1',
+			date: 'March 25, 2021',
+			updateLink: 'https://store.steampowered.com/news/app/632360/view/3008941395560828301',
 			newVersion: '1.1.0.1',
 			newUpdateLink: 'https://store.steampowered.com/news/app/632360/view/3008941395560828301',
 		} as {
@@ -79,7 +79,7 @@ export default {
 	},
 	computed: {
 		upToDate(): boolean {
-			return this.version == this.lastVersion;
+			return this.version == this.newVersion;
 		},
 	},
 };
