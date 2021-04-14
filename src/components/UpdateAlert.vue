@@ -64,11 +64,11 @@
 export default {
 	data() {
 		return {
-			version: '1.1.0.1',
-			date: 'March 25, 2021',
-			updateLink: 'https://store.steampowered.com/news/app/632360/view/3008941395560828301',
-			newVersion: '1.1.0.1',
-			newUpdateLink: 'https://store.steampowered.com/news/app/632360/view/3008941395560828301',
+			version: '1.1.1.2',
+			date: 'April 12, 2021',
+			updateLink: 'https://store.steampowered.com/news/app/632360/view/3100140557216075596',
+			newVersion: '1.1.1.2',
+			newUpdateLink: 'https://store.steampowered.com/news/app/632360/view/3100140557216075596',
 		} as {
 			version: string;
 			date: string;
