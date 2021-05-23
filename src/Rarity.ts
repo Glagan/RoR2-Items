@@ -1,8 +1,3 @@
-export const enum ItemType {
-	ITEM,
-	EQUIPMENT,
-}
-
 export const enum Rarity {
 	COMMON,
 	UNCOMMON,
@@ -11,3 +6,5 @@ export const enum Rarity {
 	LUNAR,
 	EQUIPMENT,
 }
+
+export default Rarity;

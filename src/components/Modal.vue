@@ -1,5 +1,4 @@
 <template>
-	<!-- https://www.tailwindtoolbox.com/components/modal -->
 	<div
 		ref="modal"
 		class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center cursor-pointer"
@@ -13,12 +12,12 @@
 				class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50"
 				@click="hide"
 			>
-				<unicon name="times" width="18" height="18" fill="white"></unicon>
+				<XIcon class="w-4 h-4 text-white" />
 				<span class="text-sm">(Esc)</span>
 			</div>
 			<div class="modal-content text-left border border-white rounded-md overflow-hidden cursor-default">
 				<div class="flex justify-start items-center p-2 text-xl border-b border-white bg-gray-700">
-					<unicon name="unlock" class="mr-1" width="24" height="24" fill="white"></unicon>
+					<LockOpenIcon class="w-6 h-6 mr-1 text-white" />
 					How to Unlock
 				</div>
 				<div class="item-body flex flex-row flex-nowrap bg-gray-800">
@@ -41,7 +40,11 @@
 </template>
 
 <script lang="ts">
+import { XIcon, LockOpenIcon } from '@heroicons/vue/outline';
+
+// @see https://www.tailwindtoolbox.com/components/modal
 export default {
+	components: { XIcon, LockOpenIcon },
 	data() {
 		return {
 			visible: false,

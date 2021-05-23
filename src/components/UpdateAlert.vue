@@ -1,7 +1,7 @@
 <template>
 	<div class="alert w-full mb-1 overflow-hidden bg-green-50 text-green-600 rounded-md shadow-md" v-if="upToDate">
 		<div class="p-4 flex flex-row flex-nowrap items-center border-l-4 border-green-600 tracking-normal">
-			<unicon class="mr-2" name="check-circle" width="36" height="36" fill="#059669"></unicon>
+			<CheckCircleIcon class="w-9 h-9 mr-2 text-green-600" />
 			<div>
 				<p>
 					Up to date with version <b class="inline-block mx-1">{{ version }}</b> ({{ date }}).
@@ -13,16 +13,7 @@
 						target="_blank"
 						class="flex items-center text-blue-600"
 					>
-						<unicon
-							name="steam"
-							class="mr-1"
-							width="16"
-							height="16"
-							viewBox="0 0 233 233"
-							fill="inherit"
-						></unicon>
-						Last patch
-						<unicon name="external-link-alt" class="ml-1" width="16" height="16" fill="#2563EB"></unicon>
+						<SteamIcon /> Last patch <ExternalLinkIcon class="w-4 h-4 ml-1 text-blue-600" />
 					</a>
 				</p>
 			</div>
@@ -30,7 +21,7 @@
 	</div>
 	<div class="alert w-full mb-1 overflow-hidden bg-yellow-50 text-yellow-600 rounded-md shadow-md" v-else>
 		<div class="p-4 flex flex-row flex-nowrap items-center border-l-4 border-yellow-600 tracking-normal">
-			<unicon class="mr-2" name="times-circle" width="36" height="36" fill="#d97706"></unicon>
+			<XCircleIcon class="w-9 h-9 mr-2 text-yellow-600" />
 			<div>
 				<p>
 					Outdated with version <b>{{ newVersion }}</b
@@ -43,16 +34,7 @@
 						target="_blank"
 						class="flex items-center text-blue-600"
 					>
-						<unicon
-							name="steam"
-							class="mr-1"
-							width="16"
-							height="16"
-							viewBox="0 0 233 233"
-							fill="inherit"
-						></unicon>
-						New patch
-						<unicon name="external-link-alt" class="ml-1" width="16" height="16" fill="#2563EB"></unicon>
+						<SteamIcon /> New patch <ExternalLinkIcon class="w-4 h-4 ml-1 text-blue-600" />
 					</a>
 				</p>
 			</div>
@@ -61,7 +43,11 @@
 </template>
 
 <script lang="ts">
+import { CheckCircleIcon, ExternalLinkIcon, XCircleIcon } from '@heroicons/vue/outline';
+import SteamIcon from './SteamIcon.vue';
+
 export default {
+	components: { CheckCircleIcon, ExternalLinkIcon, XCircleIcon, SteamIcon },
 	data() {
 		return {
 			version: '1.1.1.2',

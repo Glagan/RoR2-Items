@@ -1,6 +1,7 @@
 {
 	"compilerOptions": {
-		"target": "esnext",
+		"incremental": true,
+		"target": "es2017",
 		"module": "esnext",
 		"moduleResolution": "node",
 		"strict": true,
@@ -9,7 +10,9 @@
 		"resolveJsonModule": true,
 		"esModuleInterop": true,
 		"lib": ["esnext", "dom"],
-		"types": ["vite/client"]
+		"types": ["vite/client"],
+		"skipLibCheck": true
 	},
+	"files": ["src/index.d.ts", "src/vue-shims.d.ts"],
 	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

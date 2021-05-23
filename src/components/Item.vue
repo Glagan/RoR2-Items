@@ -32,16 +32,17 @@
 </template>
 
 <script lang="ts">
-import { Rarity } from '../definition';
+import { PropType } from '@vue/runtime-core';
+import Rarity from '../Rarity';
 
 export default {
 	props: {
-		item: { type: Object, required: true },
+		item: { type: Object as PropType<ItemDescription>, required: true },
 	},
 	methods: {
 		copyGive() {
 			let command = 'give_item';
-			if (this.item.rarity == 5 || (this.item.rarity == 4 && this.isLunarEquipment)) {
+			if (this.item.rarity == Rarity.EQUIPMENT || (this.item.rarity == Rarity.LUNAR && this.isLunarEquipment)) {
 				command = 'give_equip';
 			}
 			navigator.clipboard.writeText(`${command} ${this.item.id} 1`);
