@@ -53,8 +53,8 @@ export default {
 			version: '1.1.1.2',
 			date: 'April 12, 2021',
 			updateLink: 'https://store.steampowered.com/news/app/632360/view/3100140557216075596',
-			newVersion: '1.1.1.2',
-			newUpdateLink: 'https://store.steampowered.com/news/app/632360/view/3100140557216075596',
+			newVersion: '1.2.1.0',
+			newUpdateLink: 'https://store.steampowered.com/news/app/632360/view/3114806614742495252',
 		} as {
 			version: string;
 			date: string;
