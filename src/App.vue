@@ -140,8 +140,9 @@ export default {
 			return 'equipment';
 		},
 		load() {
-			for (const i of list) {
-				const item = i as RawItemDescription;
+			for (const rawItem of list) {
+				if (rawItem.length === 1) continue;
+				const item = rawItem as RawItemDescription;
 				this.list.push({
 					id: item[0],
 					rarity: item[1],
