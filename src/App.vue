@@ -68,7 +68,7 @@
 		</form>
 		<div class="body flex flex-row flex-wrap items-start justify-around mt-1">
 			<template v-if="items.length > 0">
-				<Item v-for="item in items" :key="item.uid" :item="item" v-on:showModal="showModal" />
+				<Item v-for="item in items" :key="item.uid" :item="item" @showModal="showModal" />
 			</template>
 			<template v-else>
 				<div class="alert w-full mb-1 overflow-hidden bg-blue-50 text-blue-600 rounded-md shadow-md">
@@ -83,10 +83,11 @@
 	<Modal ref="modal" />
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+import { computed, onMounted, ref } from 'vue';
 import Item from './components/Item.vue';
 import Modal from './components/Modal.vue';
-import list from './assets/list.json';
+import allItems from './assets/list.json';
 import Rarity from './Rarity';
 import FilterButton from './components/FilterButton.vue';
 import UpdateAlert from './components/UpdateAlert.vue';
@@ -102,88 +103,78 @@ import { InformationCircleIcon } from '@heroicons/vue/outline';
  *	[29, 5, 'QuestVolatileBattery', 'Fuel Array', 'quest', 'fuelArray', 'Looks like it could power something.\n{offense:EXTREMELY unstable...}.\n{misc:(Not obtainable in-game, used for quest)}'],
  */
 
-export default {
-	components: { FilterButton, Item, Modal, UpdateAlert, InformationCircleIcon },
-	data() {
-		return {
-			list: [],
-			lunarEquipments: [3, 23, 26],
-			strFilter: '',
-			rarityFilter: 'all',
-			rarities: ['Common', 'Uncommon', 'Rare', 'Unique', 'Lunar', 'Equipment'],
-		} as {
-			list: ItemDescription[];
-			lunarEquipments: number[];
-			strFilter: string;
-			rarityFilter: 'all' | Rarity;
-			rarities: string[];
-		};
-	},
-	created() {
-		this.load();
-	},
-	methods: {
-		rarityToString(rarity: Rarity): string {
-			switch (rarity) {
-				case Rarity.COMMON:
-					return 'common';
-				case Rarity.UNCOMMON:
-					return 'uncommon';
-				case Rarity.RARE:
-					return 'rare';
-				case Rarity.UNIQUE:
-					return 'unique';
-				case Rarity.LUNAR:
-					return 'lunar';
-			}
-			//case Rarity.EQUIPMENT:
-			return 'equipment';
-		},
-		load() {
-			for (const rawItem of list) {
-				if (rawItem.length === 1) continue;
-				const item = rawItem as RawItemDescription;
-				this.list.push({
-					id: item[0],
-					rarity: item[1],
-					stringRarity: this.rarityToString(item[1]),
-					uid: item[2],
-					name: item[3],
-					tags: item[4],
-					image: item[5],
-					description: item[6],
-					unlock: item[7],
-				});
-			}
-		},
-		clearFilter() {
-			this.strFilter = '';
-		},
-		selectRarity(type: 'all' | Rarity) {
-			this.rarityFilter = type;
-		},
-		showModal(item: ItemDescription) {
-			(this.$refs.modal as typeof Modal).show(item);
-		},
-	},
-	computed: {
-		items(): ItemDescription[] {
-			return this.list.filter((item: ItemDescription) => {
-				return (
-					(this.strFilter == '' ||
-						item.name.indexOf(this.strFilter) >= 0 ||
-						item.tags.indexOf(this.strFilter) >= 0 ||
-						item.uid.indexOf(this.strFilter) >= 0 ||
-						item.description.indexOf(this.strFilter) >= 0 ||
-						item.image.indexOf(this.strFilter) >= 0 ||
-						item.stringRarity.indexOf(this.strFilter) >= 0) &&
-					(this.rarityFilter == 'all' || this.rarityFilter == item.rarity)
-				);
-			});
-		},
-		selectedRarity(): 'all' | Rarity {
-			return this.rarityFilter;
-		},
-	},
+const list = ref<ItemDescription[]>([]);
+const lunarEquipments = [3, 23, 26];
+const strFilter = ref('');
+const rarityFilter = ref<'all' | Rarity>('all');
+const rarities = ['Common', 'Uncommon', 'Rare', 'Unique', 'Lunar', 'Equipment'];
+const modal = ref<typeof Modal | null>(null);
+
+const items = computed((): ItemDescription[] => {
+	return list.value.filter((item: ItemDescription) => {
+		return (
+			(strFilter.value == '' ||
+				item.name.indexOf(strFilter.value) >= 0 ||
+				item.tags.indexOf(strFilter.value) >= 0 ||
+				item.uid.indexOf(strFilter.value) >= 0 ||
+				item.description.indexOf(strFilter.value) >= 0 ||
+				item.image.indexOf(strFilter.value) >= 0 ||
+				item.stringRarity.indexOf(strFilter.value) >= 0) &&
+			(rarityFilter.value == 'all' || rarityFilter.value == item.rarity)
+		);
+	});
+});
+
+const rarityToString = (rarity: Rarity): string => {
+	switch (rarity) {
+		case Rarity.COMMON:
+			return 'common';
+		case Rarity.UNCOMMON:
+			return 'uncommon';
+		case Rarity.RARE:
+			return 'rare';
+		case Rarity.UNIQUE:
+			return 'unique';
+		case Rarity.LUNAR:
+			return 'lunar';
+	}
+	//case Rarity.EQUIPMENT:
+	return 'equipment';
 };
+
+const selectedRarity = computed((): 'all' | Rarity => {
+	return rarityFilter.value;
+});
+
+const clearFilter = () => {
+	strFilter.value = '';
+};
+
+const selectRarity = (type: 'all' | Rarity) => {
+	rarityFilter.value = type;
+};
+
+const showModal = (item: ItemDescription) => {
+	if (modal.value) {
+		modal.value.show(item);
+	}
+};
+
+onMounted(() => {
+	for (const rawItem of allItems) {
+		if (rawItem.length === 1) continue;
+		const item = rawItem as RawItemDescription;
+		list.value.push({
+			id: item[0],
+			rarity: item[1],
+			stringRarity: rarityToString(item[1]),
+			uid: item[2],
+			name: item[3],
+			tags: item[4],
+			image: item[5],
+			description: item[6],
+			unlock: item[7],
+		});
+	}
+});
 </script>

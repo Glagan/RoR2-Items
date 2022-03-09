@@ -31,70 +31,68 @@
 	</div>
 </template>
 
-<script lang="ts">
-import { PropType } from '@vue/runtime-core';
+<script lang="ts" setup>
+import { computed } from 'vue';
 import Rarity from '../Rarity';
 
-export default {
-	props: {
-		item: { type: Object as PropType<ItemDescription>, required: true },
-	},
-	methods: {
-		copyGive() {
-			let command = 'give_item';
-			if (this.item.rarity == Rarity.EQUIPMENT || (this.item.rarity == Rarity.LUNAR && this.isLunarEquipment)) {
-				command = 'give_equip';
-			}
-			navigator.clipboard.writeText(`${command} ${this.item.id} 1`);
-		},
-		toggleModal() {
-			this.$emit('showModal', this.item);
-		},
-	},
-	computed: {
-		isLunarEquipment(): boolean {
-			return false; // return this.$store.state.lunarEquipments.indexOf(this.item.id) >= 0;
-		},
-		// Keep full classname for Tailwind
-		border(): string {
-			switch (this.item.rarity) {
-				case Rarity.COMMON:
-					return `border-common-light`;
-				case Rarity.UNCOMMON:
-					return `border-uncommon-light`;
-				case Rarity.RARE:
-					return `border-rare-light`;
-				case Rarity.UNIQUE:
-					return `border-unique-light`;
-				case Rarity.LUNAR:
-					return `border-lunar-light`;
-			}
-			// case Rarity.EQUIPMENT:
-			return `border-equipment-light`;
-		},
-		// Keep full classname for Tailwind
-		background(): string {
-			switch (this.item.rarity) {
-				case Rarity.COMMON:
-					return `bg-common`;
-				case Rarity.UNCOMMON:
-					return `bg-uncommon`;
-				case Rarity.RARE:
-					return `bg-rare`;
-				case Rarity.UNIQUE:
-					return `bg-unique`;
-				case Rarity.LUNAR:
-					return `bg-lunar`;
-			}
-			// case Rarity.EQUIPMENT:
-			return `bg-equipment`;
-		},
-		description(): string {
-			return this.item.description
-				.replaceAll(/{(offense|defense|debuff|misc):(.+?)}/g, `<span class="is-$1">$2</span>`)
-				.replaceAll(/{(.+?)}/g, `<span class="is-stackable">($1 per stack)</span>`);
-		},
-	},
+const props = defineProps<{ item: ItemDescription }>();
+
+const emit = defineEmits(['showModal']);
+
+const isLunarEquipment = computed(() => {
+	return false; // return this.$store.state.lunarEquipments.indexOf(this.item.id) >= 0;
+});
+
+const border = computed(() => {
+	switch (props.item.rarity) {
+		case Rarity.COMMON:
+			return `border-common-light`;
+		case Rarity.UNCOMMON:
+			return `border-uncommon-light`;
+		case Rarity.RARE:
+			return `border-rare-light`;
+		case Rarity.UNIQUE:
+			return `border-unique-light`;
+		case Rarity.LUNAR:
+			return `border-lunar-light`;
+	}
+	// case Rarity.EQUIPMENT:
+	return `border-equipment-light`;
+});
+
+const background = computed(() => {
+	switch (props.item.rarity) {
+		case Rarity.COMMON:
+			return `bg-common`;
+		case Rarity.UNCOMMON:
+			return `bg-uncommon`;
+		case Rarity.RARE:
+			return `bg-rare`;
+		case Rarity.UNIQUE:
+			return `bg-unique`;
+		case Rarity.LUNAR:
+			return `bg-lunar`;
+	}
+	// case Rarity.EQUIPMENT:
+	return `bg-equipment`;
+});
+
+const description = computed(() => {
+	return props.item.description
+		.replaceAll(/{(offense|defense|debuff|misc):(.+?)}/g, `<span class="is-$1">$2</span>`)
+		.replaceAll(/{(.+?)}/g, `<span class="is-stackable">($1 per stack)</span>`);
+});
+
+const copyGive = () => {
+	let command = 'give_item';
+	if (props.item.rarity == Rarity.EQUIPMENT || (props.item.rarity == Rarity.LUNAR && isLunarEquipment.value)) {
+		command = 'give_equip';
+	}
+	navigator.clipboard.writeText(`${command} ${props.item.id} 1`);
+};
+
+const toggleModal = () => {
+	emit('showModal', props.item);
 };
 </script>
 

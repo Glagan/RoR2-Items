@@ -54,35 +54,23 @@
 	</div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+import { computed, ref } from 'vue';
 import { CheckCircleIcon, ExternalLinkIcon, XCircleIcon, RefreshIcon } from '@heroicons/vue/outline';
 import SteamIcon from './SteamIcon.vue';
 
-export default {
-	components: { CheckCircleIcon, ExternalLinkIcon, XCircleIcon, RefreshIcon, SteamIcon },
-	data() {
-		return {
-			version: '1.1.1.2',
-			date: 'April 12, 2021',
-			updateLink: 'https://store.steampowered.com/news/app/632360/view/3100140557216075596',
-			newVersion: '1.2.1.0',
-			newUpdateLink: 'https://store.steampowered.com/news/app/632360/view/3114806614742495252',
-			updating:
-				'All common, uncommon, rare, unique items and equipments are up to date, only the new corrupted and lunar items are missing.',
-		} as {
-			version: string;
-			date: string;
-			updateLink: string;
-			newVersion: string;
-			newUpdateLink: string;
-		};
-	},
-	computed: {
-		upToDate(): boolean {
-			return this.version == this.newVersion;
-		},
-	},
-};
+const version = ref('1.1.1.2');
+const date = ref('April 12, 2021');
+const updateLink = ref('https://store.steampowered.com/news/app/632360/view/3100140557216075596');
+const newVersion = ref('1.2.1.0');
+const newUpdateLink = ref('https://store.steampowered.com/news/app/632360/view/3114806614742495252');
+const updating = ref(
+	'All common, uncommon, rare, unique items and equipments are up to date, only the new corrupted and lunar items are missing.'
+);
+
+const upToDate = computed(() => {
+	return version.value == newVersion.value;
+});
 </script>
 
 <style scoped></style>

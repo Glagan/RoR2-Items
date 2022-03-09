@@ -20,7 +20,7 @@
 					<LockOpenIcon class="w-6 h-6 mr-1 text-white" />
 					How to Unlock
 				</div>
-				<div class="item-body flex flex-row flex-nowrap bg-gray-800">
+				<div class="item-body flex flex-row flex-nowrap bg-gray-800" v-if="item">
 					<div class="flex-grow-0 flex-shrink-0 border-r border-white">
 						<img v-if="item.image" :src="`img/${item.image}.png`" width="90" height="90" />
 					</div>
@@ -39,40 +39,33 @@
 	</div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { XIcon, LockOpenIcon } from '@heroicons/vue/outline';
+import { ref, watch } from 'vue';
 
 // @see https://www.tailwindtoolbox.com/components/modal
-export default {
-	components: { XIcon, LockOpenIcon },
-	data() {
-		return {
-			visible: false,
-			item: {},
-		} as {
-			visible: boolean;
-			item: ItemDescription;
-		};
-	},
-	methods: {
-		show(item: ItemDescription) {
-			this.item = item;
-			this.visible = true;
-		},
-		hide() {
-			this.visible = false;
-		},
-	},
-	watch: {
-		visible(to, from) {
-			if (to != from) {
-				const modal = this.$refs.modal as HTMLElement;
-				modal.classList.toggle('opacity-0');
-				modal.classList.toggle('pointer-events-none');
-				document.body.classList.toggle('modal-active');
-				if (to) modal.focus();
-			}
-		},
-	},
+const visible = ref(false);
+const item = ref<ItemDescription | null>(null);
+const modal = ref<HTMLElement | null>(null);
+
+const show = (selected: ItemDescription) => {
+	item.value = selected;
+	visible.value = true;
 };
+const hide = () => {
+	visible.value = false;
+};
+
+watch(visible, (to, from) => {
+	if (to != from && modal.value) {
+		modal.value.classList.toggle('opacity-0');
+		modal.value.classList.toggle('pointer-events-none');
+		document.body.classList.toggle('modal-active');
+		if (to) modal.value.focus();
+	}
+});
+
+defineExpose({
+	show,
+});
 </script>
