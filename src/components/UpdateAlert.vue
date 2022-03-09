@@ -29,7 +29,7 @@
 			:class="updating ? 'border-blue-600' : 'border-yellow-600'"
 		>
 			<component
-				:is="updating ? 'RefreshIcon' : 'XCircleIcon'"
+				:is="updating ? RefreshIcon : XCircleIcon"
 				class="w-9 h-9 mr-2"
 				:class="updating ? 'text-blue-600' : 'text-yellow-600'"
 			/>
