@@ -129,9 +129,9 @@
 	[-1, 4, "missinguid_flame", "Voidsent Flame", "offense,on,hit,burst,damage,zone,great", "flame", "Upon hitting an enemy at or above {offense:90% health}, {offense:detonate} them in a {offense:12m} {+2.4m} radius burst for {offense:260%} {+156%} base damage.\n{corrupt:Corrupts all Will-o'-the-wisps}."],
 	[-1, 4, "missinguid_shrimp", "Plasma Shrimp", "offense,on,attack,missile", "superMissile", "Gain a {defense:shield} equal to {defense:10%} of your maximum health. While you have a {defense:shield}, hitting an enemy fires a missile that deals {offense:40%} {+50%} TOTAL damage.\n{corrupt:Corrupts all AtG Missile Mk. 1s}."],
 	[-1, 4, "missinguid_plantTentacle", "Tentabauble", "utility,root,on,hit", "plantTentacle", "{misc:5%} {+5%} chance on hit to {offense:root} enemies for {misc:1s} {+1s}.\n{corrupt:Corrupts all Chronobaubles}."],
-	[-1, 4, "missinguid_corruptedClover", "???", "utility,upgrade,next,tier", "corruptedClover", "???.\n{corrupt:Corrupts all 57 Leaf Clovers}."],
+	[-1, 4, "missinguid_corruptedClover", "???", "utility,upgrade,next,tier", "corruptedClover", "???\n{corrupt:Corrupts all 57 Leaf Clovers}."],
 	[-1, 4, "missinguid_hauntedBear", "Pluripotent Larva", "utility,on,death,corrupt,consume", "hauntedBear", "{misc:Upon death}, this item will be {misc:consumed} and you will {defense:return to life} with {defense:3 seconds of invulnerability}, and all of your items that can be {misc:corrupted} will be.\n{corrupt:Corrupts all Dio's Best Friends}."],
-	[-1, 4, "missinguid_corruptedScorpion", "???", "", "corruptedScorpion", "???"],
+	[-1, 4, "missinguid_corruptedScorpion", "???", "", "corruptedScorpion", "???\n{corrupt:Corrupts all Symbiotic Scorpions}."],
 
 	["**** LUNAR ITEMS ****"],
 	[74, 5, "AutoCastEquipment", "Gesture of the Drowned", "utility,equipment,locked", "fossil", "{misc:Reduce equipment cooldown} by {misc:50%} {+15%}.\nForces your Equipment to {misc:activate} whenever it is off {misc:cooldown}.", "Kill 20 Hermit Crabs by chasing them off the edge of the map."],
