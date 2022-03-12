@@ -65,7 +65,7 @@ const updateLink = ref('https://store.steampowered.com/news/app/632360/view/3100
 const newVersion = ref('1.2.2.0');
 const newUpdateLink = ref('https://store.steampowered.com/news/app/632360/view/3114807061149729826');
 const updating = ref<string | false>(
-	'All common, uncommon, rare, unique items and equipments are up to date, only some corrupted and lunar items are missing.'
+	'All common, uncommon, rare, unique items, lunar items and equipments are up to date, only two rare corrupted items are missing.'
 );
 
 const upToDate = computed(() => {
