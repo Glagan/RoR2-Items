@@ -53,6 +53,8 @@ const border = computed(() => {
 			return `border-rare-light`;
 		case Rarity.UNIQUE:
 			return `border-unique-light`;
+		case Rarity.CORRUPTED:
+			return `border-corrupted-light`;
 		case Rarity.LUNAR:
 			return `border-lunar-light`;
 	}
@@ -70,6 +72,8 @@ const background = computed(() => {
 			return `bg-rare`;
 		case Rarity.UNIQUE:
 			return `bg-unique`;
+		case Rarity.CORRUPTED:
+			return `bg-corrupted`;
 		case Rarity.LUNAR:
 			return `bg-lunar`;
 	}
@@ -79,7 +83,7 @@ const background = computed(() => {
 
 const description = computed(() => {
 	return props.item.description
-		.replaceAll(/{(offense|defense|debuff|misc):(.+?)}/g, `<span class="is-$1">$2</span>`)
+		.replaceAll(/{(offense|defense|debuff|misc|corrupt):(.+?)}/g, `<span class="is-$1">$2</span>`)
 		.replaceAll(/{(.+?)}/g, `<span class="is-stackable">($1 per stack)</span>`);
 });
 

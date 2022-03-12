@@ -107,7 +107,7 @@ const list = ref<ItemDescription[]>([]);
 const lunarEquipments = [3, 23, 26];
 const strFilter = ref('');
 const rarityFilter = ref<'all' | Rarity>('all');
-const rarities = ['Common', 'Uncommon', 'Rare', 'Unique', 'Lunar', 'Equipment'];
+const rarities = ['Common', 'Uncommon', 'Rare', 'Unique', 'Corrupted', 'Lunar', 'Equipment'];
 const modal = ref<typeof Modal | null>(null);
 
 const items = computed((): ItemDescription[] => {
@@ -135,6 +135,8 @@ const rarityToString = (rarity: Rarity): string => {
 			return 'rare';
 		case Rarity.UNIQUE:
 			return 'unique';
+		case Rarity.CORRUPTED:
+			return 'corrupted';
 		case Rarity.LUNAR:
 			return 'lunar';
 	}

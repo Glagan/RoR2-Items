@@ -3,6 +3,7 @@ export const enum Rarity {
 	UNCOMMON,
 	RARE,
 	UNIQUE,
+	CORRUPTED,
 	LUNAR,
 	EQUIPMENT,
 }

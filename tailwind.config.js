@@ -12,6 +12,8 @@ module.exports = {
 				'rare-light': '#e3502b',
 				unique: '#758623',
 				'unique-light': '#dbe621',
+				corrupted: '#4b0a53',
+				'corrupted-light': '#e58ee2',
 				lunar: '#074c69',
 				'lunar-light': '#40dff7',
 				equipment: '#a06b17',

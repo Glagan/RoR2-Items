@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+	overflow-y: scroll;
+}
 body {
 	text-shadow: 0 1px 1px black;
 }
@@ -26,6 +29,9 @@ body {
 	color: rgb(159, 164, 182);
 	font-size: 14px;
 	text-shadow: 1px 1px 1px black;
+}
+.is-corrupt {
+	color: #ed7fcd;
 }
 
 .modal {
@@ -64,6 +70,9 @@ body.modal-active {
 }
 .equipment.active {
 	@apply bg-equipment;
+}
+.corrupted.active {
+	@apply bg-corrupted;
 }
 
 input,
