@@ -62,10 +62,10 @@ import SteamIcon from './SteamIcon.vue';
 const version = ref('1.1.1.2');
 const date = ref('April 12, 2021');
 const updateLink = ref('https://store.steampowered.com/news/app/632360/view/3100140557216075596');
-const newVersion = ref('1.2.1.0');
-const newUpdateLink = ref('https://store.steampowered.com/news/app/632360/view/3114806614742495252');
-const updating = ref(
-	'All common, uncommon, rare, unique items and equipments are up to date, only the new corrupted and lunar items are missing.'
+const newVersion = ref('1.2.2.0');
+const newUpdateLink = ref('https://store.steampowered.com/news/app/632360/view/3114807061149729826');
+const updating = ref<string | false>(
+	'All common, uncommon, rare, unique items and equipments are up to date, only some corrupted and lunar items are missing.'
 );
 
 const upToDate = computed(() => {
