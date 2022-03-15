@@ -59,14 +59,12 @@ import { computed, ref } from 'vue';
 import { CheckCircleIcon, ExternalLinkIcon, XCircleIcon, RefreshIcon } from '@heroicons/vue/outline';
 import SteamIcon from './SteamIcon.vue';
 
-const version = ref('1.1.1.2');
-const date = ref('April 12, 2021');
-const updateLink = ref('https://store.steampowered.com/news/app/632360/view/3100140557216075596');
+const version = ref('1.2.2.0');
+const date = ref('March 11, 2022');
+const updateLink = ref('https://store.steampowered.com/news/app/632360/view/3114807061149729826');
 const newVersion = ref('1.2.2.0');
 const newUpdateLink = ref('https://store.steampowered.com/news/app/632360/view/3114807061149729826');
-const updating = ref<string | false>(
-	'All common, uncommon, rare, unique items, lunar items and equipments are up to date, only two rare corrupted items are missing.'
-);
+const updating = ref<string | false>(false);
 
 const upToDate = computed(() => {
 	return version.value == newVersion.value;
