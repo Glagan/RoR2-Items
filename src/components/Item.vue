@@ -22,7 +22,7 @@
 					title="Click to copy give command"
 					width="90"
 					height="90"
-					:data-url="`img/${item.image}.png`"
+					:data-url="`img/${item.image}.jpg`"
 					@click="copyGive"
 				/>
 			</div>
