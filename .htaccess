@@ -17,6 +17,21 @@ Options -Indexes
   ExpiresByType application/javascript "access plus 1 week"
 </IfModule>
 
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{HTTP_ACCEPT} image/webp
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteCond %{REQUEST_FILENAME}.webp -f
+  RewriteRule ^/?(.+?)\.(?:jpe?g|png)$ /$1.webp [NC,T=image/webp,E=EXISTING:1,E=ADDVARY:1,L]
+
+  <IfModule mod_headers.c>
+    <FilesMatch "(?i)\.(jpe?g|png)$">
+      Header append "Vary" "Accept"
+    </FilesMatch>
+  </IfModule>
+</IfModule>
+
 <IfModule mod_deflate.c>
   # Compress HTML, CSS, JavaScript, Text, XML and fonts
   AddOutputFilterByType DEFLATE application/javascript
