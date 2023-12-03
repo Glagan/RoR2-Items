@@ -30,6 +30,7 @@
 				<a href="https://ko-fi.com/Y8Y32X73U" target="_blank">
 					<img
 						height="36"
+						width="143"
 						style="border: 0px; height: 36px"
 						src="https://cdn.ko-fi.com/cdn/kofi1.png?v=2"
 						border="0"
