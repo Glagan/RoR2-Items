@@ -59,11 +59,11 @@ import { computed, ref } from 'vue';
 import { CheckCircleIcon, ExternalLinkIcon, XCircleIcon, RefreshIcon } from '@heroicons/vue/outline';
 import SteamIcon from './SteamIcon.vue';
 
-const version = ref('1.2.2.0');
-const date = ref('March 11, 2022');
-const updateLink = ref('https://store.steampowered.com/news/app/632360/view/3114807061149729826');
-const newVersion = ref('1.2.2.0');
-const newUpdateLink = ref('https://store.steampowered.com/news/app/632360/view/3114807061149729826');
+const version = ref('1.2.4.4');
+const date = ref('May 20, 2024');
+const updateLink = ref('https://store.steampowered.com/news/app/632360/view/4195743898806475560');
+const newVersion = ref('1.2.4.4');
+const newUpdateLink = ref('https://store.steampowered.com/news/app/632360/view/4195743898806475560');
 const updating = ref<string | false>(false);
 
 const upToDate = computed(() => {
