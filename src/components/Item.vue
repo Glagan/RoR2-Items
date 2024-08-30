@@ -84,6 +84,8 @@ const background = computed(() => {
 const description = computed(() => {
 	return props.item.description
 		.replaceAll(/{(offense|defense|debuff|misc|corrupt):(.+?)}/g, `<span class="is-$1">$2</span>`)
+		.replaceAll(/{(.+?)\$}/g, `<span class="is-stackable not-per-stack">$1</span>`)
+		.replaceAll(/{(.+?)\|(.+?)}/g, `<span class="is-stackable">($1 $2)</span>`)
 		.replaceAll(/{(.+?)}/g, `<span class="is-stackable">($1 per stack)</span>`);
 });
 

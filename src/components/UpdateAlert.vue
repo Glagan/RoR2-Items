@@ -59,12 +59,12 @@ import { computed, ref } from 'vue';
 import { CheckCircleIcon, ExternalLinkIcon, XCircleIcon, RefreshIcon } from '@heroicons/vue/outline';
 import SteamIcon from './SteamIcon.vue';
 
-const version = ref('1.2.4.4');
-const date = ref('May 20, 2024');
-const updateLink = ref('https://store.steampowered.com/news/app/632360/view/4195743898806475560');
-const newVersion = ref('1.2.4.4');
-const newUpdateLink = ref('https://store.steampowered.com/news/app/632360/view/4195743898806475560');
-const updating = ref<string | false>(false);
+const version = ref('1.3.1#274 (Seeker of the Storm DLC)');
+const date = ref('August 27, 2024');
+const updateLink = ref('https://store.steampowered.com/news/app/632360/view/4281321170606899293');
+const newVersion = ref('1.3.1#274 (Seeker of the Storm DLC)');
+const newUpdateLink = ref('https://store.steampowered.com/news/app/632360/view/4281321170606899293');
+const updating = ref<string | false>('Currently updating for the latest DLC, Seekers of the Storm.');
 
 const upToDate = computed(() => {
 	return version.value == newVersion.value;
