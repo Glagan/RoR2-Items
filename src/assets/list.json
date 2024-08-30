@@ -1059,7 +1059,7 @@
 		"Defense Nucleus",
 		"utility,summon,triangle",
 		"triangleSummon",
-		"Killing elite monsters spawns an {offense:Alpha Construct} with bonus {offense:300%} damage and {defense:300% health}. Limited to {misc:4} {+4}."
+		"Killing elite monsters spawns an {offense:Alpha Construct}. Limited to {misc:4} {+4}."
 	],
 	[
 		97,
@@ -1301,7 +1301,7 @@
 		"Brittle Crown",
 		"utility",
 		"crown",
-		"{misc:30% chance on hit} to gain {misc:2} {+2} {misc:gold}. {misc:Scales over time}.\n{debuff:Lose gold} equal to {debuff:100%} {+100%} of amount your are hit for OR lose % gold equal to {debuff:100%} {+100%} of the maximum health % you lost.\nChooses the greater of the two."
+		"{misc:30% chance on hit} to gain {misc:2} {+2} {misc:gold}. {misc:Scales over time}.\nOn taking damage, {debuff:lose gold} equal to {debuff:100%} {+100%} of the maximum health percentage you lost."
 	],
 	[
 		-1,
@@ -1624,7 +1624,7 @@
 		"Goobo Jr.",
 		"utility,clone,summon",
 		"goobo",
-		"Spawn a gummy clone that has {offense:700% damage} and {defense:700% health}. Expires in {misc:30} seconds.\nCooldown: {misc:100s}"
+		"Spawn a gummy clone that has {offense:300% damage} and {defense:300% health}. Expires in {misc:30} seconds.\nCooldown: {misc:100s}"
 	],
 	[
 		-1,
@@ -1633,7 +1633,7 @@
 		"Seed of Life",
 		"utility,revive,bear",
 		"seedOfLife",
-		"Revives the user when killed or dead allies on activation. Consumed on use.",
+		"Revives the user when killed or dead allies on activation. Consumed on use.\nCooldown: {misc:60s}",
 		"Journey to the Prime Meridian and defeat the False Son."
 	],
 	[
