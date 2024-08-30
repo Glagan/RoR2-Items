@@ -1,186 +1,1742 @@
 [
-	["* Colors:"],
-	["* 'offense' yellow"],
-	["* 'defense' green"],
-	["* 'misc' blue"],
-	["* 'debuff' red"],
-	["**** COMMON ITEMS ****"],
-	[102, 0, "missinguid_repulsionArmorPlate", "Repulsion Armor Plate", "defense,armor,flat,reduction", "armor", "Reduce all {offense:incoming damage} by {offense:5} {+5}. Cannot be reduced below {offense:1}."],
-	[-1, 0, "missinguid_mocha", "Mocha", "utility,speed,attack,dual,coffee", "mocha", "Increases {offense:attack speed} by {offense:7.5%} {+7.5%} and {misc:movement speed} by {misc:7%} {+7%}."],
-	[84, 0, "BarrierOnKill", "Topaz Brooch", "defense,shield,on,kill", "shieldBrooch", "Gain a {defense:temporary barrier} on kill for {defense:15 health} {+15}."],
-	[1, 0, "Bear", "Tougher Times", "defense,block,locked", "bear", "{defense:15%} {+15%} chance to {defense:block} incoming damage.\n{misc:Unaffected by the luck}.", "Die 5 times."],
-	[20, 0, "BleedOnHit", "Trip-Tip Dagger", "offense,dot", "tritip", "{offense:10%} {+10%} chance to {offense:bleed} an enemy for {offense:240%} base damage."],
-	[61, 0, "BossDamageBonus", "Armor-Piercing Rounds", "offense,boss,ammo,bullet,locked", "bossDamage", "Deal an additional {offense:20%} damage {+20%} to bosses.", "Complete a Teleporter event."],
-	[7, 0, "CritGlasses", "Lens-Maker's Glasses", "offense,critical,chance", "glasses", "Your attacks have a {offense:10%} {+10%} chance to \"{offense:Critically Strike}\", dealing {offense:double damage}."],
-	[17, 0, "Crowbar", "Crowbar", "attack", "crowbar", "Deal {offense:75%} {+75%} damage to enemies above {offense:90% health}.", "Discover 10 unique white items."],
-	[42, 0, "Firework", "Bundle of Fireworks", "offense,on,open,locked", "firework", "Activating an interactable {offense:launches 8} {+4} {offense:fireworks} that deal {offense:300%} base damage.", "Duplicate the same item 7 times in a row with a 3D printer."],
-	[91, 0, "RegeOnKill", "Fresh Meat", "utility,heal,steack,steak,raw,health", "steak", "Increases {defense:maximum health} by {defense:25} {+25}."],
-	[-1, 0, "missinguid_brokenWatch", "Delicate Watch", "utility,damage,breakable", "brokenWatch", "Increase damage by {offense:20%} {+20%}. Taking damage to below {debuff:25% health} {misc:breaks} this item."],
-	[-1, 0, "missinguid_pennies", "Roll of Pennies", "utility,damage,gold,scales", "pennies", "Gain {misc:3} {+3} {misc:gold} on {offense:taking damage} from an enemy. {misc:Scales over time}."],
-	[27, 0, "HealWhileSafe", "Cautious Slug", "defense,heal", "slug", "Increases {defense:base health regeneration} by {defense:+3 hp/s} {+3 hp/s} while outside of combat."],
-	[-1, 0, "missinguid_elixir", "Power Elixir", "utility,heal,low,health", "elixir", "Taking damage to below {debuff:25% health} {misc:consumes} this item, {defense:healing} you for {defense:75%} of {defense:maximum health}."],
-	[8, 0, "Hoof", "Paul's Goat Hoof", "defense,movespeed,locked", "goat", "Increases {misc:movement speed} by {misc:14%} {+14%}.", "Fail the Shrine of chance 3 times in a row."],
-	[39, 0, "IgniteOnKill", "Gasoline", "offense,fire,on,kill", "gasoline", "Killing an enemy {offense:ignites} all enemies within {offense:12m} {+4m}.\nEnnemies {offense:burn} for {offense:150%} {+75%} base damage."],
-	[36, 0, "Medkit", "Medkit", "defense,heal,on,hit,locked", "medkit", "2 seconds after getting hurt, {defense:heal} for {defense:20} plus an additional {defense:5%} {+5%} of {defense:maximum health}.", "Defeat an Elite-type monster."],
-	[16, 0, "Mushroom", "Bustling Fungus", "defense,heal,stand", "fungus", "After standing still for {defense:1} seconds create a zone that {defense:heals} for {defense:4.5%} {+2.25%} of your {defense:health} every second to all allies within {defense:3m} {+1.5m}."],
-	[87, 0, "NearbyDamageBonus", "Focus Crystal", "offense,closen,boost,damage", "redCrystal", "Increase damage to enemies withing {offense:13m} by {offense:20%} {+20%}."],
-	[-1, 0, "missinguid_opal", "Oddly-shaped Opal", "defense,armor,safe", "opal", "{defense:Increase armor} by {defense:100} {+100} while out of danger."],
-	[29, 0, "PersonalShield", "Personal Shield Generator", "defense,shield", "shield", "Gain a {defense:shield} equal to {defense:8%} {+8%} of your maximum healt. Recharges outside of danger."],
-	[-1, 0, "missinguid_itemScrapWhite", "Item Scrap, White", "utility,3d,printer,white", "scraps1", "Does nothing. Prioritized when used with 3D Printers."],
-	[58, 0, "SecondarySkillMagazine", "Backup Magazine", "utility,charge,locked", "backupMag", "Add {misc:+1} {+1} charge of your {misc:Secondary skill}.", "Fully charge a Teleporter without getting hit."],
-	[57, 0, "SprintBonus", "Energy Drink", "defense,movespeed", "drink", "{misc:Sprint speed} is improved by {misc:25%} {+25%}."],
-	[59, 0, "StickyBomb", "Sticky Bomb", "offense,on,hit", "stickyBomb", "{offense:5%} {+5%} chance on hit to attach a {offense:bomb} to an enemy, detonating for {offense:180%} TOTAL damage."],
-	[41, 0, "StunChanceOnHit", "Stun Grenade", "offense,stun,on,hit", "stunGrenade", "{misc:5%} {+5%} chance on hit to {misc:stun} enemies for {misc:2} seconds."],
-	[0, 0, "Syringe", "Soldier's Syringe", "offense,speed", "syringe", "Increase {offense:Attack Speed} by {offense:15%} {+15%}."],
-	[6, 0, "Tooth", "Monster Tooth", "defense,heal,on,kill", "monsterTooth", "Killing an ennemy spawns a {defense:healing orb} that heals for {defense:8} plus an additional {defense:2%} {+2%} of {defense:maximum health}."],
-	[60, 0, "TreasureCache", "Rusted Key", "utility,box,locked", "key", "A {misc:hidden cache} containing an item ({defense:80%}/{debuff:20%}) will appear in a random location {misc:on each stage}.\nOpening the cache {misc:consumes} this item.", "Defeat the Teleporter boss under 15 seconds."],
-	[24, 0, "LevelBonus", "Warbanner", "utility,attack,speed,movespeed,on,level", "warbanner", "On {misc:level up} or starting the {misc:Teleporter event}, drop a banner that strengthens all allies within {misc:16m} {+8m}.\nRaise {offense:attack} and {misc:movement speed} by {offense:30%}."],
-
-	["**** UNCOMMON ITEMS ****"],
-	[19, 1, "AttackSpeedOnCrit", "Predatory Instincts", "offense,critical,locked", "hat", "{offense:Critical Strikes} increase {offense:attack speed} by {offense:12%}.\nMaximum cap of {offense:36%} {+24%} {offense:attack speed}.", "Reach +200% attack speed."],
-	[37, 1, "Bandolier", "Bandolier", "utility", "bandolier", "{misc:18%} {+10%} chance on kill to drop an ammo pack that {misc:resets all cooldowns}."],
-	[94, 1, "BonusGoldPackOnKill", "Ghor's Tome", "utility,gold,book,treasure,flesh", "goldBook", "{misc:4%} {+4%} chance on kill to drop a treasure worth {misc:25$}. {misc:Scales over time.}"],
-	[11, 1, "ChainLightning", "Ukulele", "offense,on,hit", "ukulele", "{offense:25%} chance to fire a {offense:chain lightning} for {offense:80%} TOTAL damage up to {offense:3} {+2} targets within {offense:20m} {+2m}."],
-	[104, 1, "missinguid_deathMark", "Death Mark", "offense,mark,death,debuff,increased,damage", "deathMark", "Enemies with {offense:4} or more debuffs are {offense:marked for death}, increasing damage taken by {offense:50%} from all sources for {misc:7} {+7} seconds."],
-	[79, 1, "EnergizedOnEquipmentUse", "War Horn", "offense,attack,speed,equipment,locked", "warHorn", "Activating your Equipment gives you {offense:+70% attack speed} for {offense:8s} {+4s}.", "Complete 3 Combat Shrines in a single stage."],
-	[30, 1, "EquipmentMagazine", "Fuel Cell", "utility,charge,locked", "cell", "Hold an {misc:additional equipment charge} {+1}.\n{misc:Reduce equipment cooldown} by {misc:15%} {+15%}.", "Pickup 5 different types of Equipment."],
-	[78, 1, "ExecuteLowHealthElite", "Old Guillotine", "offense,boss,locked", "guillotine", "Instantly kill Elite Monsters below {debuff:13%} {+13%} {debuff:health}.", "Defeat 500 Elite Monsters."],
-	[4, 1, "ExplodeOnDeath", "Will-O'-the-wisp", "offense,on,kill", "wisp", "On killing an enemy, spawn a {offense:lava pillar} in a {offense:12m} {+2.4m} radius for {offense:350%} {+280%} base damage."],
-	[9, 1, "Feather", "Hopoo Feather", "utility", "feather", "Gain {misc:+1} {+1} maximum {misc:jump count}."],
-	[64, 1, "FireRing", "Kjaro's Band", "offense,on,hit,locked", "fireRing", "Hits that deals {offense:more than 400% damage} also blasts enemies with a {offense:runic flame tornado}, dealing {offense:300%} {+300%} TOTAL damage over time. Recharge every {misc:10} seconds.", "Discover the hidden chamber in the Abandonned Aqueduct."],
-	[-1, 1, "missinguid_for,", "Shipping Request Form", "utility,item,selector,drop", "form", "A {misc:delivery} containing 2 items (79%/{defense:20%}/{debuff:1%}) will appear in a random location {misc:on each stage}. {Increases rarity chances of the items}."],
-	[26, 1, "HealOnCrit", "Harvester's Scythe", "offense,defense,critical,heal,locked", "scythe", "Gain {offense:5% critical chance}.\n{offense:Critical strikes} {defense:heal} for {defense:8} {+4} {defense:health}.", "Complete a Prismatic Trial."],
-	[63, 1, "IceRing", "Runald's Band", "offense,on,hit,locked", "iceRing", "Hits that deals {offense:more than 400% damage} also blasts enemies with a {offense:runic ice blast}, {misc:slowing} them by {misc:80%} for {misc:3s} {+3s} and dealing {offense:250%} {+250%} TOTAL damage. Recharge every {misc:10} seconds.", "Discover the hidden chamber in the Abandonned Aqueduct."],
-	[33, 1, "Infusion", "Infusion", "defense,life,locked", "infusion", "Killing an enemy increases your {defense:health permanently} by {defense:1} {+1}, up to a {defense:maximum} of {defense:100} {+100} {defense:health}.", "Defeat 3000 enemies."],
-	[76, 1, "JumpBoost", "Wax Quail", "defense,movespeed,pigeon,locked", "quail", "{defense:Jumping} while {defense:sprinting} boosts you forward by {defense:10m} {+10m}.", "Reach +300% movespeed (include sprinting)."],
-	[3, 1, "Missile", "AtG Missile Mk. 1", "offense,on,hit", "missile_mk", "{offense:10%} chance to fire a missile that deals {offense:300%} {+300%} TOTAL damage."],
-	[-1, 1, "missinguid_harpoon", "Hunter's Harpoon", "utility,movement,speed,on,kill", "harpoon", "Killing an enemy increases {misc:movement speed} by {misc:125%}, fading over {misc:1} {+0.5} seconds."],
-	[25, 1, "Phasing", "Old War Stealthkit", "defense,phasing,invincible", "phasing", "Falling below {debuff:25% health} causes you to gain {misc:40% movement speed} and {misc:invisibility} for {misc:5s}.\nRecharges every {misc:30 seconds} {-50%}."],
-	[-1, 1, "missinguid_shuriken", "Shuriken", "offense,on,attack,ninja", "shuriken", "Activation your {misc:Primary skill} also throws a {offense:shuriken} that deals {offense:400%} {+100%} base damage. You can hold up to {misc:3} {+1} {offense:shurikens} which all reload over {misc:10} seconds."],
-	[-1, 1, "missinguid_orangeScrap", "Regenerating Scrap", "utility,scrap,rare,shop", "orangeScrap", "Does nothing. Prioritized when used with {defense:Uncommon} 3D Printers. At the start of each stage, it regenerates."],
-	[-1, 1, "missinguid_itemScrapGreen", "Item Scrap, Green", "utility,3d,green", "scraps2", "Does nothing. Prioritized when used with 3D Printers."],
-	[13, 1, "Seed", "Leeching Seed", "defense,heal,on,hit", "seed", "Dealing damage {defense:heals} you for {defense:1} {+1} {defense:health}."],
-	[65, 1, "SlowOnHit", "Chronobauble", "offense,on,hit", "bauble", "{misc:Slow} enemies for {misc:-60% movement speed} for {misc:2s} {+2s}."],
-	[62, 1, "SprintArmor", "Rose Buckler", "defense,armour,shield", "buckler", "{defense:Increase armor} by {defense:30} {+30} while {misc:sprinting}."],
-	[21, 1, "SprintOutOfCombat", "Red Whip", "defense,movespeed", "whip", "Leaving combat boosts {misc:movement speed} by {misc:30%} {+30%}."],
-	[103, 1, "missinguid_squidPolyp", "Squid Polyp", "offense,summon,turret,squid,auto", "squidTurret", "Activating an interactable summons a {offense:Squid Turret} that attacks nearby enemies at {offense:100%} {+100%} {offense:attack speed}. Lasts {misc:30} seconds.", "Activate 6 turrets in a single run."],
-	[-1, 1, "missinguid_tank", "Ignition Tank", "offense,ignite,fire,dot", "tank", "Ignite effects deal {offense:+300%} {+300%} more damage over time."],
-	[86, 1, "TPHealingNova", "Lepton Daisy", "defense,heal,flower", "healFlower", "Release a {defense:healing nova} during the Teleporter event, {defense:healing} all nearby allies for {defense:50%} of their maximum health. Occurs {defense:1} {+1} times."],
-	[90, 1, "Thorns", "Razorwire", "offense,on,hit,radius", "razorHeadband", "Getting hit causes you to explode in a burst of razors, dealing {offense:160% damage}.\nHits up to {offense:5} {+2} targets in a {offense:25m} {+10m} radius."],
-	[46, 1, "WarCryOnMultiKill", "Berzerker's Pauldron", "offense,movespeed,on,kill,locked", "berzerk", "{offense:Killing 4 enemies} within {offense:1} second sends you into a {offense:frenzy} for {offense:6s} {+4s}.\nIncreases {misc:movement speed} by {misc:50%} and {offense:attack speed} by {offense:100%}.", "Charge the Teleporter with less than 10% health."],
-
-	["**** RARE ITEMS ****"],
-	[50, 2, "AlienHead", "Alien Head", "utility", "alien", "{misc:Reduce skill cooldown} by {misc:25%} {+25%}."],
-	[85, 2, "ArmorReductionOnHit", "Shattering Justice", "offense,armor,break,hammer,hit", "hammer", "After hitting an enemy {offense:5} times, reduce their {offense:armor} by {offense:60} for {offense:8} {+8} seconds."],
-	[80, 2, "BarrierOnOverHeal", "Aegis", "utility,heal,defense", "fullBarrier", "Healing past full grants you a {defense:temporary barrier} for {defense:50%} {+50%} of the amount you {defense:healed}."],
-	[2, 2, "Behemoth", "Brilliant Behemoth", "offense,explosion,on,hit", "behemoth", "All your {offense:attacks explode} in a {offense:4m} {+1.5m} radius for a bonus {offense:60%} TOTAL damage to nearby enemies."],
-	[38, 2, "BounceNearby", "Sentient Meat Hook", "offense,utility,grab,locked", "hook", "{offense:20%} {+20%} chance on hit to {offense:fire homing hooks} at up to {offense:10} {+5} enemies for {offense:100%} TOTAL damage.", "Loop back to the first stage."],
-	[-1, 2, "missinguid_defensiveMicrobots", "Defensive Microbots", "defense,projectile,protection,shield", "microbot", "Shoot down {offense:1} {+1} projectiles within {offense:20m} every {offense:0.5 seconds}. {misc:Recharge rate scales with attack speed}."],
-	[35, 2, "Clover", "57 Leaf Clover", "utility,locked", "clover", "All random effects are rolled {misc:+1} {+1} {misc:times for a favorable outcome}.", "Complete 20 stages in a single run."],
-	[-1, 2, "missinguid_", "Laser scope", "offence,critical,damage,x2", "scope", "{offense:Critical Strikes} deal an additional {offense:100% damage} {+100%}"],
-	[5, 2, "Dagger", "Ceremonial Dagger", "offense,on,kill,tracking,attack", "dagger", "Killing an enemy fires out {offense:3 homing daggers} that deal {offense:150%} {+150%} base damage."],
-	[-1, 2, "missinguid_droneBox", "Spare Drone Parts", "offense,drones,useless", "droneBox", "Gain {offense:Col. Droneman}.\nDrones gain {offense:+50%} {+50%} attack speed and cooldown reduction.\nDrones gain {offense:10%} chance to fire a {offense:missile} on hit, dealing {offense:300%} TOTAL damage.\nDrones gain an {offense:automatic chain gun} that deals {offense:6x100%} damage, bouncing to {offense:2} enemies."],
-	[66, 2, "ExtraLife", "Dio's Best Friend", "utility,bear,death,jojo,revive,res,locked", "dio", "{misc:Upon Death}, this item will be {misc:consumed} and you will {defense:return to life} with {defense:3 seconds of invulnerability}.", "Stay alive for 30 consecutive minutes."],
-	[22, 2, "FallBoots", "H3AD-5T v2", "defense,attack,fall", "cuffs", "Increase {misc:jump height}.\nCreates a {offense:5m-100m} radius {offense:kinetic explosion} on hitting the ground, dealing {offense:1000%-10000%} base damage that scales up with {offense:fall distance}.\nRecharges in {offense:10} {-50%} seconds."],
-	[15, 2, "GhostOnKill", "Happiest Mask", "offense,on,kill", "mask", "Killing enemies has a {offense:7%} chance to {offense:spawn a ghost} of the killed enemy with {offense:1500%} damage. Lasts {offense:30s} {+30s}."],
-	[69, 2, "HeadHunter", "Wake of Vultures", "utility,elite,poe,headhunter", "headhunter", "Gain the {offense:power} of any killed elite monster for {offense:8s} {+5s}."],
-	[14, 2, "Icicle", "Frost Relic", "offense,on,kill", "ice", "Killing an enemy surrounds you with an {offense:ice storm} that deals {offense:1200% damage per second} and {misc:slows} enemies by {misc:80%} for {misc:1.5s}.\nThe storm {offense:grows with every kill}, increasing it's radius by {offense:2m}.\nStacks up to {offense:18m} {+12m}."],
-	[-1, 2, "missinguid_rainCoat", "Ben's Raincot", "defense,debuff,cleanse,tank", "rainCoat", "Prevents {misc:1} {+1} {offense:debuff} and instead grants a {defense:temporary barrier} for {defense:10%} of {defense:maximum health}. Recharges every {misc:5} seconds."],
-	[75, 2, "IncreaseHealing", "Rejuvenation Rack", "defense,heal,double,locked", "horn", "{defense:Heal +100%} {+100%} more.", "Without healing, reach and complete the 3rd Teleporter event."],
-	[70, 2, "KillEliteFrenzy", "Brainstalks", "offense,locked", "brain", "Upon killing an elite monster, {offense:enter a frenzy} for {offense:4s} {+4s} where {misc:skills have no cooldowns}.", "Defeat an Elite boss on Monsoon difficulty."],
-	[95, 2, "LaserTurbine", "Resonance Disc", "offense,charge,piercing,explode", "disc", "Killing {offense:4} enemies in {misc:7 seconds} charges the Resonance Disc.\nThe disc launches itself toward a target for {offense:300%} base damage {+300%}, piercing all enemies it doesn't kill, and then explodes for {offense:1000%} base damage {+1000%}.\nReturns to the user, striking all enemies along the way for {offense:300%} base damage {+300%}."],
-	[-1, 2, "missinguid_hugeMissile", "Pocket I.C.B.M", "offense,missile,triple", "hugeMissile", "All missile items and equipments fire an additional {offense:2 missiles}. Increase missile damage by {offense:0%} {+50%}."],
-	[31, 2, "NovaOnHeal", "N'kuhana's Opinion", "offense,locked", "opinion", "Store {defense:100%} {+100%} of healing as {defense:Soul Energy}.\nAfter your {defense:Soul Energy} reaches {defense:10%} of your {defense:maximum health}, {offense:fire a skull} that deals {offense:250%} of your {defense:Soul Energy} as {offense:damage}.", "Find the Altar to N'kuhana."],
-	[-1, 2, "missinguid_scorpion", "Symbiotic Scorpion", "utility,debuff,stack", "scorpion", "{offense:100%} chance on hit to reduce {offense:armor} by {offense:2} {+2} {offense:permanently}."],
-	[105, 2, "missinguid_interstellarDeskPlant", "Interstellar Desk Plant", "heal,defense,on kill", "deskPlant", "On kill, plant a {defense:healing} fruit seed that grows into a plant after {misc:5} seconds.\nThe plant {defense:heals} for {defense:10%} of {defense:maximum health} every second to all allies withing {defense:5m} {+5m}. Last {misc:10} seconds."],
-	[-1, 2, "missinguid_bottle", "Bottled Chaos", "utility,trigger,equipment,useless", "bottle", "Trigger a {offense:random equipment} effect {offense:1} {+1} time(s)."],
-	[-1, 2, "missinguid_itemScrapRed", "Item Scrap, Red", "utility,3d,rare,red", "scraps3", "Does nothing. Prioritized when used with 3D Printers."],
-	[32, 2, "ShockNearby", "Unstable Tesla Coil", "offense,close,locked", "tesla", "Fire out {offense:lightning} that hits {offense:3} {+2} enemies for {offense:200%} base damage every {offense:0.5s}.\nThe Tesla Coil switches off every {offense:10 seconds}.", "Deal 5000 damage in one shot."],
-	[51, 2, "Talisman", "Souldbound Catalyst", "utility,equipment,locked", "soul", "{offense:Kills reduce} {misc:equipment cooldown} by {misc:4s} {+2s}.", "Discover and activate 8 unique Newt Altars."],
-	[68, 2, "UtilitySkillMagazine", "Hardlight Afterburner", "utility,charge",  "burner", "Add {misc:+2} {+2} charges of your {misc:Utility skill}.\n{misc:Reduces Utility skill cooldown} by {misc:33%}."],
-
-	["**** UNIQUE ITEMS ****"],
-	[101, 3, "missinguid_artifactKey", "Artifact Key", "activation", "artifactKey", "A stone shard with immense power."],
-	[53, 3, "BeetleGland", "Queen's Gland", "utility,invocation", "beetle", "Every 30 seconds, {misc:summon a Beetle Guard} with bonus {offense:300%} damage and {defense:100%} health.\nCan have up to {misc:1} {+1} Guards at a time."],
-	[-1, 3, "missinguid_shatterspleen", "Shatterspleen", "offense,critical hit,bleed,explode,on death", "critBleed", "{offense:Critical Strikes bleed} enemies for {offense:240%} base damage. {offense:Bleeding} enemies {offense:explode} on death for {offense:400%} {+400%} damage, plus an additional {offense:15%} {+15%} of their maximum health."],
-	[-1, 3, "missinguid_moltenPerforator", "Molten Perforator", "offense,magma,on hit", "magmaTooth", "{offense:10%} chance on hit to call forth {offense:3 magma balls} from an enemy, dealing {offense:300%} {+300%} damage and {offense:igniting} all enemies."],
-	[52, 3, "Knurl", "Titanic Knurl", "defense,life", "knurl", "{defense:Increases maximum health} by {defense:40} {+40} and {defense:base health regeneration} by {defense:+1.6 hp/s} {+1.6 hp/s}."],
-	[-1, 3, "missinguid_chargedPerforator", "Charged Perforator", "offense,lightning,random,new", "whiteHook", "{offense:10%} chance on hit to do down a lightning strike, dealing {offense:500%} {+500%} damage."],
-	[-1, 3, "missinguid_defenseNucleus", "Defense Nucleus", "utility,summon,triangle", "triangleSummon", "Killing elite monsters spawns an {offense:Alpha Construct} with bonus {offense:300%} damage and {defense:300% health}. Limited to {misc:4} {+4}."],
-	[97, 3, "NovaOnLowHealth", "Genesis Loop", "low,health,nova,explode,recharge,cooldown", "weirdTail", "Falling below {debuff:25% health} causes you to explode, dealing {offense:6000% base damage}. Recharges every {misc:30 seconds} {-50%}."],
-	[-1, 3, "missinguid_planula", "Planula", "defense,heal,egg,flat,incoming,new", "magmaEgg", "Heal from {offense:incoming damage} for {defense:15} {+15}"],
-	[92, 3, "Pearl", "Pearl", "defense,health,maximum", "pearl", "Increases {defense:maximum health} by {defense:10%} {+10%}."],
-	[-1, 3, "missinguid_empathyCores", "Empathy Cores", "offense,summon,drone,boost,new", "doubleDrone", "Every 30 seconds, {misc:summon two Solus Probes} that gain {offense:+100%} {+100%} damage per {misc:ally on your team}."],
-	[-1, 3, "missinguid_itemScrapYellow", "Item Scrap, Yellow", "utility,3d,unique,yelllow", "scraps4", "Does nothing. Prioritized when used with 3D Printers."],
-	[93, 3, "ShinyPearl", "Irradiant Pearl", "defense,boost,statistics", "shinyPearl", "Increases {misc:ALL stats} by {misc:10%} {+10%}."],
-	[-1, 3, "missinguid_miredUrn", "Mired Urn", "offense,heal,slow,near,proximity", "tarUrn", "While in combat, the nearest 1 {+1} characters to you within {offense:13m} whill be \"tethered\" to you, dealing {offense:100%} damage per second, applying {offense:tar}, and {defense:healing} your for {defense:100%} of the damage dealt."],
-	[83, 3, "SprintWisp", "Little Disciple", "offense,tracking,sprint,attack", "sprintingWisp", "Fire a {offense:tracking wisp} for {offense:300%} {+300%} {offense:damage}.\nFires every 1.6 seconds while sprinting. Fire rate increases with {misc:movement speed}."],
-	[82, 3, "TitanGoldDuringTP", "Halcyon Seed", "utility,invocation,boss,summon", "goldenSeed", "Summon {offense:Aurelionite} during the teleporter event.\nIt has {offense:100%} {+50%} {offense:damage} and {defense:100%} {+100%} {defense:health}."],
-
-	["**** CORRUPTED ITEMS ****"],
-	[-1, 4, "missinguid_corruptedBear", "Safer Spaces", "defense,cooldown,block", "corruptedBear", "{defense:Block} incoming damage once. Recharges after {misc:15 seconds} {-10%}.\n{corrupt:Corrupts all Tougher Times}."],
-	[-1, 4, "missinguid_needletick", "Needletick", "offense,utility,collapse", "needletick", "{offense:10%} {+10%} chance to {offense:collapse} an enemy for {offense:400%} base damage.\n{corrupt:Corrupts all Tri-Tip Daggers}."],
-	[-1, 4, "missinguid_corruptedGlasses", "Lost Seer's Lenses", "offense,crit,insta,kill,elite", "corruptedGlasses", "Your attacks have a {offense:0.5%} {+0.5%} chance to {offense:instantly kill} a {offense:non-Boss enemy}.\n{corrupt:Corrupts all Lens-Maker's Glasses}."],
-	[-1, 4, "missinguid_weirdShroom", "Weeping Fungus", "defense,sprint,heal,percent", "weirdShroom", "{defense:Heals} for {defense:2%} {+2%} of your {defense:health} every second {misc:while sprinting}.\n{corrupt:Corrupts all Bustling Fungi}."],
-	[-1, 4, "missinguid_corruptedKey", "Encrusted Key", "uility,chest,void", "corruptedKey", "A {misc:hidden cache} containing an item (60%/{defense:30%}/{debuff:10%}) will appear in a random location {misc:on each stage}. Opening the cache {misc:consumes} this item.\n{corrupt:Corrupts all Rusted Key}."],
-	[-1, 4, "missinguid_corruptedThing", "Polylute", "offense,lightning,group", "corruptedThing", "{offense:25%} chance to fire {offense:lightning} for {offense:60%} TOTAL damage up to {offense:3} {+3} times.\n{corrupt:Corrupts all Ukuleles}."],
-	[-1, 4, "missinguid_superRing", "Singularity Band", "offense,blackhole,grab,on,hit", "superRing", "Hits that deal {offense:more than 400% damage} also fire a black hole that {misc:draws enemies within 15m into its center}.\nLasts {misc:5} seconds before collapsing, dealing {offense:100%} {+100%} TOTAL damage.\nRecharges every {misc:20} seconds.\n{corrupt:Corrupts all Kjaro's Band and Runald's Band}."],
-	[-1, 4, "missinguid_superCell", "Lysate Cell", "utility,stack,add,skill", "purpleCell", "Add {misc:+1} {+1} charge of your {misc:Special skill}.\n{corrupt:Corrupts all Fuell Cells}."],
-	[-1, 4, "missinguid_flame", "Voidsent Flame", "offense,on,hit,burst,damage,zone,great", "flame", "Upon hitting an enemy at or above {offense:100% health}, {offense:detonate} them in a {offense:12m} {+2.4m} radius burst for {offense:260%} {+156%} base damage.\n{corrupt:Corrupts all Will-o'-the-wisps}."],
-	[-1, 4, "missinguid_shrimp", "Plasma Shrimp", "offense,on,attack,missile", "superMissile", "Gain a {defense:shield} equal to {defense:10%} of your maximum health. While you have a {defense:shield}, hitting an enemy fires a missile that deals {offense:40%} {+50%} TOTAL damage.\n{corrupt:Corrupts all AtG Missile Mk. 1s}."],
-	[-1, 4, "missinguid_plantTentacle", "Tentabauble", "utility,root,on,hit", "plantTentacle", "{misc:5%} {+5%} chance on hit to {offense:root} enemies for {misc:1s} {+1s}.\n{corrupt:Corrupts all Chronobaubles}."],
-	[-1, 4, "missinguid_corruptedClover", "Benthic Bloom", "utility,upgrade,next,tier", "corruptedClover", "{misc:Upgrades 3} {+3} randoms items to items of the next {misc:higher rarity} at the {misc:start of each stage}.\n{corrupt:Corrupts all 57 Leaf Clovers}."],
-	[-1, 4, "missinguid_hauntedBear", "Pluripotent Larva", "utility,on,death,corrupt,consume", "hauntedBear", "{misc:Upon death}, this item will be {misc:consumed} and you will {defense:return to life} with {defense:3 seconds of invulnerability}, and all of your items that can be {misc:corrupted} will be.\n{corrupt:Corrupts all Dio's Best Friends}."],
-	[-1, 4, "missinguid_corruptedScorpion", "Newly Hatched Zoea", "offense,summon,void,ally", "corruptedScorpion", "Every {misc:60} {-50%} seconds, gain a random {corrupt:Void} ally. Can have up to {misc:1} {+1} allies at a time.\n{corrupt:Corrupts all Unique Items}."],
-
-	["**** LUNAR ITEMS ****"],
-	[74, 5, "AutoCastEquipment", "Gesture of the Drowned", "utility,equipment,locked", "fossil", "{misc:Reduce equipment cooldown} by {misc:50%} {+15%}.\nForces your Equipment to {misc:activate} whenever it is off {misc:cooldown}.", "Kill 20 Hermit Crabs by chasing them off the edge of the map."],
-	[107, 5, "missinguid_focusedConvergence", "Focused Convergence", "utility,teleporter,event,smaller,faster", "orb", "Teleporters charge {misc:30%} {+30%} {misc:faster}, but the size of the Teleporter zone is {debuff:50%} {-50%} smaller.", "In 4 consecutives stages, don't leave the teleporter radius until it is fully charged."],
-	[44, 5, "GoldOnHit", "Brittle Crown", "utility", "crown", "{misc:30% chance on hit} to gain {misc:2} {+2} {misc:gold}. {misc:Scales over time}.\n{debuff:Lose gold} equal to {debuff:100%} {+100%} of amount your are hit for OR lose % gold equal to {debuff:100%} {+100%} of the maximum health % you lost.\nChooses the greater of the two."],
-	[-1, 5, "missinguid_coolJacket", "Light Flux Pauldron", "utility,skill,cooldown,bad,trade", "coolJacket", "Decrease {misc:skill cooldowns} by {misc:50%} {+50%}. Decrease {offense:attack speed} by {offense:50%} {+50%}."],
-	[-1, 5, "missinguid_pauldron", "Stone Flux Pauldron", "utility,bad,trade", "pauldron", "Increase {defense:max health} by {defense:100%} {+100%}. Reduce {misc:movement speed} by {misc:50%} {+50%}."],
-	[-1, 5, "missinguid_purity", "Purity", "utility,cooldown,reduction,bad luck,reroll", "snowflake", "All skill cooldowns are reduced by {misc:2} {+1} seconds. All random effects are rolled {misc:+1} {+1} times for an {debuff:unfavorable outcome}.", "Beat the game in Monsoon difficulty."],
-	[43, 5, "LunarDagger", "Shaped Glass", "offense,suicide", "sword", "Increase base damage by {offense:100%} {+100%}.\n{defense:Reduce maximum health by 50%} {+50%}."],
-	[96, 5, "LunarPrimaryReplacement", "Visions of Heresy", "active,primary,replace,offense,damage,recharge,cooldown,skill,orb", "weirdOrb", "{misc:Replace your Primary Skill} with {misc:Hungering Gaze}.\nFire a flurry of {misc:tracking shards} that detonate after a delay, dealing {offense:120%} base damage. Hold up to 12 charges {+12} that reload after 2 seconds {+2}."],
-	[-1, 5, "missinguid_hookOfHeresy", "Hook of Heresy", "active,secondary,replace,offense,skill,explode", "purpleBlade", "{misc:Replace your Secondary Skill} with {misc:Slicing Maelstrom}.\nCharge up a projectile that deals {offense:175% damage per second} to nearby enemies, exploding after {misc:3} seconds to deal {offense:700% damage} and {offense:root} enemies for {misc:3} {+3} seconds. Recharges after 5 {+5} seconds.", "Kill 15 boss monsters in a single run."],
-	[-1, 5, "missinguid_essenceOfHeresy", "Essence of Heresy", "active,special,replace,offense,skill,stack,explode", "ocarina", "{misc:Replace your Special Skill} with {misc:Ruin}.\nDealing damage adds a stack of {offense:Ruin} for 10 {+10} seconds. Activating the skill {offense:detonates} all Ruin stack at unlimited range, dealing {offense:300% damage} plus {offense:120% damage per stack of Ruin}.\nRecharges after 8 {+8} seconds.", "Kill 15 boss monsters in a single run."],
-	[-1, 5, "missinguid_whiteBall", "Egocentrism", "utility,sacrifice,item", "whiteBall", "Every {misc:3} {-50%} seconds, gain an {offense:orbiting bomb} that detonates on impact for {offense:360%} damage, up to a maximum of {misc:3} {+1} {misc:bombs}.\nEvery {misc:60} seconds, a random item is {misc:converted} into this item."],
-	[98, 5, "LunarTrinket", "Beads of Fealty", "secret,unlock,zone,no,effect", "beads", "Seems to do nothing... {debuff:but...}", "Unlock the new zone from the \"Hidden Realms\" update when you obliterate with this item."],
-	[88, 5, "LunarUtilityReplacement", "Strides of Heresy", "utility,movement,skill,arm,speed,heal,defense", "weirdArm", "{misc:Replace your Utility Skill} with {misc:Shadowfade}.\nFade away, becoming {misc:intangible} and gaining {misc:+30% movement speed}. {defense:Heal} for {defense:25%} {+25%} {defense:of your maximum health}. Lasts 3 {+3} seconds.", "Kill 15 boss monsters in a single run."],
-	[-1, 5, "missinguid_defiantGouge", "Defiant Gouge", "offense,summon,shrine,on use", "tools", "Using a Shrine summons {debuff:enemies} nearby. {misc:Scales over time}."],
-	[-1, 5, "missinguid_mercurialRachis", "Mercurial Rachis", "offense,power,zone,damage", "spin", "Creates a Ward of Power in a random location nearby that buffs both enemies and allies within {misc:16m} {+50%}, causing them to deal {offense:+50%} damage."],
-	[-1, 5, "missinguid_domino", "Eulogy Zero", "utility,convert,chance,lunar", "domino", "Items have a {misc:5%} {+5%} chance to become a {misc:Lunar} item instead."],
-	[71, 5, "RepeatHeal", "Corpsebloom", "defense,heal,dot", "flower", "{defense:Heal +100%} {+100%} more.\n{defense:All healing is applied over time}.\nCan {defense:heal} for a {defense:maximum} of {defense:10%} {-50%} of your {defense:health per second}."],
-	[49, 5, "ShieldOnly", "Transcendence", "defense,chaos", "transc", "{defense:Convert} all but {defense:1 health} into {defense:regenerating shields}.\n{defense:Gain 50%} {+25%} {defense:maximum health}."],
-	[23, 5, "BurnNearby", "Helfire Tincture", "offense,suicide,fire,equipment,locked", "burn", "Ignite ALL characters within 8m. Deal {offense:5% of your maximum health/second as burning} to yourself.\nThe burn is {offense:0.5x} stronger on allies, and {offense:24x} stronger on enemies.\nCooldown: {misc:45s}", "Kill 15 enemies simultaneously."],
-	[26, 5, "CrippleWard", "Effigy of Grief", "utility,equipment", "slow", "ALL characters are {misc:slowed by 50%} and has their {offense:armor reduced by 20}.\nCan place up to {misc:5}.\nCooldown: {misc:15s}"],
-	[3, 5, "Meteor", "Glowing Meteorite", "offense,suicide,equipment,locked", "meteorite", "{offense:Rain meteors} from the sky, damaging ALL characters for {offense:600% damage per blast}.\nLast 20 seconds.", "Carry 5 Lunar items in a single run."],
-	[28, 5, "Tonic", "Spinel Affliction", "utility,buff,debuff,attack,speed,movespeed,health,regen", "tonic", "Drink the Tonic, gaining a boost for 15 seconds.\nIncreases {offense:damage} by {offense:+100%}.\nIncreases {offense:attack speed} by {offense:+70%}.\nIncreases {offense:armor} by {offense:+20}.\nIncreases {defense:maximum health} by {defense:+50%}.\nIncreases {defense:passive health regeneration} by {defense:+300%}.\nIncreases {misc:movespeed} by {misc:+30%}.\nWhen the tonic wears off, you have {debuff:20%} chance to gain a {debuff:Tonic Affliction, reducing all of your stats} by {debuff:-5%} {-5%}", "Discover and enter three unique portals."],
-
-	["**** EQUIPMENTS ****"],
-	[16, 6, "BFG", "Preon Accumulator", "offense,locked", "beam", "Fires preon tendrils, zapping enemies within 35m up to {offense:600% damage/second}.\nOn contact, detonate in an enormous 20m explosion for {offense:4000% damage}.\nCooldown: {misc:140s}", "Open the Timed Security Chest on Rallypoint Delta."],
-	[11, 6, "Blackhole", "Blackhole", "offense,stack", "blackhole", "Fire a black hole that {misc:draws enemies within 30m into it's center}. Last 10 seconds.\nCooldown: {misc:60s}"],
-	[-1, 6, "missinguid_oldGun", "Trophy Hunter's Tricorn", "utility,one,shoot,boss,drop,item", "oldGun", "{offense:Execute} any enemy capable of spawning a {offense:unique reward}, and it will drop that {offense:item}. Equipment is {misc:consumed} on use."],
-	[30, 6, "Cleanse", "Blast Shower", "utility,defense,cleanse,debuff", "potThing", "{misc:Cleanse} all negative effects. Includes debuffs, damage over time, and nearby projectiles.\nCooldown: {misc:20s}", "Die three fiery deaths."],
-	[-1, 6, "CommandMissile", "Disposable Missile Launcher", "attack", "missile", "Fire a swarm of {offense:12} missiles that deal {offense:12x300%} damage.\nCooldown: {misc:45s}"],
-	[13, 6, "CritOnUse", "Ocular HUD", "attack", "hud", "Gain {offense:+100% Critical Strike Chance} for 8 seconds.\nCooldown: {misc:60s}"],
-	[-1, 6, "missinguid_forgiveMePlease", "Forgive Me Please", "offense,trigger,on kill", "voodoo", "Throw a cursed doll out that {offense:triggers} any {offense:On-kill} effects you have every {misc:1} second for {misc:8} seconds.\nCooldown: {misc:45}", "Die 20 times."],
-	[14, 6, "DroneBackup", "The Back-up", "utility,locked", "drone", "Call {offense:4 Strike Drones} to fight for you.\nLast 25 seconds.\nCooldown: {misc:100s}", "Repair 30 drones or turrets."],
-	[31, 6, "FireBallDash", "Volcania Egg", "utility,offense,detonate,movement", "egg", "Turn into a {offense:draconic fireball} for {offense:5} seconds. Deal {offense:500% damage} on impact.\nDetonates at the end for {offense:800% damage}.\nCooldown: {misc:30s}"],
-	[2, 6, "Fruit", "Foreign Fruit", "defense,heal", "fruit", "Instantly heal for {defense:50% of your maximum health}.\nCooldown: {misc:45s}"],
-	[33, 6, "GainArmor", "Jade Elephant", "utility,defense,resistance,armor", "elephant", "Gain {offense:500 armor} for {misc:5 seconds}.\nCooldown: {misc:45s}"],
-	[27, 6, "Gateway", "Eccentric Vase", "utility,scan,locked", "vase", "Create a {misc:quantum tunnel} of up to {misc:1000m} in length. Lasts 30 seconds.\nCooldown: {misc:45s}", "Defeat the guardian of Gilded Coast without any beacons deactivating."],
-	[20, 6, "GoldGat", "The Crowdfunder", "offense,troll,locked", "gatling", "Fires a continuous barrage that deals {offense:100% damage per bullet}.\nCosts $1 per bullet. Costs increases over time.\nCooldown: {misc:5s}", "Collect $30,480 total gold."],
-	[-1, 6, "missinguid_goobo", "Goobo Jr.", "utility,clone,summon", "goobo", "Spawn a gummy clone that has {offense:700% damage} and {defense:700% health}. Expires in {misc:30} seconds.\nCooldown: {misc:100s}"],
-	[18, 6, "Jetpack", "Milky Chrisalis", "utility,movespeed", "larva", "Sprout wings and {misc:fly for 15 seconds}.\nGain {misc:+20% movement speed} for the duration.\nCooldown: {misc:60s}"],
-	[-1, 6, "missinguid_superMassiveLeech", "Super Massive Leech", "defense,heal,leech,on hit", "leech", "{defense:Heal} for {defense:20%} of the {offense:damage} you deal. Lasts {defense:8} seconds.\nCooldown: {misc:60s}"],
-	[19, 6, "Lightning", "Royal Capacitor", "offense,locked", "lightning", "Call down a lightning strike on a targeted monster, dealing {offense:3000% damage} and {offense:stunning} nearby monsters.\nCooldown: {misc:20s}", "Defeat the Teleporter bosses after activating 2 Shrines of the Moutain."],
-	[-1, 6, "missinguid_molotov", "Molotov (6-Pack)", "offense,fire", "molotov", "Throw {offense:6} molotov cocktails that {offense:ignites} enemies for {offense:500% base damage}. Each molotov leaves a burning area for {offense:200% damage per second}.\nCooldown: {misc:45s}"],
-	[-1, 6, "missinguid_creditCard", "Executive Card", "utility,shop,money,gold", "creditCard", "Whenever you make a gold purchase, get {misc:10%} of the spent gold back. If the purchase is a {misc:multishop} terminal, the other terminals will {misc:remaing open}.\nCooldown: {misc:0.1s}"],
-	[21, 6, "PassiveHealing", "Gnarled Woodsprite", "defense,heal,locked", "spirit", "Gain a Woodsprite follower that heals a friendly target for {defense:10% of their maximum health} instantly, then {defense:1.5% of your maximum health} every second.\nActivating the equipment assigns a new target, or yourself if there are no targets available.\nCooldown: {misc:15s}", "Fully upgrade a Shrine of the Woods."],
-	[-1, 6, "missinguid_recycler", "Recycler", "utility,reroll,recycle,transform", "recycler", "{misc:Transform} an Item or Equipment into a different one. {misc:Can only be converted in the same tier one time}.\nCooldown: {misc:45s}", "Destroy  20 flying rocks in Sky Meadow."],
-	[-1, 6, "missinguid_sawmerang", "Sawmerang", "offense,boomerang", "metalSpin", "Throw {offense:three large saw blades} that slice through enemies for {offense:3x400%} damage.\nAlso deals an additional {offense:3x100% damage per second} while {offense:bleeding} enemies.\nCan {offense:strike} enemies again on the way back.\nCooldown: {misc:45s}"],
-	[25, 6, "Scanner", "Radar Scanner", "utility,scan,locked", "radar", "{misc:Reveal} all interactables within 500m for {misc:10 seconds}.\nCooldown: {misc:45s}", "Collect 10 Monster or Environment Logs."],
-	[-1, 6, "missinguid_goragsOpus", "Gorag's Opus", "utility,offense,frenzy,movement speed,attack speed", "drum", "All allies enter a {offense:frenzy} for {misc:7} seconds. Increases {misc:movement speed} by {misc:50%} and {offense:attack speed} by {offense:100%}.\nCooldown: {misc:45s}"],
-	[-1, 6, "missinguid_fridge", "Remote Caffeinator", "utility,heal,drop,coffee,deliver", "fridge", "Request an {offense:Eclipse Zero Vending Machine} from the {offense:UES Safe Travels}. Delivery guaranteed in {misc:5 seconds}, dealing {offense:2000% damage}. {defense:Heal} up to 3 targets for {defense:25% of their maximum health}.\nCooldown: {misc:60s}"]
+	[
+		"* Colors:"
+	],
+	[
+		"* 'offense' yellow"
+	],
+	[
+		"* 'defense' green"
+	],
+	[
+		"* 'misc' blue"
+	],
+	[
+		"* 'debuff' red"
+	],
+	[
+		"**** COMMON ITEMS ****"
+	],
+	[
+		102,
+		0,
+		"missinguid_repulsionArmorPlate",
+		"Repulsion Armor Plate",
+		"defense,armor,flat,reduction",
+		"armor",
+		"Reduce all {offense:incoming damage} by {offense:5} {+5}. Cannot be reduced below {offense:1}."
+	],
+	[
+		-1,
+		0,
+		"missinguid_mocha",
+		"Mocha",
+		"utility,speed,attack,dual,coffee",
+		"mocha",
+		"Increases {offense:attack speed} by {offense:7.5%} {+7.5%} and {misc:movement speed} by {misc:7%} {+7%}."
+	],
+	[
+		84,
+		0,
+		"BarrierOnKill",
+		"Topaz Brooch",
+		"defense,shield,on,kill",
+		"shieldBrooch",
+		"Gain a {defense:temporary barrier} on kill for {defense:15 health} {+15}."
+	],
+	[
+		1,
+		0,
+		"Bear",
+		"Tougher Times",
+		"defense,block,locked",
+		"bear",
+		"{defense:15%} {+15%} chance to {defense:block} incoming damage.\n{misc:Unaffected by the luck}.",
+		"Die 5 times."
+	],
+	[
+		20,
+		0,
+		"BleedOnHit",
+		"Trip-Tip Dagger",
+		"offense,dot",
+		"tritip",
+		"{offense:10%} {+10%} chance to {offense:bleed} an enemy for {offense:240%} base damage."
+	],
+	[
+		61,
+		0,
+		"BossDamageBonus",
+		"Armor-Piercing Rounds",
+		"offense,boss,ammo,bullet,locked",
+		"bossDamage",
+		"Deal an additional {offense:20%} damage {+20%} to bosses.",
+		"Complete a Teleporter event."
+	],
+	[
+		7,
+		0,
+		"CritGlasses",
+		"Lens-Maker's Glasses",
+		"offense,critical,chance",
+		"glasses",
+		"Your attacks have a {offense:10%} {+10%} chance to \"{offense:Critically Strike}\", dealing {offense:double damage}."
+	],
+	[
+		17,
+		0,
+		"Crowbar",
+		"Crowbar",
+		"attack",
+		"crowbar",
+		"Deal {offense:75%} {+75%} damage to enemies above {offense:90% health}.",
+		"Discover 10 unique white items."
+	],
+	[
+		-1,
+		0,
+		"missinguid_warpedEcho",
+		"WarpedEcho",
+		"defense,on,hit,on,taken",
+		"warpedEcho",
+		"On damage taken {offense:50%} of the damage is dealt immediately while the other {offense:50%} is delayed for {offense:3} seconds.\nThis effect has a cooldown of {misc:10} seconds. {Every additional item$} increases how many instances of this effect the player has."
+	],
+	[
+		42,
+		0,
+		"Firework",
+		"Bundle of Fireworks",
+		"offense,on,open,locked",
+		"firework",
+		"Activating an interactable {offense:launches 8} {+4} {offense:fireworks} that deal {offense:300%} base damage.",
+		"Duplicate the same item 7 times in a row with a 3D printer."
+	],
+	[
+		91,
+		0,
+		"RegeOnKill",
+		"Fresh Meat",
+		"utility,heal,steack,steak,raw,health",
+		"steak",
+		"Increases {defense:maximum health} by {defense:25} {+25}."
+	],
+	[
+		-1,
+		0,
+		"missinguid_brokenWatch",
+		"Delicate Watch",
+		"utility,damage,breakable",
+		"brokenWatch",
+		"Increase damage by {offense:20%} {+20%}. Taking damage to below {debuff:25% health} {misc:breaks} this item."
+	],
+	[
+		-1,
+		0,
+		"missinguid_pennies",
+		"Roll of Pennies",
+		"utility,damage,gold,scales",
+		"pennies",
+		"Gain {misc:3} {+3} {misc:gold} on {offense:taking damage} from an enemy. {misc:Scales over time}."
+	],
+	[
+		27,
+		0,
+		"HealWhileSafe",
+		"Cautious Slug",
+		"defense,heal",
+		"slug",
+		"Increases {defense:base health regeneration} by {defense:+3 hp/s} {+3 hp/s} while outside of combat."
+	],
+	[
+		-1,
+		0,
+		"missinguid_elixir",
+		"Power Elixir",
+		"utility,heal,low,health",
+		"elixir",
+		"Taking damage to below {debuff:25% health} {misc:consumes} this item, {defense:healing} you for {defense:75%} of {defense:maximum health}."
+	],
+	[
+		8,
+		0,
+		"Hoof",
+		"Paul's Goat Hoof",
+		"defense,movespeed,locked",
+		"goat",
+		"Increases {misc:movement speed} by {misc:14%} {+14%}.",
+		"Fail the Shrine of chance 3 times in a row."
+	],
+	[
+		39,
+		0,
+		"IgniteOnKill",
+		"Gasoline",
+		"offense,fire,on,kill",
+		"gasoline",
+		"Killing an enemy {offense:ignites} all enemies within {offense:12m} {+4m}.\nEnnemies {offense:burn} for {offense:150%} {+75%} base damage."
+	],
+	[
+		-1,
+		0,
+		"missinguid_chronicExpansion",
+		"Chronic Expansion",
+		"offense,buff,on,kill",
+		"chronicExpansion",
+		"Every {offense:5} enemies slain grants a damage counter bonus increasing the players damage by {offense:10%} {+5%|per item stack}, lasting as long as the player stays in combat."
+	],
+	[
+		-1,
+		0,
+		"missinguid_knockbackFin",
+		"Knockback Fin",
+		"utility,knockback,on,hit",
+		"knockbackFin",
+		"{misc:7.5%} {+7.5%} chance on hit to knock enemies into the air. {height increases}."
+	],
+	[
+		-1,
+		0,
+		"missinguid_bolsteringLantern",
+		"Bolstering Lantern",
+		"utility,damage,low,health,berzerk",
+		"bolsteringLantern",
+		"When below {debuff:50% health} receive a damage increase of {offense:20%} {+20% damage bonus|per item stack}."
+	],
+	[
+		36,
+		0,
+		"Medkit",
+		"Medkit",
+		"defense,heal,on,hit,locked",
+		"medkit",
+		"2 seconds after getting hurt, {defense:heal} for {defense:20} plus an additional {defense:5%} {+5%} of {defense:maximum health}.",
+		"Defeat an Elite-type monster."
+	],
+	[
+		16,
+		0,
+		"Mushroom",
+		"Bustling Fungus",
+		"defense,heal,stand",
+		"fungus",
+		"After standing still for {defense:1} seconds create a zone that {defense:heals} for {defense:4.5%} {+2.25%} of your {defense:health} every second to all allies within {defense:3m} {+1.5m}."
+	],
+	[
+		87,
+		0,
+		"NearbyDamageBonus",
+		"Focus Crystal",
+		"offense,closen,boost,damage",
+		"redCrystal",
+		"Increase damage to enemies withing {offense:13m} by {offense:20%} {+20%}."
+	],
+	[
+		-1,
+		0,
+		"missinguid_antlerShield",
+		"Antler Shield",
+		"utility,defense,reflect,mirror",
+		"antlerShield",
+		"{misc:55%} {+5%} chance on being hit to reflect {misc:10%} {+10%} damage back to the attacker."
+	],
+	[
+		-1,
+		0,
+		"missinguid_opal",
+		"Oddly-shaped Opal",
+		"defense,armor,safe",
+		"opal",
+		"{defense:Increase armor} by {defense:100} {+100} while out of danger."
+	],
+	[
+		29,
+		0,
+		"PersonalShield",
+		"Personal Shield Generator",
+		"defense,shield",
+		"shield",
+		"Gain a {defense:shield} equal to {defense:8%} {+8%} of your maximum healt. Recharges outside of danger."
+	],
+	[
+		-1,
+		0,
+		"missinguid_itemScrapWhite",
+		"Item Scrap, White",
+		"utility,3d,printer,white",
+		"scraps1",
+		"Does nothing. Prioritized when used with 3D Printers."
+	],
+	[
+		58,
+		0,
+		"SecondarySkillMagazine",
+		"Backup Magazine",
+		"utility,charge,locked",
+		"backupMag",
+		"Add {misc:+1} {+1} charge of your {misc:Secondary skill}.",
+		"Fully charge a Teleporter without getting hit."
+	],
+	[
+		57,
+		0,
+		"SprintBonus",
+		"Energy Drink",
+		"defense,movespeed",
+		"drink",
+		"{misc:Sprint speed} is improved by {misc:25%} {+25%}."
+	],
+	[
+		59,
+		0,
+		"StickyBomb",
+		"Sticky Bomb",
+		"offense,on,hit",
+		"stickyBomb",
+		"{offense:5%} {+5%} chance on hit to attach a {offense:bomb} to an enemy, detonating for {offense:180%} TOTAL damage."
+	],
+	[
+		41,
+		0,
+		"StunChanceOnHit",
+		"Stun Grenade",
+		"offense,stun,on,hit",
+		"stunGrenade",
+		"{misc:5%} {+5%} chance on hit to {misc:stun} enemies for {misc:2} seconds."
+	],
+	[
+		0,
+		0,
+		"Syringe",
+		"Soldier's Syringe",
+		"offense,speed",
+		"syringe",
+		"Increase {offense:Attack Speed} by {offense:15%} {+15%}."
+	],
+	[
+		6,
+		0,
+		"Tooth",
+		"Monster Tooth",
+		"defense,heal,on,kill",
+		"monsterTooth",
+		"Killing an ennemy spawns a {defense:healing orb} that heals for {defense:8} plus an additional {defense:2%} {+2%} of {defense:maximum health}."
+	],
+	[
+		60,
+		0,
+		"TreasureCache",
+		"Rusted Key",
+		"utility,box,locked",
+		"key",
+		"A {misc:hidden cache} containing an item ({defense:80%}/{debuff:20%}) will appear in a random location {misc:on each stage}.\nOpening the cache {misc:consumes} this item.",
+		"Defeat the Teleporter boss under 15 seconds."
+	],
+	[
+		24,
+		0,
+		"LevelBonus",
+		"Warbanner",
+		"utility,attack,speed,movespeed,on,level",
+		"warbanner",
+		"On {misc:level up} or starting the {misc:Teleporter event}, drop a banner that strengthens all allies within {misc:16m} {+8m}.\nRaise {offense:attack} and {misc:movement speed} by {offense:30%}."
+	],
+	[
+		"**** UNCOMMON ITEMS ****"
+	],
+	[
+		19,
+		1,
+		"AttackSpeedOnCrit",
+		"Predatory Instincts",
+		"offense,critical,locked",
+		"hat",
+		"{offense:Critical Strikes} increase {offense:attack speed} by {offense:12%}.\nMaximum cap of {offense:36%} {+24%} {offense:attack speed}.",
+		"Reach +200% attack speed."
+	],
+	[
+		37,
+		1,
+		"Bandolier",
+		"Bandolier",
+		"utility",
+		"bandolier",
+		"{misc:18%} {+10%} chance on kill to drop an ammo pack that {misc:resets all cooldowns}."
+	],
+	[
+		94,
+		1,
+		"BonusGoldPackOnKill",
+		"Ghor's Tome",
+		"utility,gold,book,treasure,flesh",
+		"goldBook",
+		"{misc:4%} {+4%} chance on kill to drop a treasure worth {misc:25$}. {misc:Scales over time.}"
+	],
+	[
+		11,
+		1,
+		"ChainLightning",
+		"Ukulele",
+		"offense,on,hit",
+		"ukulele",
+		"{offense:25%} chance to fire a {offense:chain lightning} for {offense:80%} TOTAL damage up to {offense:3} {+2} targets within {offense:20m} {+2m}."
+	],
+	[
+		104,
+		1,
+		"missinguid_deathMark",
+		"Death Mark",
+		"offense,mark,death,debuff,increased,damage",
+		"deathMark",
+		"Enemies with {offense:4} or more debuffs are {offense:marked for death}, increasing damage taken by {offense:50%} from all sources for {misc:7} {+7} seconds."
+	],
+	[
+		79,
+		1,
+		"EnergizedOnEquipmentUse",
+		"War Horn",
+		"offense,attack,speed,equipment,locked",
+		"warHorn",
+		"Activating your Equipment gives you {offense:+70% attack speed} for {offense:8s} {+4s}.",
+		"Complete 3 Combat Shrines in a single stage."
+	],
+	[
+		30,
+		1,
+		"EquipmentMagazine",
+		"Fuel Cell",
+		"utility,charge,locked",
+		"cell",
+		"Hold an {misc:additional equipment charge} {+1}.\n{misc:Reduce equipment cooldown} by {misc:15%} {+15%}.",
+		"Pickup 5 different types of Equipment."
+	],
+	[
+		78,
+		1,
+		"ExecuteLowHealthElite",
+		"Old Guillotine",
+		"offense,boss,locked",
+		"guillotine",
+		"Instantly kill Elite Monsters below {debuff:13%} {+13%} {debuff:health}.",
+		"Defeat 500 Elite Monsters."
+	],
+	[
+		4,
+		1,
+		"ExplodeOnDeath",
+		"Will-O'-the-wisp",
+		"offense,on,kill",
+		"wisp",
+		"On killing an enemy, spawn a {offense:lava pillar} in a {offense:12m} {+2.4m} radius for {offense:350%} {+280%} base damage."
+	],
+	[
+		-1,
+		1,
+		"missinguid_chanceDoll",
+		"Chance Doll",
+		"utility,drop,rarity,items,shrine,great,success,upgrade",
+		"chanceDoll",
+		"{misc:20%} {+8%} chance to get higher rarity items from chance shrines on success."
+	],
+	[
+		-1,
+		1,
+		"missinguid_prayerBreads",
+		"Prayer Beads",
+		"utility,experience,weird",
+		"prayerBreads",
+		"Grows in power by absorbing experience, storing {misc:20%} {+5%|per item stack} of player stats per item level up. On removal, gain all stored stats."
+	],
+	[
+		9,
+		1,
+		"Feather",
+		"Hopoo Feather",
+		"utility",
+		"feather",
+		"Gain {misc:+1} {+1} maximum {misc:jump count}."
+	],
+	[
+		64,
+		1,
+		"FireRing",
+		"Kjaro's Band",
+		"offense,on,hit,locked",
+		"fireRing",
+		"Hits that deals {offense:more than 400% damage} also blasts enemies with a {offense:runic flame tornado}, dealing {offense:300%} {+300%} TOTAL damage over time. Recharge every {misc:10} seconds.",
+		"Discover the hidden chamber in the Abandonned Aqueduct."
+	],
+	[
+		-1,
+		1,
+		"missinguid_for,",
+		"Shipping Request Form",
+		"utility,item,selector,drop",
+		"form",
+		"A {misc:delivery} containing 2 items (79%/{defense:20%}/{debuff:1%}) will appear in a random location {misc:on each stage}. {Increases rarity chances of the items}."
+	],
+	[
+		26,
+		1,
+		"HealOnCrit",
+		"Harvester's Scythe",
+		"offense,defense,critical,heal,locked",
+		"scythe",
+		"Gain {offense:5% critical chance}.\n{offense:Critical strikes} {defense:heal} for {defense:8} {+4} {defense:health}.",
+		"Complete a Prismatic Trial."
+	],
+	[
+		63,
+		1,
+		"IceRing",
+		"Runald's Band",
+		"offense,on,hit,locked",
+		"iceRing",
+		"Hits that deals {offense:more than 400% damage} also blasts enemies with a {offense:runic ice blast}, {misc:slowing} them by {misc:80%} for {misc:3s} {+3s} and dealing {offense:250%} {+250%} TOTAL damage. Recharge every {misc:10} seconds.",
+		"Discover the hidden chamber in the Abandonned Aqueduct."
+	],
+	[
+		-1,
+		1,
+		"missinguid_luminousShot",
+		"Luminous Shot",
+		"utility,secondary,skill,auto,attack,buff",
+		"luminousShot",
+		"Using the secondary skill charges the next primary attack, dealing {offense:+150%} damage {+25%|per item stack} per charge up to {misc:5} times {+1|per item stack}."
+	],
+	[
+		33,
+		1,
+		"Infusion",
+		"Infusion",
+		"defense,life,locked",
+		"infusion",
+		"Killing an enemy increases your {defense:health permanently} by {defense:1} {+1}, up to a {defense:maximum} of {defense:100} {+100} {defense:health}.",
+		"Defeat 3000 enemies."
+	],
+	[
+		76,
+		1,
+		"JumpBoost",
+		"Wax Quail",
+		"defense,movespeed,pigeon,locked",
+		"quail",
+		"{defense:Jumping} while {defense:sprinting} boosts you forward by {defense:10m} {+10m}.",
+		"Reach +300% movespeed (include sprinting)."
+	],
+	[
+		-1,
+		1,
+		"missinguid_saleStar",
+		"Sale Star",
+		"utility,extra,item,drop,chest",
+		"saleStar",
+		"Gain an extra item on the first chest opened per stage. {Each additional Sale Star increase the chance of getting more items by 5%$}."
+	],
+	[
+		3,
+		1,
+		"Missile",
+		"AtG Missile Mk. 1",
+		"offense,on,hit",
+		"missile_mk",
+		"{offense:10%} chance to fire a missile that deals {offense:300%} {+300%} TOTAL damage."
+	],
+	[
+		-1,
+		1,
+		"missinguid_harpoon",
+		"Hunter's Harpoon",
+		"utility,movement,speed,on,kill",
+		"harpoon",
+		"Killing an enemy increases {misc:movement speed} by {misc:125%}, fading over {misc:1} {+0.5} seconds."
+	],
+	[
+		25,
+		1,
+		"Phasing",
+		"Old War Stealthkit",
+		"defense,phasing,invincible",
+		"phasing",
+		"Falling below {debuff:25% health} causes you to gain {misc:40% movement speed} and {misc:invisibility} for {misc:5s}.\nRecharges every {misc:30 seconds} {-50%}."
+	],
+	[
+		-1,
+		1,
+		"missinguid_shuriken",
+		"Shuriken",
+		"offense,on,attack,ninja",
+		"shuriken",
+		"Activation your {misc:Primary skill} also throws a {offense:shuriken} that deals {offense:400%} {+100%} base damage. You can hold up to {misc:3} {+1} {offense:shurikens} which all reload over {misc:10} seconds."
+	],
+	[
+		-1,
+		1,
+		"missinguid_orangeScrap",
+		"Regenerating Scrap",
+		"utility,scrap,rare,shop",
+		"orangeScrap",
+		"Does nothing. Prioritized when used with {defense:Uncommon} 3D Printers. At the start of each stage, it regenerates."
+	],
+	[
+		-1,
+		1,
+		"missinguid_itemScrapGreen",
+		"Item Scrap, Green",
+		"utility,3d,green",
+		"scraps2",
+		"Does nothing. Prioritized when used with 3D Printers."
+	],
+	[
+		13,
+		1,
+		"Seed",
+		"Leeching Seed",
+		"defense,heal,on,hit",
+		"seed",
+		"Dealing damage {defense:heals} you for {defense:1} {+1} {defense:health}."
+	],
+	[
+		65,
+		1,
+		"SlowOnHit",
+		"Chronobauble",
+		"offense,on,hit",
+		"bauble",
+		"{misc:Slow} enemies for {misc:-60% movement speed} for {misc:2s} {+2s}."
+	],
+	[
+		62,
+		1,
+		"SprintArmor",
+		"Rose Buckler",
+		"defense,armour,shield",
+		"buckler",
+		"{defense:Increase armor} by {defense:30} {+30} while {misc:sprinting}."
+	],
+	[
+		21,
+		1,
+		"SprintOutOfCombat",
+		"Red Whip",
+		"defense,movespeed",
+		"whip",
+		"Leaving combat boosts {misc:movement speed} by {misc:30%} {+30%}."
+	],
+	[
+		103,
+		1,
+		"missinguid_squidPolyp",
+		"Squid Polyp",
+		"offense,summon,turret,squid,auto",
+		"squidTurret",
+		"Activating an interactable summons a {offense:Squid Turret} that attacks nearby enemies at {offense:100%} {+100%} {offense:attack speed}. Lasts {misc:30} seconds.",
+		"Activate 6 turrets in a single run."
+	],
+	[
+		-1,
+		1,
+		"missinguid_tank",
+		"Ignition Tank",
+		"offense,ignite,fire,dot",
+		"tank",
+		"Ignite effects deal {offense:+300%} {+300%} more damage over time."
+	],
+	[
+		86,
+		1,
+		"TPHealingNova",
+		"Lepton Daisy",
+		"defense,heal,flower",
+		"healFlower",
+		"Release a {defense:healing nova} during the Teleporter event, {defense:healing} all nearby allies for {defense:50%} of their maximum health. Occurs {defense:1} {+1} times."
+	],
+	[
+		-1,
+		1,
+		"missinguid_unstableTramsmitter",
+		"Unstable Transmitter",
+		"low,health,survival,explosion",
+		"unstableTramsmitter",
+		"When reaching below {defense:25%} health the Survivor explodes, dealing {offense:350%} {+350%|per item stack} damage to nearby enemies and teleporting to a random location.\nThis effect has a cooldown of {misc:2} minutes {-5%|per item stack}."
+	],
+	[
+		90,
+		1,
+		"Thorns",
+		"Razorwire",
+		"offense,on,hit,radius",
+		"razorHeadband",
+		"Getting hit causes you to explode in a burst of razors, dealing {offense:160% damage}.\nHits up to {offense:5} {+2} targets in a {offense:25m} {+10m} radius."
+	],
+	[
+		-1,
+		1,
+		"missinguid_noxiousThorn",
+		"Noxious Thorn",
+		"on,hit,nearby,mirror,bleed,debuff,stack",
+		"noxiousThorn",
+		"{offense:25% chance} on being hit to inflict nearby enemies with {offense:2} {+1} stacks of bleed.\nIf enemies are already inflicted with one or more stackable debuffs, add {offense:1} {+1} to those debuffs instead."
+	],
+	[
+		46,
+		1,
+		"WarCryOnMultiKill",
+		"Berzerker's Pauldron",
+		"offense,movespeed,on,kill,locked",
+		"berzerk",
+		"{offense:Killing 4 enemies} within {offense:1} second sends you into a {offense:frenzy} for {offense:6s} {+4s}.\nIncreases {misc:movement speed} by {misc:50%} and {offense:attack speed} by {offense:100%}.",
+		"Charge the Teleporter with less than 10% health."
+	],
+	[
+		"**** RARE ITEMS ****"
+	],
+	[
+		50,
+		2,
+		"AlienHead",
+		"Alien Head",
+		"utility",
+		"alien",
+		"{misc:Reduce skill cooldown} by {misc:25%} {+25%}."
+	],
+	[
+		85,
+		2,
+		"ArmorReductionOnHit",
+		"Shattering Justice",
+		"offense,armor,break,hammer,hit",
+		"hammer",
+		"After hitting an enemy {offense:5} times, reduce their {offense:armor} by {offense:60} for {offense:8} {+8} seconds."
+	],
+	[
+		80,
+		2,
+		"BarrierOnOverHeal",
+		"Aegis",
+		"utility,heal,defense",
+		"fullBarrier",
+		"Healing past full grants you a {defense:temporary barrier} for {defense:50%} {+50%} of the amount you {defense:healed}."
+	],
+	[
+		2,
+		2,
+		"Behemoth",
+		"Brilliant Behemoth",
+		"offense,explosion,on,hit",
+		"behemoth",
+		"All your {offense:attacks explode} in a {offense:4m} {+1.5m} radius for a bonus {offense:60%} TOTAL damage to nearby enemies."
+	],
+	[
+		-1,
+		2,
+		"missinguid_growthNectar",
+		"Growth Nectar",
+		"buff,utility,stack,stats",
+		"growthNectar",
+		"While benefiting from 5+ unique buffs, gain {misc:20%} {+20%} bonus stats for {misc:5} seconds."
+	],
+	[
+		38,
+		2,
+		"BounceNearby",
+		"Sentient Meat Hook",
+		"offense,utility,grab,locked",
+		"hook",
+		"{offense:20%} {+20%} chance on hit to {offense:fire homing hooks} at up to {offense:10} {+5} enemies for {offense:100%} TOTAL damage.",
+		"Loop back to the first stage."
+	],
+	[
+		-1,
+		2,
+		"missinguid_defensiveMicrobots",
+		"Defensive Microbots",
+		"defense,projectile,protection,shield",
+		"microbot",
+		"Shoot down {offense:1} {+1} projectiles within {offense:20m} every {offense:0.5 seconds}. {misc:Recharge rate scales with attack speed}."
+	],
+	[
+		35,
+		2,
+		"Clover",
+		"57 Leaf Clover",
+		"utility,locked",
+		"clover",
+		"All random effects are rolled {misc:+1} {+1} {misc:times for a favorable outcome}.",
+		"Complete 20 stages in a single run."
+	],
+	[
+		-1,
+		2,
+		"missinguid_",
+		"Laser scope",
+		"offence,critical,damage,x2",
+		"scope",
+		"{offense:Critical Strikes} deal an additional {offense:100% damage} {+100%}"
+	],
+	[
+		5,
+		2,
+		"Dagger",
+		"Ceremonial Dagger",
+		"offense,on,kill,tracking,attack",
+		"dagger",
+		"Killing an enemy fires out {offense:3 homing daggers} that deal {offense:150%} {+150%} base damage."
+	],
+	[
+		-1,
+		2,
+		"missinguid_droneBox",
+		"Spare Drone Parts",
+		"offense,drones,useless",
+		"droneBox",
+		"Gain {offense:Col. Droneman}.\nDrones gain {offense:+50%} {+50%} attack speed and cooldown reduction.\nDrones gain {offense:10%} chance to fire a {offense:missile} on hit, dealing {offense:300%} TOTAL damage.\nDrones gain an {offense:automatic chain gun} that deals {offense:6x100%} damage, bouncing to {offense:2} enemies."
+	],
+	[
+		66,
+		2,
+		"ExtraLife",
+		"Dio's Best Friend",
+		"utility,bear,death,jojo,revive,res,locked",
+		"dio",
+		"{misc:Upon Death}, this item will be {misc:consumed} and you will {defense:return to life} with {defense:3 seconds of invulnerability}.",
+		"Stay alive for 30 consecutive minutes."
+	],
+	[
+		22,
+		2,
+		"FallBoots",
+		"H3AD-5T v2",
+		"defense,attack,fall",
+		"cuffs",
+		"Increase {misc:jump height}.\nCreates a {offense:5m-100m} radius {offense:kinetic explosion} on hitting the ground, dealing {offense:1000%-10000%} base damage that scales up with {offense:fall distance}.\nRecharges in {offense:10} {-50%} seconds."
+	],
+	[
+		15,
+		2,
+		"GhostOnKill",
+		"Happiest Mask",
+		"offense,on,kill",
+		"mask",
+		"Killing enemies has a {offense:7%} chance to {offense:spawn a ghost} of the killed enemy with {offense:1500%} damage. Lasts {offense:30s} {+30s}."
+	],
+	[
+		-1,
+		2,
+		"missinguid_warBonds",
+		"War Bonds",
+		"utility,gold,stack,difficulty,level",
+		"warBonds",
+		"Yields {offense:75} gold {+25 gold|per item stack} based on current difficulty level and the survivor's level at the start of every stage."
+	],
+	[
+		69,
+		2,
+		"HeadHunter",
+		"Wake of Vultures",
+		"utility,elite,poe,headhunter",
+		"headhunter",
+		"Gain the {offense:power} of any killed elite monster for {offense:8s} {+5s}."
+	],
+	[
+		14,
+		2,
+		"Icicle",
+		"Frost Relic",
+		"offense,on,kill",
+		"ice",
+		"Killing an enemy surrounds you with an {offense:ice storm} that deals {offense:1200% damage per second} and {misc:slows} enemies by {misc:80%} for {misc:1.5s}.\nThe storm {offense:grows with every kill}, increasing it's radius by {offense:2m}.\nStacks up to {offense:18m} {+12m}."
+	],
+	[
+		-1,
+		2,
+		"missinguid_rainCoat",
+		"Ben's Raincot",
+		"defense,debuff,cleanse,tank",
+		"rainCoat",
+		"Prevents {misc:1} {+1} {offense:debuff} and instead grants a {defense:temporary barrier} for {defense:10%} of {defense:maximum health}. Recharges every {misc:5} seconds."
+	],
+	[
+		75,
+		2,
+		"IncreaseHealing",
+		"Rejuvenation Rack",
+		"defense,heal,double,locked",
+		"horn",
+		"{defense:Heal +100%} {+100%} more.",
+		"Without healing, reach and complete the 3rd Teleporter event."
+	],
+	[
+		70,
+		2,
+		"KillEliteFrenzy",
+		"Brainstalks",
+		"offense,locked",
+		"brain",
+		"Upon killing an elite monster, {offense:enter a frenzy} for {offense:4s} {+4s} where {misc:skills have no cooldowns}.",
+		"Defeat an Elite boss on Monsoon difficulty."
+	],
+	[
+		95,
+		2,
+		"LaserTurbine",
+		"Resonance Disc",
+		"offense,charge,piercing,explode",
+		"disc",
+		"Killing {offense:4} enemies in {misc:7 seconds} charges the Resonance Disc.\nThe disc launches itself toward a target for {offense:300%} base damage {+300%}, piercing all enemies it doesn't kill, and then explodes for {offense:1000%} base damage {+1000%}.\nReturns to the user, striking all enemies along the way for {offense:300%} base damage {+300%}."
+	],
+	[
+		-1,
+		2,
+		"missinguid_runicLens",
+		"Runic Lens",
+		"on,hit,spawn,meteor,target,targeted",
+		"runicLens",
+		"{misc:Overspill}. {misc:5%} chance {+1%|per 100% done on initial hit plus 1% per item stack} on hit to summon a meteor on the target, dealing {offense:2000%} damage {+50% damage|per 100% damage done on initial hit plus +50% damage per item stack}."
+	],
+	[
+		-1,
+		2,
+		"missinguid_hugeMissile",
+		"Pocket I.C.B.M",
+		"offense,missile,triple",
+		"hugeMissile",
+		"All missile items and equipments fire an additional {offense:2 missiles}. Increase missile damage by {offense:0%} {+50%}."
+	],
+	[
+		31,
+		2,
+		"NovaOnHeal",
+		"N'kuhana's Opinion",
+		"offense,locked",
+		"opinion",
+		"Store {defense:100%} {+100%} of healing as {defense:Soul Energy}.\nAfter your {defense:Soul Energy} reaches {defense:10%} of your {defense:maximum health}, {offense:fire a skull} that deals {offense:250%} of your {defense:Soul Energy} as {offense:damage}.",
+		"Find the Altar to N'kuhana."
+	],
+	[
+		-1,
+		2,
+		"missinguid_scorpion",
+		"Symbiotic Scorpion",
+		"utility,debuff,stack",
+		"scorpion",
+		"{offense:100%} chance on hit to reduce {offense:armor} by {offense:2} {+2} {offense:permanently}."
+	],
+	[
+		105,
+		2,
+		"missinguid_interstellarDeskPlant",
+		"Interstellar Desk Plant",
+		"heal,defense,on kill",
+		"deskPlant",
+		"On kill, plant a {defense:healing} fruit seed that grows into a plant after {misc:5} seconds.\nThe plant {defense:heals} for {defense:10%} of {defense:maximum health} every second to all allies withing {defense:5m} {+5m}. Last {misc:10} seconds."
+	],
+	[
+		-1,
+		2,
+		"missinguid_bottle",
+		"Bottled Chaos",
+		"utility,trigger,equipment,useless",
+		"bottle",
+		"Trigger a {offense:random equipment} effect {offense:1} {+1} time(s)."
+	],
+	[
+		-1,
+		2,
+		"missinguid_sonorousWhispers",
+		"Sonorous Whispers",
+		"on,kill,utility,drop,item",
+		"sonorousWhispers",
+		"When a large monster is killed it will always drop an item. All elites have a {misc:15%} chance of dropping an item {+5%|per item stack}."
+	],
+	[
+		-1,
+		2,
+		"missinguid_itemScrapRed",
+		"Item Scrap, Red",
+		"utility,3d,rare,red",
+		"scraps3",
+		"Does nothing. Prioritized when used with 3D Printers."
+	],
+	[
+		32,
+		2,
+		"ShockNearby",
+		"Unstable Tesla Coil",
+		"offense,close,locked",
+		"tesla",
+		"Fire out {offense:lightning} that hits {offense:3} {+2} enemies for {offense:200%} base damage every {offense:0.5s}.\nThe Tesla Coil switches off every {offense:10 seconds}.",
+		"Deal 5000 damage in one shot."
+	],
+	[
+		-1,
+		2,
+		"missinguid_electricBoomerang",
+		"Electric Boomerang",
+		"better,guitar,on,hit,electric,stun",
+		"electricBoomerang",
+		"{offense:15%} chance on hit to fire an electric boomerang that travels a short distance before returning, dealing {offense:30%} {+30%} damage and stunning all enemies hit."
+	],
+	[
+		51,
+		2,
+		"Talisman",
+		"Souldbound Catalyst",
+		"utility,equipment,locked",
+		"soul",
+		"{offense:Kills reduce} {misc:equipment cooldown} by {misc:4s} {+2s}.",
+		"Discover and activate 8 unique Newt Altars."
+	],
+	[
+		68,
+		2,
+		"UtilitySkillMagazine",
+		"Hardlight Afterburner",
+		"utility,charge",
+		"burner",
+		"Add {misc:+2} {+2} charges of your {misc:Utility skill}.\n{misc:Reduces Utility skill cooldown} by {misc:33%}."
+	],
+	[
+		"**** UNIQUE ITEMS ****"
+	],
+	[
+		101,
+		3,
+		"missinguid_artifactKey",
+		"Artifact Key",
+		"activation",
+		"artifactKey",
+		"A stone shard with immense power."
+	],
+	[
+		53,
+		3,
+		"BeetleGland",
+		"Queen's Gland",
+		"utility,invocation",
+		"beetle",
+		"Every 30 seconds, {misc:summon a Beetle Guard} with bonus {offense:300%} damage and {defense:100%} health.\nCan have up to {misc:1} {+1} Guards at a time."
+	],
+	[
+		-1,
+		3,
+		"missinguid_shatterspleen",
+		"Shatterspleen",
+		"offense,critical hit,bleed,explode,on death",
+		"critBleed",
+		"{offense:Critical Strikes bleed} enemies for {offense:240%} base damage. {offense:Bleeding} enemies {offense:explode} on death for {offense:400%} {+400%} damage, plus an additional {offense:15%} {+15%} of their maximum health."
+	],
+	[
+		-1,
+		3,
+		"missinguid_moltenPerforator",
+		"Molten Perforator",
+		"offense,magma,on hit",
+		"magmaTooth",
+		"{offense:10%} chance on hit to call forth {offense:3 magma balls} from an enemy, dealing {offense:300%} {+300%} damage and {offense:igniting} all enemies."
+	],
+	[
+		52,
+		3,
+		"Knurl",
+		"Titanic Knurl",
+		"defense,life",
+		"knurl",
+		"{defense:Increases maximum health} by {defense:40} {+40} and {defense:base health regeneration} by {defense:+1.6 hp/s} {+1.6 hp/s}."
+	],
+	[
+		-1,
+		3,
+		"missinguid_chargedPerforator",
+		"Charged Perforator",
+		"offense,lightning,random,new",
+		"whiteHook",
+		"{offense:10%} chance on hit to do down a lightning strike, dealing {offense:500%} {+500%} damage."
+	],
+	[
+		-1,
+		3,
+		"missinguid_defenseNucleus",
+		"Defense Nucleus",
+		"utility,summon,triangle",
+		"triangleSummon",
+		"Killing elite monsters spawns an {offense:Alpha Construct} with bonus {offense:300%} damage and {defense:300% health}. Limited to {misc:4} {+4}."
+	],
+	[
+		97,
+		3,
+		"NovaOnLowHealth",
+		"Genesis Loop",
+		"low,health,nova,explode,recharge,cooldown",
+		"weirdTail",
+		"Falling below {debuff:25% health} causes you to explode, dealing {offense:6000% base damage}. Recharges every {misc:30 seconds} {-50%}."
+	],
+	[
+		-1,
+		3,
+		"missinguid_planula",
+		"Planula",
+		"defense,heal,egg,flat,incoming,new",
+		"magmaEgg",
+		"Heal from {offense:incoming damage} for {defense:15} {+15}"
+	],
+	[
+		92,
+		3,
+		"Pearl",
+		"Pearl",
+		"defense,health,maximum",
+		"pearl",
+		"Increases {defense:maximum health} by {defense:10%} {+10%}."
+	],
+	[
+		-1,
+		3,
+		"missinguid_empathyCores",
+		"Empathy Cores",
+		"offense,summon,drone,boost,new",
+		"doubleDrone",
+		"Every 30 seconds, {misc:summon two Solus Probes} that gain {offense:+100%} {+100%} damage per {misc:ally on your team}."
+	],
+	[
+		-1,
+		3,
+		"missinguid_itemScrapYellow",
+		"Item Scrap, Yellow",
+		"utility,3d,unique,yelllow",
+		"scraps4",
+		"Does nothing. Prioritized when used with 3D Printers."
+	],
+	[
+		93,
+		3,
+		"ShinyPearl",
+		"Irradiant Pearl",
+		"defense,boost,statistics",
+		"shinyPearl",
+		"Increases {misc:ALL stats} by {misc:10%} {+10%}."
+	],
+	[
+		-1,
+		3,
+		"missinguid_miredUrn",
+		"Mired Urn",
+		"offense,heal,slow,near,proximity",
+		"tarUrn",
+		"While in combat, the nearest 1 {+1} characters to you within {offense:13m} whill be \"tethered\" to you, dealing {offense:100%} damage per second, applying {offense:tar}, and {defense:healing} your for {defense:100%} of the damage dealt."
+	],
+	[
+		83,
+		3,
+		"SprintWisp",
+		"Little Disciple",
+		"offense,tracking,sprint,attack",
+		"sprintingWisp",
+		"Fire a {offense:tracking wisp} for {offense:300%} {+300%} {offense:damage}.\nFires every 1.6 seconds while sprinting. Fire rate increases with {misc:movement speed}."
+	],
+	[
+		82,
+		3,
+		"TitanGoldDuringTP",
+		"Halcyon Seed",
+		"utility,invocation,boss,summon",
+		"goldenSeed",
+		"Summon {offense:Aurelionite} during the teleporter event.\nIt has {offense:100%} {+50%} {offense:damage} and {defense:100%} {+100%} {defense:health}."
+	],
+	[
+		"**** CORRUPTED ITEMS ****"
+	],
+	[
+		-1,
+		4,
+		"missinguid_corruptedBear",
+		"Safer Spaces",
+		"defense,cooldown,block",
+		"corruptedBear",
+		"{defense:Block} incoming damage once. Recharges after {misc:15 seconds} {-10%}.\n{corrupt:Corrupts all Tougher Times}."
+	],
+	[
+		-1,
+		4,
+		"missinguid_needletick",
+		"Needletick",
+		"offense,utility,collapse",
+		"needletick",
+		"{offense:10%} {+10%} chance to {offense:collapse} an enemy for {offense:400%} base damage.\n{corrupt:Corrupts all Tri-Tip Daggers}."
+	],
+	[
+		-1,
+		4,
+		"missinguid_corruptedGlasses",
+		"Lost Seer's Lenses",
+		"offense,crit,insta,kill,elite",
+		"corruptedGlasses",
+		"Your attacks have a {offense:0.5%} {+0.5%} chance to {offense:instantly kill} a {offense:non-Boss enemy}.\n{corrupt:Corrupts all Lens-Maker's Glasses}."
+	],
+	[
+		-1,
+		4,
+		"missinguid_weirdShroom",
+		"Weeping Fungus",
+		"defense,sprint,heal,percent",
+		"weirdShroom",
+		"{defense:Heals} for {defense:2%} {+2%} of your {defense:health} every second {misc:while sprinting}.\n{corrupt:Corrupts all Bustling Fungi}."
+	],
+	[
+		-1,
+		4,
+		"missinguid_corruptedKey",
+		"Encrusted Key",
+		"uility,chest,void",
+		"corruptedKey",
+		"A {misc:hidden cache} containing an item (60%/{defense:30%}/{debuff:10%}) will appear in a random location {misc:on each stage}. Opening the cache {misc:consumes} this item.\n{corrupt:Corrupts all Rusted Key}."
+	],
+	[
+		-1,
+		4,
+		"missinguid_corruptedThing",
+		"Polylute",
+		"offense,lightning,group",
+		"corruptedThing",
+		"{offense:25%} chance to fire {offense:lightning} for {offense:60%} TOTAL damage up to {offense:3} {+3} times.\n{corrupt:Corrupts all Ukuleles}."
+	],
+	[
+		-1,
+		4,
+		"missinguid_superRing",
+		"Singularity Band",
+		"offense,blackhole,grab,on,hit",
+		"superRing",
+		"Hits that deal {offense:more than 400% damage} also fire a black hole that {misc:draws enemies within 15m into its center}.\nLasts {misc:5} seconds before collapsing, dealing {offense:100%} {+100%} TOTAL damage.\nRecharges every {misc:20} seconds.\n{corrupt:Corrupts all Kjaro's Band and Runald's Band}."
+	],
+	[
+		-1,
+		4,
+		"missinguid_superCell",
+		"Lysate Cell",
+		"utility,stack,add,skill",
+		"purpleCell",
+		"Add {misc:+1} {+1} charge of your {misc:Special skill}.\n{corrupt:Corrupts all Fuell Cells}."
+	],
+	[
+		-1,
+		4,
+		"missinguid_flame",
+		"Voidsent Flame",
+		"offense,on,hit,burst,damage,zone,great",
+		"flame",
+		"Upon hitting an enemy at or above {offense:100% health}, {offense:detonate} them in a {offense:12m} {+2.4m} radius burst for {offense:260%} {+156%} base damage.\n{corrupt:Corrupts all Will-o'-the-wisps}."
+	],
+	[
+		-1,
+		4,
+		"missinguid_shrimp",
+		"Plasma Shrimp",
+		"offense,on,attack,missile",
+		"superMissile",
+		"Gain a {defense:shield} equal to {defense:10%} of your maximum health. While you have a {defense:shield}, hitting an enemy fires a missile that deals {offense:40%} {+50%} TOTAL damage.\n{corrupt:Corrupts all AtG Missile Mk. 1s}."
+	],
+	[
+		-1,
+		4,
+		"missinguid_plantTentacle",
+		"Tentabauble",
+		"utility,root,on,hit",
+		"plantTentacle",
+		"{misc:5%} {+5%} chance on hit to {offense:root} enemies for {misc:1s} {+1s}.\n{corrupt:Corrupts all Chronobaubles}."
+	],
+	[
+		-1,
+		4,
+		"missinguid_corruptedClover",
+		"Benthic Bloom",
+		"utility,upgrade,next,tier",
+		"corruptedClover",
+		"{misc:Upgrades 3} {+3} randoms items to items of the next {misc:higher rarity} at the {misc:start of each stage}.\n{corrupt:Corrupts all 57 Leaf Clovers}."
+	],
+	[
+		-1,
+		4,
+		"missinguid_hauntedBear",
+		"Pluripotent Larva",
+		"utility,on,death,corrupt,consume",
+		"hauntedBear",
+		"{misc:Upon death}, this item will be {misc:consumed} and you will {defense:return to life} with {defense:3 seconds of invulnerability}, and all of your items that can be {misc:corrupted} will be.\n{corrupt:Corrupts all Dio's Best Friends}."
+	],
+	[
+		-1,
+		4,
+		"missinguid_corruptedScorpion",
+		"Newly Hatched Zoea",
+		"offense,summon,void,ally",
+		"corruptedScorpion",
+		"Every {misc:60} {-50%} seconds, gain a random {corrupt:Void} ally. Can have up to {misc:1} {+1} allies at a time.\n{corrupt:Corrupts all Unique Items}."
+	],
+	[
+		"**** LUNAR ITEMS ****"
+	],
+	[
+		74,
+		5,
+		"AutoCastEquipment",
+		"Gesture of the Drowned",
+		"utility,equipment,locked",
+		"fossil",
+		"{misc:Reduce equipment cooldown} by {misc:50%} {+15%}.\nForces your Equipment to {misc:activate} whenever it is off {misc:cooldown}.",
+		"Kill 20 Hermit Crabs by chasing them off the edge of the map."
+	],
+	[
+		107,
+		5,
+		"missinguid_focusedConvergence",
+		"Focused Convergence",
+		"utility,teleporter,event,smaller,faster",
+		"orb",
+		"Teleporters charge {misc:30%} {+30%} {misc:faster}, but the size of the Teleporter zone is {debuff:50%} {-50%} smaller.",
+		"In 4 consecutives stages, don't leave the teleporter radius until it is fully charged."
+	],
+	[
+		44,
+		5,
+		"GoldOnHit",
+		"Brittle Crown",
+		"utility",
+		"crown",
+		"{misc:30% chance on hit} to gain {misc:2} {+2} {misc:gold}. {misc:Scales over time}.\n{debuff:Lose gold} equal to {debuff:100%} {+100%} of amount your are hit for OR lose % gold equal to {debuff:100%} {+100%} of the maximum health % you lost.\nChooses the greater of the two."
+	],
+	[
+		-1,
+		5,
+		"missinguid_coolJacket",
+		"Light Flux Pauldron",
+		"utility,skill,cooldown,bad,trade",
+		"coolJacket",
+		"Decrease {misc:skill cooldowns} by {misc:50%} {+50%}. Decrease {offense:attack speed} by {offense:50%} {+50%}."
+	],
+	[
+		-1,
+		5,
+		"missinguid_pauldron",
+		"Stone Flux Pauldron",
+		"utility,bad,trade",
+		"pauldron",
+		"Increase {defense:max health} by {defense:100%} {+100%}. Reduce {misc:movement speed} by {misc:50%} {+50%}."
+	],
+	[
+		-1,
+		5,
+		"missinguid_purity",
+		"Purity",
+		"utility,cooldown,reduction,bad luck,reroll",
+		"snowflake",
+		"All skill cooldowns are reduced by {misc:2} {+1} seconds. All random effects are rolled {misc:+1} {+1} times for an {debuff:unfavorable outcome}.",
+		"Beat the game in Monsoon difficulty."
+	],
+	[
+		43,
+		5,
+		"LunarDagger",
+		"Shaped Glass",
+		"offense,suicide",
+		"sword",
+		"Increase base damage by {offense:100%} {+100%}.\n{defense:Reduce maximum health by 50%} {+50%}."
+	],
+	[
+		96,
+		5,
+		"LunarPrimaryReplacement",
+		"Visions of Heresy",
+		"active,primary,replace,offense,damage,recharge,cooldown,skill,orb",
+		"weirdOrb",
+		"{misc:Replace your Primary Skill} with {misc:Hungering Gaze}.\nFire a flurry of {misc:tracking shards} that detonate after a delay, dealing {offense:120%} base damage. Hold up to 12 charges {+12} that reload after 2 seconds {+2}."
+	],
+	[
+		-1,
+		5,
+		"missinguid_hookOfHeresy",
+		"Hook of Heresy",
+		"active,secondary,replace,offense,skill,explode",
+		"purpleBlade",
+		"{misc:Replace your Secondary Skill} with {misc:Slicing Maelstrom}.\nCharge up a projectile that deals {offense:175% damage per second} to nearby enemies, exploding after {misc:3} seconds to deal {offense:700% damage} and {offense:root} enemies for {misc:3} {+3} seconds. Recharges after 5 {+5} seconds.",
+		"Kill 15 boss monsters in a single run."
+	],
+	[
+		-1,
+		5,
+		"missinguid_essenceOfHeresy",
+		"Essence of Heresy",
+		"active,special,replace,offense,skill,stack,explode",
+		"ocarina",
+		"{misc:Replace your Special Skill} with {misc:Ruin}.\nDealing damage adds a stack of {offense:Ruin} for 10 {+10} seconds. Activating the skill {offense:detonates} all Ruin stack at unlimited range, dealing {offense:300% damage} plus {offense:120% damage per stack of Ruin}.\nRecharges after 8 {+8} seconds.",
+		"Kill 15 boss monsters in a single run."
+	],
+	[
+		-1,
+		5,
+		"missinguid_whiteBall",
+		"Egocentrism",
+		"utility,sacrifice,item",
+		"whiteBall",
+		"Every {misc:3} {-50%} seconds, gain an {offense:orbiting bomb} that detonates on impact for {offense:360%} damage, up to a maximum of {misc:3} {+1} {misc:bombs}.\nEvery {misc:60} seconds, a random item is {misc:converted} into this item."
+	],
+	[
+		98,
+		5,
+		"LunarTrinket",
+		"Beads of Fealty",
+		"secret,unlock,zone,no,effect",
+		"beads",
+		"Seems to do nothing... {debuff:but...}",
+		"Unlock the new zone from the \"Hidden Realms\" update when you obliterate with this item."
+	],
+	[
+		88,
+		5,
+		"LunarUtilityReplacement",
+		"Strides of Heresy",
+		"utility,movement,skill,arm,speed,heal,defense",
+		"weirdArm",
+		"{misc:Replace your Utility Skill} with {misc:Shadowfade}.\nFade away, becoming {misc:intangible} and gaining {misc:+30% movement speed}. {defense:Heal} for {defense:25%} {+25%} {defense:of your maximum health}. Lasts 3 {+3} seconds.",
+		"Kill 15 boss monsters in a single run."
+	],
+	[
+		-1,
+		5,
+		"missinguid_defiantGouge",
+		"Defiant Gouge",
+		"offense,summon,shrine,on use",
+		"tools",
+		"Using a Shrine summons {debuff:enemies} nearby. {misc:Scales over time}."
+	],
+	[
+		-1,
+		5,
+		"missinguid_longstandingSolitude",
+		"Longstanding Solitude",
+		"on,level,up,free,purchase,conversion,increase,downsize",
+		"longstandingSolitude",
+		"{misc:On level up} gain a free unlock for the next purchase {+1 free unlock|per item stack} but {debuff:all gold is converted to experience. Anything that costs gold is increased by 100%} {+100%|per item stack}{debuff:.}"
+	],
+	[
+		-1,
+		5,
+		"missinguid_mercurialRachis",
+		"Mercurial Rachis",
+		"offense,power,zone,damage",
+		"spin",
+		"Creates a Ward of Power in a random location nearby that buffs both enemies and allies within {misc:16m} {+50%}, causing them to deal {offense:+50%} damage."
+	],
+	[
+		-1,
+		5,
+		"missinguid_domino",
+		"Eulogy Zero",
+		"utility,convert,chance,lunar",
+		"domino",
+		"Items have a {misc:5%} {+5%} chance to become a {misc:Lunar} item instead."
+	],
+	[
+		71,
+		5,
+		"RepeatHeal",
+		"Corpsebloom",
+		"defense,heal,dot",
+		"flower",
+		"{defense:Heal +100%} {+100%} more.\n{defense:All healing is applied over time}.\nCan {defense:heal} for a {defense:maximum} of {defense:10%} {-50%} of your {defense:health per second}."
+	],
+	[
+		49,
+		5,
+		"ShieldOnly",
+		"Transcendence",
+		"defense,chaos",
+		"transc",
+		"{defense:Convert} all but {defense:1 health} into {defense:regenerating shields}.\n{defense:Gain 50%} {+25%} {defense:maximum health}."
+	],
+	[
+		23,
+		5,
+		"BurnNearby",
+		"Helfire Tincture",
+		"offense,suicide,fire,equipment,locked",
+		"burn",
+		"Ignite ALL characters within 8m. Deal {offense:5% of your maximum health/second as burning} to yourself.\nThe burn is {offense:0.5x} stronger on allies, and {offense:24x} stronger on enemies.\nCooldown: {misc:45s}",
+		"Kill 15 enemies simultaneously."
+	],
+	[
+		26,
+		5,
+		"CrippleWard",
+		"Effigy of Grief",
+		"utility,equipment",
+		"slow",
+		"ALL characters are {misc:slowed by 50%} and has their {offense:armor reduced by 20}.\nCan place up to {misc:5}.\nCooldown: {misc:15s}"
+	],
+	[
+		3,
+		5,
+		"Meteor",
+		"Glowing Meteorite",
+		"offense,suicide,equipment,locked",
+		"meteorite",
+		"{offense:Rain meteors} from the sky, damaging ALL characters for {offense:600% damage per blast}.\nLast 20 seconds.",
+		"Carry 5 Lunar items in a single run."
+	],
+	[
+		28,
+		5,
+		"Tonic",
+		"Spinel Affliction",
+		"utility,buff,debuff,attack,speed,movespeed,health,regen",
+		"tonic",
+		"Drink the Tonic, gaining a boost for 15 seconds.\nIncreases {offense:damage} by {offense:+100%}.\nIncreases {offense:attack speed} by {offense:+70%}.\nIncreases {offense:armor} by {offense:+20}.\nIncreases {defense:maximum health} by {defense:+50%}.\nIncreases {defense:passive health regeneration} by {defense:+300%}.\nIncreases {misc:movespeed} by {misc:+30%}.\nWhen the tonic wears off, you have {debuff:20%} chance to gain a {debuff:Tonic Affliction, reducing all of your stats} by {debuff:-5%} {-5%}",
+		"Discover and enter three unique portals."
+	],
+	[
+		"**** EQUIPMENTS ****"
+	],
+	[
+		16,
+		6,
+		"BFG",
+		"Preon Accumulator",
+		"offense,locked",
+		"beam",
+		"Fires preon tendrils, zapping enemies within 35m up to {offense:600% damage/second}.\nOn contact, detonate in an enormous 20m explosion for {offense:4000% damage}.\nCooldown: {misc:140s}",
+		"Open the Timed Security Chest on Rallypoint Delta."
+	],
+	[
+		11,
+		6,
+		"Blackhole",
+		"Blackhole",
+		"offense,stack",
+		"blackhole",
+		"Fire a black hole that {misc:draws enemies within 30m into it's center}. Last 10 seconds.\nCooldown: {misc:60s}"
+	],
+	[
+		-1,
+		6,
+		"missinguid_oldGun",
+		"Trophy Hunter's Tricorn",
+		"utility,one,shoot,boss,drop,item",
+		"oldGun",
+		"{offense:Execute} any enemy capable of spawning a {offense:unique reward}, and it will drop that {offense:item}. Equipment is {misc:consumed} on use."
+	],
+	[
+		30,
+		6,
+		"Cleanse",
+		"Blast Shower",
+		"utility,defense,cleanse,debuff",
+		"potThing",
+		"{misc:Cleanse} all negative effects. Includes debuffs, damage over time, and nearby projectiles.\nCooldown: {misc:20s}",
+		"Die three fiery deaths."
+	],
+	[
+		-1,
+		6,
+		"CommandMissile",
+		"Disposable Missile Launcher",
+		"attack",
+		"missile",
+		"Fire a swarm of {offense:12} missiles that deal {offense:12x300%} damage.\nCooldown: {misc:45s}"
+	],
+	[
+		13,
+		6,
+		"CritOnUse",
+		"Ocular HUD",
+		"attack",
+		"hud",
+		"Gain {offense:+100% Critical Strike Chance} for 8 seconds.\nCooldown: {misc:60s}"
+	],
+	[
+		-1,
+		6,
+		"missinguid_forgiveMePlease",
+		"Forgive Me Please",
+		"offense,trigger,on kill",
+		"voodoo",
+		"Throw a cursed doll out that {offense:triggers} any {offense:On-kill} effects you have every {misc:1} second for {misc:8} seconds.\nCooldown: {misc:45}",
+		"Die 20 times."
+	],
+	[
+		14,
+		6,
+		"DroneBackup",
+		"The Back-up",
+		"utility,locked",
+		"drone",
+		"Call {offense:4 Strike Drones} to fight for you.\nLast 25 seconds.\nCooldown: {misc:100s}",
+		"Repair 30 drones or turrets."
+	],
+	[
+		31,
+		6,
+		"FireBallDash",
+		"Volcania Egg",
+		"utility,offense,detonate,movement",
+		"egg",
+		"Turn into a {offense:draconic fireball} for {offense:5} seconds. Deal {offense:500% damage} on impact.\nDetonates at the end for {offense:800% damage}.\nCooldown: {misc:30s}"
+	],
+	[
+		2,
+		6,
+		"Fruit",
+		"Foreign Fruit",
+		"defense,heal",
+		"fruit",
+		"Instantly heal for {defense:50% of your maximum health}.\nCooldown: {misc:45s}"
+	],
+	[
+		33,
+		6,
+		"GainArmor",
+		"Jade Elephant",
+		"utility,defense,resistance,armor",
+		"elephant",
+		"Gain {offense:500 armor} for {misc:5 seconds}.\nCooldown: {misc:45s}"
+	],
+	[
+		27,
+		6,
+		"Gateway",
+		"Eccentric Vase",
+		"utility,scan,locked",
+		"vase",
+		"Create a {misc:quantum tunnel} of up to {misc:1000m} in length. Lasts 30 seconds.\nCooldown: {misc:45s}",
+		"Defeat the guardian of Gilded Coast without any beacons deactivating."
+	],
+	[
+		20,
+		6,
+		"GoldGat",
+		"The Crowdfunder",
+		"offense,troll,locked",
+		"gatling",
+		"Fires a continuous barrage that deals {offense:100% damage per bullet}.\nCosts $1 per bullet. Costs increases over time.\nCooldown: {misc:5s}",
+		"Collect $30,480 total gold."
+	],
+	[
+		-1,
+		6,
+		"missinguid_goobo",
+		"Goobo Jr.",
+		"utility,clone,summon",
+		"goobo",
+		"Spawn a gummy clone that has {offense:700% damage} and {defense:700% health}. Expires in {misc:30} seconds.\nCooldown: {misc:100s}"
+	],
+	[
+		-1,
+		6,
+		"missinguid_seedOfLife",
+		"Seed of Life",
+		"utility,revive,bear",
+		"seedOfLife",
+		"Revives the user when killed or dead allies on activation. Consumed on use.",
+		"Journey to the Prime Meridian and defeat the False Son."
+	],
+	[
+		18,
+		6,
+		"Jetpack",
+		"Milky Chrisalis",
+		"utility,movespeed",
+		"larva",
+		"Sprout wings and {misc:fly for 15 seconds}.\nGain {misc:+20% movement speed} for the duration.\nCooldown: {misc:60s}"
+	],
+	[
+		-1,
+		6,
+		"missinguid_superMassiveLeech",
+		"Super Massive Leech",
+		"defense,heal,leech,on hit",
+		"leech",
+		"{defense:Heal} for {defense:20%} of the {offense:damage} you deal. Lasts {defense:8} seconds.\nCooldown: {misc:60s}"
+	],
+	[
+		19,
+		6,
+		"Lightning",
+		"Royal Capacitor",
+		"offense,locked",
+		"lightning",
+		"Call down a lightning strike on a targeted monster, dealing {offense:3000% damage} and {offense:stunning} nearby monsters.\nCooldown: {misc:20s}",
+		"Defeat the Teleporter bosses after activating 2 Shrines of the Moutain."
+	],
+	[
+		-1,
+		6,
+		"missinguid_molotov",
+		"Molotov (6-Pack)",
+		"offense,fire",
+		"molotov",
+		"Throw {offense:6} molotov cocktails that {offense:ignites} enemies for {offense:500% base damage}. Each molotov leaves a burning area for {offense:200% damage per second}.\nCooldown: {misc:45s}"
+	],
+	[
+		-1,
+		6,
+		"missinguid_creditCard",
+		"Executive Card",
+		"utility,shop,money,gold",
+		"creditCard",
+		"Whenever you make a gold purchase, get {misc:10%} of the spent gold back. If the purchase is a {misc:multishop} terminal, the other terminals will {misc:remaing open}.\nCooldown: {misc:0.1s}"
+	],
+	[
+		21,
+		6,
+		"PassiveHealing",
+		"Gnarled Woodsprite",
+		"defense,heal,locked",
+		"spirit",
+		"Gain a Woodsprite follower that heals a friendly target for {defense:10% of their maximum health} instantly, then {defense:1.5% of your maximum health} every second.\nActivating the equipment assigns a new target, or yourself if there are no targets available.\nCooldown: {misc:15s}",
+		"Fully upgrade a Shrine of the Woods."
+	],
+	[
+		-1,
+		6,
+		"missinguid_recycler",
+		"Recycler",
+		"utility,reroll,recycle,transform",
+		"recycler",
+		"{misc:Transform} an Item or Equipment into a different one. {misc:Can only be converted in the same tier one time}.\nCooldown: {misc:45s}",
+		"Destroy  20 flying rocks in Sky Meadow."
+	],
+	[
+		-1,
+		6,
+		"missinguid_sawmerang",
+		"Sawmerang",
+		"offense,boomerang",
+		"metalSpin",
+		"Throw {offense:three large saw blades} that slice through enemies for {offense:3x400%} damage.\nAlso deals an additional {offense:3x100% damage per second} while {offense:bleeding} enemies.\nCan {offense:strike} enemies again on the way back.\nCooldown: {misc:45s}"
+	],
+	[
+		25,
+		6,
+		"Scanner",
+		"Radar Scanner",
+		"utility,scan,locked",
+		"radar",
+		"{misc:Reveal} all interactables within 500m for {misc:10 seconds}.\nCooldown: {misc:45s}",
+		"Collect 10 Monster or Environment Logs."
+	],
+	[
+		-1,
+		6,
+		"missinguid_goragsOpus",
+		"Gorag's Opus",
+		"utility,offense,frenzy,movement speed,attack speed",
+		"drum",
+		"All allies enter a {offense:frenzy} for {misc:7} seconds. Increases {misc:movement speed} by {misc:50%} and {offense:attack speed} by {offense:100%}.\nCooldown: {misc:45s}"
+	],
+	[
+		-1,
+		6,
+		"missinguid_fridge",
+		"Remote Caffeinator",
+		"utility,heal,drop,coffee,deliver",
+		"fridge",
+		"Request an {offense:Eclipse Zero Vending Machine} from the {offense:UES Safe Travels}. Delivery guaranteed in {misc:5 seconds}, dealing {offense:2000% damage}. {defense:Heal} up to 3 targets for {defense:25% of their maximum health}.\nCooldown: {misc:60s}"
+	]
 ]
