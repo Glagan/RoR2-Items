@@ -35,17 +35,20 @@
 			/>
 			<div>
 				<p>
-					Outdated with version <b>{{ newVersion }}</b
-					>, I'm currently updating the items. Up to date with version: <b>{{ version }}</b> ({{ date }}).
+					Currently up to date with version <b>{{ version }}</b
+					>.<br />
+					Update in progress for version <b>{{ newVersion }}</b> ({{ date }}).
 				</p>
 				<p>
 					<a
 						:href="newUpdateLink"
 						rel="noreferrer noopener"
 						target="_blank"
-						class="flex items-center text-blue-600"
+						class="flex flex-row items-center text-blue-600 font-bold"
 					>
-						<SteamIcon /> New patch <ExternalLinkIcon class="w-4 h-4 ml-1 text-blue-600" />
+						<SteamIcon />
+						<span>New patch</span>
+						<ExternalLinkIcon class="w-4 h-4 ml-1 text-blue-600" />
 					</a>
 				</p>
 				<p class="mt-4" v-if="updating">{{ updating }}</p>
@@ -60,11 +63,11 @@ import { CheckCircleIcon, ExternalLinkIcon, XCircleIcon, RefreshIcon } from '@he
 import SteamIcon from './SteamIcon.vue';
 
 const version = ref('1.3.1#274 (Seeker of the Storm DLC)');
-const date = ref('August 27, 2024');
+const date = ref('December 10, 2024');
 const updateLink = ref('https://store.steampowered.com/news/app/632360/view/4281321170606899293');
-const newVersion = ref('1.3.1#274 (Seeker of the Storm DLC)');
-const newUpdateLink = ref('https://store.steampowered.com/news/app/632360/view/4281321170606899293');
-const updating = ref<string | false>('Currently updating for the latest DLC, Seekers of the Storm.');
+const newVersion = ref('1.3.6#371 (Seeker of the Storm DLC)');
+const newUpdateLink = ref('https://store.steampowered.com/news/app/632360/view/510692079688483816');
+const updating = ref<string | false>('Currently updating for the latest DLC update.');
 
 const upToDate = computed(() => {
 	return version.value == newVersion.value;
