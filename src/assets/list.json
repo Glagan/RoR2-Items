@@ -96,10 +96,10 @@
 		-1,
 		0,
 		"missinguid_warpedEcho",
-		"WarpedEcho",
+		"Warped Echo",
 		"defense,on,hit,on,taken",
 		"warpedEcho",
-		"On damage taken {offense:50%} of the damage is dealt immediately while the other {offense:50%} is delayed for {offense:3} seconds.\nThis effect has a cooldown of {misc:10} seconds. {Every additional item$} increases how many instances of this effect the player has."
+		"The next source of damage is {defense:reduced} by {defense:30%} and spread into {misc:3} {+1} {misc:hits}.\nAll echoed damage is {misc:non-lethal} except for the final hit.\nRecharges every {misc:15s} {-3%}."
 	],
 	[
 		42,
@@ -173,7 +173,7 @@
 		"Gasoline",
 		"offense,fire,on,kill",
 		"gasoline",
-		"Killing an enemy {offense:ignites} all enemies within {offense:12m} {+4m}.\nEnnemies {offense:burn} for {offense:150%} {+75%} base damage."
+		"Killing an enemy {offense:ignites} all enemies within {offense:12m} {+4m} for {offense:150%} base damage.\nAdditionally, ennemies {offense:burn} for {offense:150%} {+75%} base damage."
 	],
 	[
 		-1,
@@ -182,16 +182,7 @@
 		"Chronic Expansion",
 		"offense,buff,on,kill",
 		"chronicExpansion",
-		"Every {offense:5} enemies slain grants a damage counter bonus increasing the players damage by {offense:10%} {+5%|per item stack}, lasting as long as the player stays in combat."
-	],
-	[
-		-1,
-		0,
-		"missinguid_knockbackFin",
-		"Knockback Fin",
-		"utility,knockback,on,hit",
-		"knockbackFin",
-		"{misc:7.5%} {+7.5%} chance on hit to knock enemies into the air. {height increases}."
+		"Killing an enemy increases your damage by {offense:3.5%} {+1%}, up to {misc:10} {+5}, for {misc:7s}. Dealing damage refreshes the timer."
 	],
 	[
 		-1,
@@ -200,7 +191,7 @@
 		"Bolstering Lantern",
 		"utility,damage,low,health,berzerk",
 		"bolsteringLantern",
-		"When below {debuff:50% health} receive a damage increase of {offense:20%} {+20% damage bonus|per item stack}."
+		"Increase your {offense:attack speed} by {offense:10%} for up to {misc:4} {+2} enemies and allies within {misc:20} {+5} meters."
 	],
 	[
 		36,
@@ -229,15 +220,6 @@
 		"offense,closen,boost,damage",
 		"redCrystal",
 		"Increase damage to enemies withing {offense:13m} by {offense:20%} {+20%}."
-	],
-	[
-		-1,
-		0,
-		"missinguid_antlerShield",
-		"Antler Shield",
-		"utility,defense,reflect,mirror",
-		"antlerShield",
-		"{misc:55%} {+5%} chance on being hit to reflect {misc:10%} {+10%} damage back to the attacker."
 	],
 	[
 		-1,
@@ -275,6 +257,15 @@
 		"backupMag",
 		"Add {misc:+1} {+1} charge of your {misc:Secondary skill}.",
 		"Fully charge a Teleporter without getting hit."
+	],
+	[
+		-1,
+		0,
+		"missinguid_antlerShield",
+		"Elusive Antlers",
+		"utility,defense,reflect,mirror",
+		"antlerShield",
+		"Increases {misc:movement speed} by {misc:7%} {+7%}. Spawns orbs of energy nearby every {misc:10s} {-10%}, giving {misc:+12% movement speed} up to {misc:3} {+1} {misc:times} for {misc:12s}."
 	],
 	[
 		57,
@@ -369,7 +360,7 @@
 		"Ghor's Tome",
 		"utility,gold,book,treasure,flesh",
 		"goldBook",
-		"{misc:4%} {+4%} chance on kill to drop a treasure worth {misc:25$}. {misc:Scales over time.}"
+		"{misc:4%} {+4%} chance on kill to drop a treasure worth {misc:25 gold}. {misc:Scales over time.}"
 	],
 	[
 		11,
@@ -435,7 +426,7 @@
 		"Chance Doll",
 		"utility,drop,rarity,items,shrine,great,success,upgrade",
 		"chanceDoll",
-		"{misc:20%} {+8%} chance to get higher rarity items from chance shrines on success."
+		"On Shrine of Chance success, {misc:40%} {+10%} chance to get higher rarity items."
 	],
 	[
 		-1,
@@ -444,7 +435,7 @@
 		"Prayer Beads",
 		"utility,experience,weird",
 		"prayerBreads",
-		"Grows in power by absorbing experience, storing {misc:20%} {+5%|per item stack} of player stats per item level up. On removal, gain all stored stats."
+		"Grows in power by absorbing experience, storing {misc:20%} {+5%} bonus stats ({defense:health}, {defense:regeneration}, and {offense:damage}). On removal, gain all stored stats."
 	],
 	[
 		9,
@@ -501,7 +492,7 @@
 		"Luminous Shot",
 		"utility,secondary,skill,auto,attack,buff",
 		"luminousShot",
-		"Using the secondary skill charges the next primary attack, dealing {offense:+150%} damage {+25%|per item stack} per charge up to {misc:5} times {+1|per item stack}."
+		"Activating {misc:secondary skill} stores up to {misc:5 charges} {+1}. Requires {misc:3 charges} for your {misc:Primary skill} to fire lightning stikres, dealing {offense:175% TOTAL damage} {+50%} each.\n{misc:Reduces Secondary skill cooldown by 20%}."
 	],
 	[
 		33,
@@ -520,8 +511,17 @@
 		"Wax Quail",
 		"defense,movespeed,pigeon,locked",
 		"quail",
-		"{defense:Jumping} while {defense:sprinting} boosts you forward by {defense:10m} {+10m}.",
+		"{misc:Jumping} while {misc:sprinting} boosts you forward by {misc:10m} {+10m}.",
 		"Reach +300% movespeed (include sprinting)."
+	],
+	[
+		-1,
+		1,
+		"missinguid_knockbackFin",
+		"Breaching Fin",
+		"utility,knockback,on,hit",
+		"breachingFin",
+		"Grounded enemies hit with any {misc:skill} are {misc:launched} and {misc:stunned}. Enemies hit while airborne are {misc:launched} again up to {misc:2 times} {+1}. Launched enemies take increased damage by {offense:20%} from all sources per launch. Recharges after {misc:10s}."
 	],
 	[
 		-1,
@@ -657,7 +657,7 @@
 		"Unstable Transmitter",
 		"low,health,survival,explosion",
 		"unstableTramsmitter",
-		"When reaching below {defense:25%} health the Survivor explodes, dealing {offense:350%} {+350%|per item stack} damage to nearby enemies and teleporting to a random location.\nThis effect has a cooldown of {misc:2} minutes {-5%|per item stack}."
+		"Falling below {debuff:25% health} gives you {defense:75%} of your {defense:maximum health} as a {defense:temporary barrier}.\nGain a dimensional aura for {misc:8s} that {offense:bleeds} and {misc:teleports} away enemies.\n{offense:Enemies killed} by the aura {misc:extend} the duration by 1s.\nRecharges every {misc:45s} {+10%}."
 	],
 	[
 		90,
@@ -675,7 +675,7 @@
 		"Noxious Thorn",
 		"on,hit,nearby,mirror,bleed,debuff,stack",
 		"noxiousThorn",
-		"{offense:25% chance} on being hit to inflict nearby enemies with {offense:2} {+1} stacks of bleed.\nIf enemies are already inflicted with one or more stackable debuffs, add {offense:1} {+1} to those debuffs instead."
+		"Gain {offense:10%} chance to {offense:bleed} an enemy. On killing an enemy, {offense:transfer 33%} of every debuff stack to {offense:1 enemy} {+1} within {misc:20m} {+5m}."
 	],
 	[
 		46,
@@ -733,7 +733,7 @@
 		"Growth Nectar",
 		"buff,utility,stack,stats",
 		"growthNectar",
-		"While benefiting from 5+ unique buffs, gain {misc:20%} {+20%} bonus stats for {misc:5} seconds."
+		"Grants {misc:7%} {+7%} increase to {misc:ALL stats} for each buff, up to a maximum of {misc:4} {+4}."
 	],
 	[
 		38,
@@ -826,7 +826,7 @@
 		"War Bonds",
 		"utility,gold,stack,difficulty,level",
 		"warBonds",
-		"Yields {offense:75} gold {+25 gold|per item stack} based on current difficulty level and the survivor's level at the start of every stage."
+		"During boss events, {misc:5} missiles bombard the area, dealing {offense:2.5%} {+2.5%} {offense:of boss' Max Health in damage}.\nBefore the boss event, gain additional missiles, up to a maximum of {misc:20} {+5}, per {misc:25} gold gained.\b{misc:Gold Requirement scales over time}."
 	],
 	[
 		69,
@@ -891,7 +891,7 @@
 		"Runic Lens",
 		"on,hit,spawn,meteor,target,targeted",
 		"runicLens",
-		"{misc:Overspill}. {misc:5%} chance {+1%|per 100% done on initial hit plus 1% per item stack} on hit to summon a meteor on the target, dealing {offense:2000%} damage {+50% damage|per 100% damage done on initial hit plus +50% damage per item stack}."
+		"{offense:3%} chance on hit to call a meteor strike, dealing {offense:2000%} base damage. Every {offense:100%} attack damage dealth increases the activation chance by {offense:3%} {+3%} and damage by {offense:150%} {+50%}."
 	],
 	[
 		-1,
@@ -946,7 +946,7 @@
 		"Sonorous Whispers",
 		"on,kill,utility,drop,item",
 		"sonorousWhispers",
-		"When a large monster is killed it will always drop an item. All elites have a {misc:15%} chance of dropping an item {+5%|per item stack}."
+		"When a large monster is killed it will always drop an item. All elites have a {misc:4%} chance of dropping an item {+1%}."
 	],
 	[
 		-1,
@@ -1131,7 +1131,7 @@
 		"Little Disciple",
 		"offense,tracking,sprint,attack",
 		"sprintingWisp",
-		"Fire a {offense:tracking wisp} for {offense:300%} {+300%} {offense:damage}.\nFires every 1.6 seconds while sprinting. Fire rate increases with {misc:movement speed}."
+		"Fire a {offense:tracking wisp} for {offense:300%} {+300%} {offense:damage}.\nFires every {misc:1.6} seconds while sprinting. Fire rate increases with {misc:movement speed}."
 	],
 	[
 		82,
@@ -1301,7 +1301,7 @@
 		"Brittle Crown",
 		"utility",
 		"crown",
-		"{misc:30% chance on hit} to gain {misc:2} {+2} {misc:gold}. {misc:Scales over time}.\nOn taking damage, {debuff:lose gold} equal to {debuff:100%} {+100%} of the maximum health percentage you lost."
+		"{misc:30% chance on hit} to gain {misc:2} {+2} {misc:gold}. {misc:Scales over time}.\nOn taking damage, {debuff:lose gold} equal to {debuff:100%} {+100%} of the {debuff:maximum health percentage you lost}."
 	],
 	[
 		-1,
@@ -1414,7 +1414,7 @@
 		"Longstanding Solitude",
 		"on,level,up,free,purchase,conversion,increase,downsize",
 		"longstandingSolitude",
-		"{misc:On level up} gain a free unlock for the next purchase {+1 free unlock|per item stack} but {debuff:all gold is converted to experience. Anything that costs gold is increased by 100%} {+100%|per item stack}{debuff:.}"
+		"{misc:On level up} gain a free unlock for the next purchase {+1} but all gold is converted to experience.\nAnything that costs gold is {misc:increased by 50%} {+50%}."
 	],
 	[
 		-1,
@@ -1459,7 +1459,7 @@
 		"Helfire Tincture",
 		"offense,suicide,fire,equipment,locked",
 		"burn",
-		"Ignite ALL characters within 8m. Deal {offense:5% of your maximum health/second as burning} to yourself.\nThe burn is {offense:0.5x} stronger on allies, and {offense:24x} stronger on enemies.\nCooldown: {misc:45s}",
+		"{offense:Ignite} ALL characters within 15m. Deal {offense:5% of your maximum health/second as burning} to yourself.\nThe burn is {offense:0.5x} stronger on allies, and {offense:24x} stronger on enemies.\nCooldown: {misc:45s}",
 		"Kill 15 enemies simultaneously."
 	],
 	[
@@ -1478,7 +1478,7 @@
 		"Glowing Meteorite",
 		"offense,suicide,equipment,locked",
 		"meteorite",
-		"{offense:Rain meteors} from the sky, damaging ALL characters for {offense:600% damage per blast}.\nLast 20 seconds.",
+		"{offense:Rain meteors} from the sky, damaging ALL characters for {offense:600% damage per blast}.\nLast 20 seconds.\nCooldown: {misc:140s}",
 		"Carry 5 Lunar items in a single run."
 	],
 	[
@@ -1488,7 +1488,7 @@
 		"Spinel Affliction",
 		"utility,buff,debuff,attack,speed,movespeed,health,regen",
 		"tonic",
-		"Drink the Tonic, gaining a boost for 15 seconds.\nIncreases {offense:damage} by {offense:+100%}.\nIncreases {offense:attack speed} by {offense:+70%}.\nIncreases {offense:armor} by {offense:+20}.\nIncreases {defense:maximum health} by {defense:+50%}.\nIncreases {defense:passive health regeneration} by {defense:+300%}.\nIncreases {misc:movespeed} by {misc:+30%}.\nWhen the tonic wears off, you have {debuff:20%} chance to gain a {debuff:Tonic Affliction, reducing all of your stats} by {debuff:-5%} {-5%}",
+		"Drink the Tonic, gaining a boost for 15 seconds.\nIncreases {offense:damage} by {offense:+100%}.\nIncreases {offense:attack speed} by {offense:+70%}.\nIncreases {offense:armor} by {offense:+20}.\nIncreases {defense:maximum health} by {defense:+50%}.\nIncreases {defense:passive health regeneration} by {defense:+300%}.\nIncreases {misc:movespeed} by {misc:+30%}.\nWhen the tonic wears off, you have {debuff:20%} chance to gain a {debuff:Tonic Affliction, reducing all of your stats} by {debuff:-5%} {-5%}.\nCooldown: {misc:60s}",
 		"Discover and enter three unique portals."
 	],
 	[
@@ -1631,9 +1631,9 @@
 		6,
 		"missinguid_seedOfLife",
 		"Seed of Life",
-		"utility,revive,bear",
+		"utility,revive,bear,invulnerability",
 		"seedOfLife",
-		"Revives the user when killed or dead allies on activation. Consumed on use.\nCooldown: {misc:60s}",
+		"{defense:Revive} {misc:dead, friendly Survivors} upon activation. {misc:Dying} while holding this equipment {defense:returns only you to life}. {defense:Reviving} gives {defense:3s of invulnerability} and {misc:consumes} the equipment.",
 		"Journey to the Prime Meridian and defeat the False Son."
 	],
 	[
