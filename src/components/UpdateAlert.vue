@@ -62,7 +62,7 @@ import { computed, ref } from 'vue';
 import { CheckCircleIcon, ExternalLinkIcon, XCircleIcon, RefreshIcon } from '@heroicons/vue/outline';
 import SteamIcon from './SteamIcon.vue';
 
-const version = ref('1.3.1#274 (Seeker of the Storm DLC)');
+const version = ref('1.3.6#371 (Seeker of the Storm DLC)');
 const date = ref('December 10, 2024');
 const updateLink = ref('https://store.steampowered.com/news/app/632360/view/4281321170606899293');
 const newVersion = ref('1.3.6#371 (Seeker of the Storm DLC)');
