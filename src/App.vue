@@ -74,7 +74,21 @@
 			<template v-else>
 				<div class="alert w-full mb-1 overflow-hidden bg-blue-50 text-blue-600 rounded-md shadow-md">
 					<div class="p-4 flex items-center border-l-4 border-blue-600 tracking-normal">
-						<InformationCircleIcon class="mr-2 w-9 h-9 text-blue-600" />
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="mr-2 w-9 h-9 text-blue-600"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+							/>
+						</svg>
+
 						No Items found.
 					</div>
 				</div>
@@ -92,7 +106,6 @@ import allItems from './assets/list.json';
 import Rarity from './Rarity';
 import FilterButton from './components/FilterButton.vue';
 import UpdateAlert from './components/UpdateAlert.vue';
-import { InformationCircleIcon } from '@heroicons/vue/outline';
 
 /**
  * Additional hidden equipments:
