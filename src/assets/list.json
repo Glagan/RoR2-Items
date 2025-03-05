@@ -99,7 +99,7 @@
 		"Warped Echo",
 		"defense,on,hit,on,taken",
 		"warpedEcho",
-		"The next source of damage is {defense:reduced} by {defense:30%} and spread into {misc:3} {+1} {misc:hits}.\nAll echoed damage is {misc:non-lethal} except for the final hit.\nRecharges every {misc:15s} {-3%}."
+		"The next source of damage is {defense:reduced} by {defense:20%} and spread into {misc:3} {+1} {misc:hits}.\nAll echoed damage is {misc:non-lethal} except for the final hit.\nRecharges every {misc:15s}."
 	],
 	[
 		42,
@@ -191,7 +191,7 @@
 		"Bolstering Lantern",
 		"utility,damage,low,health,berzerk",
 		"bolsteringLantern",
-		"Increase your {offense:attack speed} by {offense:10%} for up to {misc:4} {+2} enemies and allies within {misc:20} {+5} meters."
+		"Increase your {offense:attack speed} by {offense:7.5%} for up to {misc:4} {+2} enemies and allies within {misc:20} {+5} meters."
 	],
 	[
 		36,
@@ -265,7 +265,7 @@
 		"Elusive Antlers",
 		"utility,defense,reflect,mirror",
 		"antlerShield",
-		"Increases {misc:movement speed} by {misc:7%} {+7%}. Spawns orbs of energy nearby every {misc:10s} {-10%}, giving {misc:+12% movement speed} up to {misc:3} {+1} {misc:times} for {misc:12s}."
+		"Spawns orbs of energy nearby every {misc:10s} {-10%}, giving {misc:+12% movement speed} up to {misc:3} {+1} {misc:times} for {misc:12s}."
 	],
 	[
 		57,
@@ -521,7 +521,7 @@
 		"Breaching Fin",
 		"utility,knockback,on,hit",
 		"breachingFin",
-		"Grounded enemies hit with any {misc:skill} are {misc:launched} and {misc:stunned}. Enemies hit while airborne are {misc:launched} again up to {misc:2 times} {+1}. Launched enemies take increased damage by {offense:20%} from all sources per launch. Recharges after {misc:10s}."
+		"Grounded enemies hit with any {misc:skill} are {misc:launched} and {misc:stunned}. Enemies hit while airborne are {misc:launched} again up to {misc:2 times} {+1}. Launched enemies take increased damage by {offense:10%} from all sources per launch. Recharges after {misc:15s}."
 	],
 	[
 		-1,
@@ -657,7 +657,7 @@
 		"Unstable Transmitter",
 		"low,health,survival,explosion",
 		"unstableTramsmitter",
-		"Falling below {debuff:25% health} gives you {defense:75%} of your {defense:maximum health} as a {defense:temporary barrier}.\nGain a dimensional aura for {misc:8s} that {offense:bleeds} and {misc:teleports} away enemies.\n{offense:Enemies killed} by the aura {misc:extend} the duration by 1s.\nRecharges every {misc:45s} {+10%}."
+		"Falling below {debuff:25% health} gives you {defense:50%} of your {defense:maximum health} as a {defense:temporary barrier}.\nGain a dimensional aura for {misc:8s} that {offense:bleeds} and {misc:teleports} away enemies.\n{offense:Enemies killed} by the aura {misc:extend} the duration by 1s.\nAt the start of each stage, it regenerates."
 	],
 	[
 		90,
@@ -733,7 +733,7 @@
 		"Growth Nectar",
 		"buff,utility,stack,stats",
 		"growthNectar",
-		"Grants {misc:7%} {+7%} increase to {misc:ALL stats} for each buff, up to a maximum of {misc:4} {+4}."
+		"Grants {misc:4%} increase to {misc:ALL stats} for each buff, up to a maximum of {misc:4} {+4}."
 	],
 	[
 		38,
@@ -826,7 +826,7 @@
 		"War Bonds",
 		"utility,gold,stack,difficulty,level",
 		"warBonds",
-		"During boss events, {misc:5} missiles bombard the area, dealing {offense:2.5%} {+2.5%} {offense:of boss' Max Health in damage}.\nBefore the boss event, gain additional missiles, up to a maximum of {misc:20} {+5}, per {misc:25} gold gained.\b{misc:Gold Requirement scales over time}."
+		"During boss events, {misc:5} missiles bombard the area, dealing {offense:2.5%} {+2.5%} {offense:of boss' Max Health in damage}.\nBefore the boss event, gain additional missiles, up to a maximum of {misc:20} {+5}, per {misc:50} gold gained.\b{misc:Gold Requirement scales over time}."
 	],
 	[
 		69,

@@ -112,11 +112,11 @@
 import { computed, ref } from 'vue';
 import SteamIcon from './SteamIcon.vue';
 
-const version = ref('1.3.6#371 (Seeker of the Storm DLC)');
-const date = ref('December 10, 2024');
-const updateLink = ref('https://store.steampowered.com/news/app/632360/view/4281321170606899293');
-const newVersion = ref('1.3.6#371 (Seeker of the Storm DLC)');
-const newUpdateLink = ref('https://store.steampowered.com/news/app/632360/view/510692079688483816');
+const version = ref('1.3.7#438 (Seeker of the Storm DLC)');
+const date = ref('March 5, 2025');
+const updateLink = ref('https://store.steampowered.com/news/app/632360/view/524210308312467800');
+const newVersion = ref('1.3.7#438 (Seeker of the Storm DLC)');
+const newUpdateLink = ref('https://store.steampowered.com/news/app/632360/view/524210308312467800');
 const updating = ref<string | false>('Currently updating for the latest DLC update.');
 
 const upToDate = computed(() => {
