@@ -36,6 +36,15 @@
 		"Increases {offense:attack speed} by {offense:7.5%} {+7.5%} and {misc:movement speed} by {misc:7%} {+7%}."
 	],
 	[
+		-1,
+		0,
+		"missinguid_bolsteringLantern",
+		"Bolstering Lantern",
+		"utility,damage,low,health,berzerk",
+		"bolsteringLantern",
+		"Increase your {offense:attack speed} by {offense:7.5%} for up to {misc:4} {+2} enemies and allies within {misc:20} {+5} meters."
+	],
+	[
 		84,
 		0,
 		"BarrierOnKill",
@@ -51,7 +60,7 @@
 		"Tougher Times",
 		"defense,block,locked",
 		"bear",
-		"{defense:15%} {+15%} chance to {defense:block} incoming damage.\n{misc:Unaffected by the luck}.",
+		"{defense:15%} {+15%} chance to {defense:block} incoming damage.\n{misc:Unaffected by luck}.",
 		"Die 5 times."
 	],
 	[
@@ -183,15 +192,6 @@
 		"offense,buff,on,kill",
 		"chronicExpansion",
 		"Killing an enemy increases your damage by {offense:3.5%} {+1%}, up to {misc:10} {+5}, for {misc:7s}. Dealing damage refreshes the timer."
-	],
-	[
-		-1,
-		0,
-		"missinguid_bolsteringLantern",
-		"Bolstering Lantern",
-		"utility,damage,low,health,berzerk",
-		"bolsteringLantern",
-		"Increase your {offense:attack speed} by {offense:7.5%} for up to {misc:4} {+2} enemies and allies within {misc:20} {+5} meters."
 	],
 	[
 		36,
@@ -657,7 +657,7 @@
 		"Unstable Transmitter",
 		"low,health,survival,explosion",
 		"unstableTramsmitter",
-		"Falling below {debuff:25% health} gives you {defense:50%} of your {defense:maximum health} as a {defense:temporary barrier}.\nGain a dimensional aura for {misc:8s} that {offense:bleeds} and {misc:teleports} away enemies.\n{offense:Enemies killed} by the aura {misc:extend} the duration by 1s.\nAt the start of each stage, it regenerates."
+		"Falling below {debuff:25% health} gives you a {defense:temporary barrier} and a dimensional aura that {offense:bleeds} and {misc:teleports} away enemies for {misc:8s}.\n{offense:Enemies killed} by the aura {misc:extend} the duration by {misc:1s}.\nAt the start of each stage, it regenerates."
 	],
 	[
 		90,
@@ -707,6 +707,15 @@
 		"offense,armor,break,hammer,hit",
 		"hammer",
 		"After hitting an enemy {offense:5} times, reduce their {offense:armor} by {offense:60} for {offense:8} {+8} seconds."
+	],
+	[
+		-1,
+		2,
+		"missinguid_warBonds",
+		"War Bonds",
+		"utility,gold,stack,difficulty,level",
+		"warBonds",
+		"During boss events, {misc:5} missiles bombard the area, dealing {offense:2.5%} {+2.5%} {offense:of boss' Max Health in damage}.\nBefore the boss event, gain additional missiles, up to a maximum of {misc:20} {+5}, per {misc:50} gold gained.\b{misc:Gold Requirement scales over time}."
 	],
 	[
 		80,
@@ -820,15 +829,6 @@
 		"Killing enemies has a {offense:7%} chance to {offense:spawn a ghost} of the killed enemy with {offense:1500%} damage. Lasts {offense:30s} {+30s}."
 	],
 	[
-		-1,
-		2,
-		"missinguid_warBonds",
-		"War Bonds",
-		"utility,gold,stack,difficulty,level",
-		"warBonds",
-		"During boss events, {misc:5} missiles bombard the area, dealing {offense:2.5%} {+2.5%} {offense:of boss' Max Health in damage}.\nBefore the boss event, gain additional missiles, up to a maximum of {misc:20} {+5}, per {misc:50} gold gained.\b{misc:Gold Requirement scales over time}."
-	],
-	[
 		69,
 		2,
 		"HeadHunter",
@@ -864,6 +864,15 @@
 		"horn",
 		"{defense:Heal +100%} {+100%} more.",
 		"Without healing, reach and complete the 3rd Teleporter event."
+	],
+	[
+		-1,
+		2,
+		"missinguid_sonorousWhispers",
+		"Sonorous Whispers",
+		"on,kill,utility,drop,item",
+		"sonorousWhispers",
+		"When a large monster is killed it will always drop an item. All elites have a {misc:4%} chance of dropping an item {+1%}."
 	],
 	[
 		70,
@@ -942,15 +951,6 @@
 	[
 		-1,
 		2,
-		"missinguid_sonorousWhispers",
-		"Sonorous Whispers",
-		"on,kill,utility,drop,item",
-		"sonorousWhispers",
-		"When a large monster is killed it will always drop an item. All elites have a {misc:4%} chance of dropping an item {+1%}."
-	],
-	[
-		-1,
-		2,
 		"missinguid_itemScrapRed",
 		"Item Scrap, Red",
 		"utility,3d,rare,red",
@@ -974,7 +974,7 @@
 		"Electric Boomerang",
 		"better,guitar,on,hit,electric,stun",
 		"electricBoomerang",
-		"{offense:15%} chance on hit to fire an electric boomerang that travels a short distance before returning, dealing {offense:30%} {+30%} damage and stunning all enemies hit."
+		"{offense:15%} chance on hit to fire an electric boomerang that slices through enemies dealing {offense:120% base damage} and deals an additional {offense:120%} {+120%} {offense:base damage per second} and {offense:stuns} all enemies hit.\nCan {offense:strike} enemies on the way back."
 	],
 	[
 		51,
@@ -1122,7 +1122,7 @@
 		"Mired Urn",
 		"offense,heal,slow,near,proximity",
 		"tarUrn",
-		"While in combat, the nearest 1 {+1} characters to you within {offense:13m} whill be \"tethered\" to you, dealing {offense:100%} damage per second, applying {offense:tar}, and {defense:healing} your for {defense:100%} of the damage dealt."
+		"While in combat, the nearest 1 {+1} enemies to you within {offense:13m} whill be \"tethered\" to you, dealing {offense:100%} damage per second, applying {offense:tar}, and {defense:healing} your for {defense:100%} of the damage dealt."
 	],
 	[
 		83,
@@ -1356,7 +1356,7 @@
 		"Hook of Heresy",
 		"active,secondary,replace,offense,skill,explode",
 		"purpleBlade",
-		"{misc:Replace your Secondary Skill} with {misc:Slicing Maelstrom}.\nCharge up a projectile that deals {offense:175% damage per second} to nearby enemies, exploding after {misc:3} seconds to deal {offense:700% damage} and {offense:root} enemies for {misc:3} {+3} seconds. Recharges after 5 {+5} seconds.",
+		"{misc:Replace your Secondary Skill} with {misc:Slicing Maelstrom}.\nCharge up a projectile that deals {offense:875% damage per second} to nearby enemies, exploding after {misc:3} seconds to deal {offense:700% damage} and {offense:root} enemies for {misc:3} {+3} seconds. Recharges after 5 {+5} seconds.",
 		"Kill 15 boss monsters in a single run."
 	],
 	[
