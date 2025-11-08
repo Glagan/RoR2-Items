@@ -1,6 +1,12 @@
 <template>
-	<button class="filter mr-2 p-1 rounded-md" :class="cssClass" @click.prevent="select">
-		{{ name }}
+	<button class="filter mr-2 p-1 rounded-md space-x-2" :class="cssClass" @click.prevent="select">
+		<span>{{ name }}</span>
+		<span
+			v-if="showBadge"
+			class="inline-flex min-w-6 justify-center rounded-full bg-yellow-400/90 px-2 text-xs font-semibold text-gray-900"
+		>
+			{{ badgeValue }}
+		</span>
 	</button>
 </template>
 
@@ -13,6 +19,8 @@ const props = defineProps<{
 	selected: string | number;
 	rarity: string | number;
 	name: string;
+	badgeCount?: number;
+	hideBadgeZero?: boolean;
 }>();
 
 const cssClass = computed(() => {
@@ -24,6 +32,14 @@ const cssClass = computed(() => {
 const select = () => {
 	emit('selectRarity', props.rarity);
 };
+
+const showBadge = computed(() => {
+	if (props.badgeCount === undefined) return false;
+	if (props.hideBadgeZero && props.badgeCount === 0) return false;
+	return props.badgeCount > 0 || !props.hideBadgeZero;
+});
+
+const badgeValue = computed(() => props.badgeCount ?? 0);
 </script>
 
 <style scoped>

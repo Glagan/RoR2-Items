@@ -47,10 +47,10 @@
 					How to Unlock
 				</div>
 				<div class="item-body flex flex-row flex-nowrap bg-gray-800" v-if="item">
-					<div class="flex-grow-0 flex-shrink-0 border-r border-white">
+					<div class="grow-0 shrink-0 border-r border-white">
 						<img v-if="item.image" :src="`img/${item.image}.jpg`" width="90" height="90" />
 					</div>
-					<div class="flex-grow p-1 overflow-y-auto">{{ item.unlock }}</div>
+					<div class="grow p-1 overflow-y-auto">{{ item.unlock }}</div>
 				</div>
 				<div class="flex justify-end p-2 border-t border-white bg-gray-700">
 					<button

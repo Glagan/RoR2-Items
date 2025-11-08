@@ -10,6 +10,8 @@ interface ItemDescription {
 	unlock?: string;
 }
 
+type ItemUid = ItemDescription['uid'];
+
 type RawItemDescription = [
 	id: number,
 	rarity: import('./Rarity').Rarity,
