@@ -1,5 +1,5 @@
 <template>
-	<button class="filter mr-2 p-1 rounded-md items-center space-x-2" :class="cssClass" @click.prevent="select">
+	<button class="filter mr-2 p-1 rounded-md space-x-2" :class="cssClass" @click.prevent="select">
 		<span>{{ name }}</span>
 		<span
 			v-if="showBadge"

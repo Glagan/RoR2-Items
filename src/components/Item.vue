@@ -37,7 +37,6 @@
 						/>
 					</svg>
 				</button>
-
 			</div>
 		</div>
 		<div class="item-body flex flex-row flex-nowrap">
@@ -127,20 +126,18 @@ const starButtonClass = computed(() => {
 		'w-8',
 		'items-center',
 		'justify-center',
-		'rounded-xl',
+		'rounded-lg',
 		'transition',
 		'focus:outline-none',
 		'focus:ring-2',
-		'focus:ring-offset-2',
 		'focus:ring-yellow-500',
-		'focus:ring-offset-gray-900',
-		'ring-1',
-		'ring-offset-1',
+		'hover:bg-gray-600/70',
+		'hover:text-yellow-500',
 	];
 	if (props.tracked) {
-		classes.push('bg-yellow-100', 'text-yellow-700', 'hover:bg-yellow-200', 'hover:text-yellow-800', 'ring-yellow-500/60');
+		classes.push('text-yellow-500', 'ring-yellow-500/60');
 	} else {
-		classes.push('bg-gray-700/40', 'text-gray-300', 'hover:bg-gray-600/70', 'hover:text-yellow-500', 'ring-gray-500/30');
+		classes.push('text-gray-300', 'ring-gray-500/30');
 	}
 	return classes.join(' ');
 });
