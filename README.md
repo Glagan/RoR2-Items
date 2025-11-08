@@ -14,7 +14,7 @@ Live preview: [https://ror2.nikurasu.org/](https://ror2.nikurasu.org/)
 
 ## Getting started
 
-Prerequisites: Node.js 18+ (or any version supported by the current Vite release).
+Prerequisites: Node.js 20+ (or any version supported by the current Vite release).
 
 ```bash
 git clone https://github.com/Glagan/RoR2-Items.git
