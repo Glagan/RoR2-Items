@@ -7,6 +7,14 @@
 			<span class="mr-2 truncate">{{ item.name }}</span>
 			<div class="flex items-center space-x-1">
 				<button
+					class="p-1 mr-1 rounded-md text-sm border border-blue-800 bg-blue-600 transition hover:border-blue-900 hover:bg-blue-700"
+					v-if="item.unlock"
+					@click.prevent="toggleModal"
+				>
+					Unlock
+				</button>
+				<span v-if="item.id >= 0">#{{ item.id }}</span>
+				<button
 					type="button"
 					:class="starButtonClass"
 					:aria-pressed="tracked"
@@ -29,14 +37,7 @@
 						/>
 					</svg>
 				</button>
-				<button
-					class="p-1 mr-1 rounded-md text-sm border border-blue-800 bg-blue-600 transition hover:border-blue-900 hover:bg-blue-700"
-					v-if="item.unlock"
-					@click.prevent="toggleModal"
-				>
-					Unlock
-				</button>
-				<span v-if="item.id >= 0">#{{ item.id }}</span>
+
 			</div>
 		</div>
 		<div class="item-body flex flex-row flex-nowrap">
