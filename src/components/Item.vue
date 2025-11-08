@@ -40,7 +40,7 @@
 			</div>
 		</div>
 		<div class="item-body flex flex-row flex-nowrap">
-			<div v-lazyload class="flex-grow-0 flex-shrink-0 border-r" :class="[border]">
+			<div v-lazyload class="grow-0 shrink-0 border-r" :class="[border]">
 				<img
 					title="Click to copy give command"
 					width="90"
@@ -49,7 +49,7 @@
 					@click="copyGive"
 				/>
 			</div>
-			<div class="flex-grow p-1 overflow-y-auto whitespace-pre-line" v-html="description"></div>
+			<div class="grow p-1 overflow-y-auto whitespace-pre-line" v-html="description"></div>
 		</div>
 	</div>
 </template>

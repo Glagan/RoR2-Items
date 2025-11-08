@@ -1,6 +1,26 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+	--color-common: #4f6372;
+	--color-common-light: #3e4e5b;
+	--color-uncommon: #235a11;
+	--color-uncommon-light: #23d160;
+	--color-rare: #952d2b;
+	--color-rare-light: #e3502b;
+	--color-unique: #758623;
+	--color-unique-light: #dbe621;
+	--color-corrupted: #4b0a53;
+	--color-corrupted-light: #e58ee2;
+	--color-lunar: #074c69;
+	--color-lunar-light: #40dff7;
+	--color-equipment: #a06b17;
+	--color-equipment-light: #df9834;
+
+	--spacing-32p: 32%;
+	--spacing-48p: 48%;
+}
 
 html {
 	overflow-y: scroll;

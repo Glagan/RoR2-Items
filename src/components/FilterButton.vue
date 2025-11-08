@@ -3,7 +3,7 @@
 		<span>{{ name }}</span>
 		<span
 			v-if="showBadge"
-			class="inline-flex min-w-[1.5rem] justify-center rounded-full bg-yellow-400/90 px-2 text-xs font-semibold text-gray-900"
+			class="inline-flex min-w-6 justify-center rounded-full bg-yellow-400/90 px-2 text-xs font-semibold text-gray-900"
 		>
 			{{ badgeValue }}
 		</span>

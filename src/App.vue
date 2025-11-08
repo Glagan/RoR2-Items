@@ -62,7 +62,7 @@
 					Clear
 				</button>
 				<input
-					class="flex-grow text-black placeholder-gray-500 border border-gray-200 rounded-r-md p-2 focus:border-blue-800 focus:ring focus:ring-blue-800"
+					class="grow text-black placeholder-gray-500 border border-gray-200 rounded-r-md p-2 bg-white focus:border-blue-800 focus:ring focus:ring-blue-800"
 					v-model="strFilter"
 					placeholder="Search name, tags, rarity and description"
 					@keydown.enter.prevent=""
