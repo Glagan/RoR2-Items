@@ -14,13 +14,13 @@ Live preview: [https://ror2.nikurasu.org/](https://ror2.nikurasu.org/)
 
 ## Getting started
 
-Prerequisites: Node.js 18+ (or any version supported by the current Vite release).
+Prerequisites: Node.js 20+ (or any version supported by the current Vite release).
 
 ```bash
 git clone https://github.com/Glagan/RoR2-Items.git
 cd RoR2-Items
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
 The dev server prints a local URL you can open in the browser. Hot-module replacement is enabled by default.
@@ -29,7 +29,7 @@ The dev server prints a local URL you can open in the browser. Hot-module replac
 
 | Command         | Description                                      |
 | --------------- | ------------------------------------------------ |
-| `npm run dev`   | Start the Vite dev server.                       |
-| `npm run build` | Create a production build under `dist/`.         |
-| `npm run serve` | Preview the production build locally.            |
-| `npm run test`  | Execute the Vitest suite (composables, helpers). |
+| `bun run dev`   | Start the Vite dev server.                       |
+| `bun run build` | Create a production build under `dist/`.         |
+| `bun run serve` | Preview the production build locally.            |
+| `bun run test`  | Execute the Vitest suite (composables, helpers). |
