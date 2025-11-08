@@ -47,9 +47,11 @@
 					v-for="(item, index) in rarities"
 					:rarity="index"
 					:name="item"
-					:key="index"
+					:key="item"
 					:selected="selectedRarity"
 					v-on:selectRarity="selectRarity"
+					:badge-count="item === 'Tracked' ? trackedCount : undefined"
+					:hide-badge-zero="true"
 				/>
 			</div>
 			<div class="flex flew-row flex-nowrap">
@@ -69,7 +71,14 @@
 		</form>
 		<div class="body flex flex-row flex-wrap items-start justify-around mt-1">
 			<template v-if="items.length > 0">
-				<Item v-for="item in items" :key="item.uid" :item="item" @showModal="showModal" />
+				<Item
+					v-for="item in items"
+					:key="item.uid"
+					:item="item"
+					:tracked="isTracked(item.uid)"
+					@showModal="showModal"
+					@toggleTracked="toggleTracked"
+				/>
 			</template>
 			<template v-else>
 				<div class="alert w-full mb-1 overflow-hidden bg-blue-50 text-blue-600 rounded-md shadow-md">
@@ -89,7 +98,7 @@
 							/>
 						</svg>
 
-						No Items found.
+						{{ emptyStateMessage }}
 					</div>
 				</div>
 			</template>
@@ -106,6 +115,7 @@ import allItems from './assets/list.json';
 import Rarity from './Rarity';
 import FilterButton from './components/FilterButton.vue';
 import UpdateAlert from './components/UpdateAlert.vue';
+import { useTrackedItems } from './composables/useTrackedItems';
 
 /**
  * Additional hidden equipments:
@@ -121,22 +131,46 @@ const list = ref<ItemDescription[]>([]);
 const lunarEquipments = [3, 23, 26];
 const strFilter = ref('');
 const rarityFilter = ref<'all' | Rarity>('all');
-const rarities = ['Common', 'Uncommon', 'Rare', 'Unique', 'Corrupted', 'Lunar', 'Equipment'];
+const rarities = ['Common', 'Uncommon', 'Rare', 'Unique', 'Corrupted', 'Lunar', 'Equipment', 'Tracked'];
 const modal = ref<typeof Modal | null>(null);
+const { trackedUids, isTracked, toggleTracked } = useTrackedItems();
+const trackedCount = computed(() => trackedUids.value.size);
 
 const items = computed((): ItemDescription[] => {
 	return list.value.filter((item: ItemDescription) => {
-		return (
-			(strFilter.value == '' ||
-				item.name.indexOf(strFilter.value) >= 0 ||
-				item.tags.indexOf(strFilter.value) >= 0 ||
-				item.uid.indexOf(strFilter.value) >= 0 ||
-				item.description.indexOf(strFilter.value) >= 0 ||
-				item.image.indexOf(strFilter.value) >= 0 ||
-				item.stringRarity.indexOf(strFilter.value) >= 0) &&
-			(rarityFilter.value == 'all' || rarityFilter.value == item.rarity)
-		);
+		const matchesSearch =
+			strFilter.value == '' ||
+			item.name.indexOf(strFilter.value) >= 0 ||
+			item.tags.indexOf(strFilter.value) >= 0 ||
+			item.uid.indexOf(strFilter.value) >= 0 ||
+			item.description.indexOf(strFilter.value) >= 0 ||
+			item.image.indexOf(strFilter.value) >= 0 ||
+			item.stringRarity.indexOf(strFilter.value) >= 0;
+
+		if (!matchesSearch) {
+			return false;
+		}
+
+		if (rarityFilter.value === 'all') {
+			return true;
+		}
+
+		if (rarityFilter.value === Rarity.TRACKED) {
+			return trackedUids.value.has(item.uid);
+		}
+
+		return rarityFilter.value === item.rarity;
 	});
+});
+
+const emptyStateMessage = computed(() => {
+	if (rarityFilter.value === Rarity.TRACKED) {
+		return trackedCount.value === 0
+			? 'No tracked items yet. Click the star icon on any card to add it here.'
+			: 'No tracked items match your search. Adjust your keywords or untrack items to change the list.';
+	}
+
+	return 'No Items found.';
 });
 
 const rarityToString = (rarity: Rarity): string => {
@@ -153,6 +187,8 @@ const rarityToString = (rarity: Rarity): string => {
 			return 'corrupted';
 		case Rarity.LUNAR:
 			return 'lunar';
+		case Rarity.TRACKED:
+			return 'tracked';
 	}
 	//case Rarity.EQUIPMENT:
 	return 'equipment';

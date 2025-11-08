@@ -74,6 +74,9 @@ body.modal-active {
 .corrupted.active {
 	@apply bg-corrupted;
 }
+.tracked.active {
+	@apply bg-yellow-200 text-yellow-900;
+}
 
 input,
 button {
