@@ -1,3 +1,7 @@
 [phases.setup]
 # https://www.nixhub.io/packages/bun
 nixpkgsArchive = 'nixpkgs/1666250dbe4141e4ca8aaf89b40a3a51c2e36144#bun'
+nixPkgs = ['bun', 'curl', 'wget']
+
+[phases.install]
+cmds = ['bun install --frozen-lockfile']
