@@ -83,6 +83,8 @@ const border = computed(() => {
 			return `border-unique-light`;
 		case Rarity.CORRUPTED:
 			return `border-corrupted-light`;
+		case Rarity.MEAL:
+			return `border-meal-light`;
 		case Rarity.LUNAR:
 			return `border-lunar-light`;
 	}
@@ -102,6 +104,8 @@ const background = computed(() => {
 			return `bg-unique`;
 		case Rarity.CORRUPTED:
 			return `bg-corrupted`;
+		case Rarity.MEAL:
+			return `bg-meal`;
 		case Rarity.LUNAR:
 			return `bg-lunar`;
 	}

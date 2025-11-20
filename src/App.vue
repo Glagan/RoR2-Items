@@ -131,7 +131,7 @@ const list = ref<ItemDescription[]>([]);
 const lunarEquipments = [3, 23, 26];
 const strFilter = ref('');
 const rarityFilter = ref<'all' | Rarity>('all');
-const rarities = ['Common', 'Uncommon', 'Rare', 'Unique', 'Corrupted', 'Lunar', 'Equipment', 'Tracked'];
+const rarities = ['Common', 'Uncommon', 'Rare', 'Unique', 'Corrupted', 'Meal', 'Lunar', 'Equipment', 'Tracked'];
 const modal = ref<typeof Modal | null>(null);
 const { trackedUids, isTracked, toggleTracked } = useTrackedItems();
 const trackedCount = computed(() => trackedUids.value.size);
@@ -185,6 +185,8 @@ const rarityToString = (rarity: Rarity): string => {
 			return 'unique';
 		case Rarity.CORRUPTED:
 			return 'corrupted';
+		case Rarity.MEAL:
+			return 'meal';
 		case Rarity.LUNAR:
 			return 'lunar';
 		case Rarity.TRACKED:

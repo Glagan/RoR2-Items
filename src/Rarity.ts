@@ -4,9 +4,10 @@ export const enum Rarity {
 	RARE,
 	UNIQUE,
 	CORRUPTED,
+	MEAL,
 	LUNAR,
 	EQUIPMENT,
-	TRACKED
+	TRACKED,
 }
 
 export default Rarity;

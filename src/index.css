@@ -17,6 +17,8 @@
 	--color-lunar-light: #40dff7;
 	--color-equipment: #a06b17;
 	--color-equipment-light: #df9834;
+	--color-meal: #6d4905;
+	--color-meal-light: #a8710a;
 
 	--spacing-32p: 32%;
 	--spacing-48p: 48%;
@@ -93,6 +95,9 @@ body.modal-active {
 }
 .corrupted.active {
 	@apply bg-corrupted;
+}
+.meal.active {
+	@apply bg-meal;
 }
 .tracked.active {
 	@apply bg-yellow-200 text-yellow-900;
