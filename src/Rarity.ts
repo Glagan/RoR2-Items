@@ -4,7 +4,7 @@ export const enum Rarity {
 	RARE,
 	UNIQUE,
 	CORRUPTED,
-	FOOD,
+	MEAL,
 	LUNAR,
 	EQUIPMENT,
 	TRACKED,
