@@ -1,12 +1,13 @@
 <template>
-	<button class="filter mr-2 p-1 rounded-md space-x-2" :class="cssClass" @click.prevent="select">
+	<button type="button" class="filter chip" :class="cssClass" :aria-pressed="isSelected" @click.prevent="select">
+		<svg v-if="isTracked" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+			<path
+				d="M11.48 3.5a.56.56 0 0 1 1.04 0l2.13 5.11a.56.56 0 0 0 .47.35l5.52.44c.5.04.7.66.32.99l-4.2 3.54a.56.56 0 0 0-.18.56l1.28 5.38a.56.56 0 0 1-.84.61l-4.72-2.88a.56.56 0 0 0-.59 0l-4.72 2.88a.56.56 0 0 1-.84-.61l1.28-5.38a.56.56 0 0 0-.18-.56l-4.2-3.54a.56.56 0 0 1 .32-.99l5.52-.44a.56.56 0 0 0 .47-.35l2.13-5.11Z"
+			/>
+		</svg>
+		<span v-else class="pip" aria-hidden="true"></span>
 		<span>{{ name }}</span>
-		<span
-			v-if="showBadge"
-			class="inline-flex min-w-6 justify-center rounded-full bg-yellow-400/90 px-2 text-xs font-semibold text-gray-900"
-		>
-			{{ badgeValue }}
-		</span>
+		<span v-if="showBadge" class="badge">{{ badgeValue }}</span>
 	</button>
 </template>
 
@@ -23,11 +24,9 @@ const props = defineProps<{
 	hideBadgeZero?: boolean;
 }>();
 
-const cssClass = computed(() => {
-	const classes = [props.name.toLowerCase()];
-	if (props.selected == props.rarity) classes.push('active');
-	return classes;
-});
+const isTracked = computed(() => props.name === 'Tracked');
+const isSelected = computed(() => props.selected == props.rarity);
+const cssClass = computed(() => (isTracked.value ? 'tracked' : `r-${props.name.toLowerCase()}`));
 
 const select = () => {
 	emit('selectRarity', props.rarity);
@@ -41,9 +40,3 @@ const showBadge = computed(() => {
 
 const badgeValue = computed(() => props.badgeCount ?? 0);
 </script>
-
-<style scoped>
-.filter {
-	min-width: 4rem;
-}
-</style>

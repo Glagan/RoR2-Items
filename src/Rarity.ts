@@ -7,6 +7,10 @@ export const enum Rarity {
 	MEAL,
 	LUNAR,
 	EQUIPMENT,
+	HALLOWED,
+	HEX,
+	PAGE,
+	CURIO,
 	TRACKED,
 }
 
