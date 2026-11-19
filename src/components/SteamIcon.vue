@@ -1,5 +1,5 @@
 <template>
-	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 233 233" fill="inherit" class="mr-1">
+	<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 233 233" fill="inherit" aria-hidden="true">
 		<defs>
 			<linearGradient id="a" x2="50%" x1="50%" y2="100%">
 				<stop stop-color="#111D2E" offset="0"></stop>
