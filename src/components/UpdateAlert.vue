@@ -112,11 +112,11 @@
 import { computed, ref } from 'vue';
 import SteamIcon from './SteamIcon.vue';
 
-const version = ref('1.4.0#840 (Alloyed Collective DLC)');
-const date = ref('November 18, 2025');
-const updateLink = ref('https://store.steampowered.com/news/app/632360/view/534364965583192572?l=english');
-const newVersion = ref('1.4.0#840 (Alloyed Collective DLC)');
-const newUpdateLink = ref('https://store.steampowered.com/news/app/632360/view/534364965583192572?l=english');
+const version = ref('1.5.0 (Hallowed Concepts DLC)');
+const date = ref('October 14, 2026');
+const updateLink = ref('https://steamcommunity.com/games/632360/announcements/detail/669505296465396193');
+const newVersion = ref(version.value);
+const newUpdateLink = ref(updateLink.value);
 const updating = ref<string | false>('Currently updating for the latest DLC update.');
 
 const upToDate = computed(() => {

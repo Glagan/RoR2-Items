@@ -1260,6 +1260,33 @@
 		"Summon {offense:Aurelionite} during the teleporter event.\nIt has {offense:100%} {+50%} {offense:damage} and {defense:100%} {+100%} {defense:health}."
 	],
 	[
+		-1,
+		3,
+		"MushShot",
+		"Mycelium Cap",
+		"dlc4,Hallowed Concepts,boss,utility,mobility",
+		"mushShot",
+		"{misc:Nullifies fall damage}. Hitting the ground at a {misc:great enough speed} creates {offense:3} damaging spore clouds on impact that deal {offense:1000%} {+200%} damage each over {misc:10s}."
+	],
+	[
+		-1,
+		3,
+		"HelpWake",
+		"Peace Flower",
+		"dlc4,Hallowed Concepts,boss,unique",
+		"helpWake",
+		"During {misc:The Wake}, these flowers can be picked up and used to heal {misc:Soul Conduits}, restoring {defense:33% of their maximum health} and damaging nearby foes within {offense:50m} for {offense:2000% damage}."
+	],
+	[
+		-1,
+		3,
+		"WispOnKill",
+		"Whispering Fragment",
+		"dlc4,Hallowed Concepts,boss,offense,damage,on kill",
+		"wispOnKill",
+		"Every {offense:5} kills, gain a temporary {offense:orbiting spirit} that attacks with you up to {misc:3} {+1} times, firing a projectile that {offense:explodes} in a {offense:8m} radius for {offense:360%} base damage."
+	],
+	[
 		"**** CORRUPTED ITEMS ****"
 	],
 	[
@@ -1921,5 +1948,332 @@
 		"utility,heal,drop,coffee,deliver",
 		"fridge",
 		"Request an {offense:Eclipse Zero Vending Machine} from the {offense:UES Safe Travels}. Delivery guaranteed in {misc:5 seconds}, dealing {offense:2000% damage}. {defense:Heal} up to 3 targets for {defense:25% of their maximum health}.\nCooldown: {misc:60s}"
+	],
+	[
+		-1,
+		7,
+		"SpawnAltar",
+		"Totem of Sacrifice",
+		"dlc4,Hallowed Concepts,lunar,equipment,sacrifice",
+		"spawnAltar",
+		"Spawn a temporary {offense:Altar of Sacrifice}. Nearby allies receive {debuff:friendly fire}. After {offense:60s}, it distributes rewards that scale based on the number and strength of {offense:enemies and allies killed} within its radius. Equipment is {misc:consumed} on use."
+	],
+	[
+		"**** HALLOWED ITEMS ****"
+	],
+	[
+		-1,
+		8,
+		"BlightZone",
+		"Corpse Lily",
+		"dlc4,Hallowed Concepts,cursed,offense,damage,teleporter",
+		"blightZone",
+		"Release an {offense:expanding cloud of noxious fumes} during the Teleporter event that periodically inflicts stacking {corrupt:Blight} for up to {offense:180%} {(+60% per team's stack)$} damage per second, {misc:averaged} among team members. The cloud {misc:expands as the event progresses}, growing in size by {misc:1%} {+0.15%} per {misc:1%} event charge."
+	],
+	[
+		-1,
+		8,
+		"LowHealthOrbSpawner",
+		"Dream Crucible",
+		"dlc4,Hallowed Concepts,cursed,utility",
+		"lowHealthOrbSpawner",
+		"When another item goes on cooldown or is consumed, {misc:10%} {+10%} chance for {defense:this item to go on cooldown or be consumed instead}. Dream Crucible cannot restore itself. At the start of each stage, it regenerates."
+	],
+	[
+		-1,
+		8,
+		"RechargeableJump",
+		"Earthbound Vessel",
+		"dlc4,Hallowed Concepts,cursed,utility,mobility",
+		"rechargeableJump",
+		"Gain {misc:3} {+2} extra {misc:jumps} that recharge after being grounded for {misc:5 seconds} {-25%}. Each unused jump {defense:increases armor} by {defense:5}."
+	],
+	[
+		-1,
+		8,
+		"CausticPheromones",
+		"Infernal Mark",
+		"dlc4,Hallowed Concepts,cursed,utility",
+		"causticPheromones",
+		"After hitting an enemy with {misc:skills} 10 times, {offense:stun} and {offense:soul-brand} that enemy for {misc:5s} {+5s}. Soul-branded enemies {misc:draw attention} and {offense:have friendly fire enabled}. Once soul-branding wears off, the target {misc:cannot be soul-branded again} for 15 seconds."
+	],
+	[
+		-1,
+		8,
+		"DreamDemon",
+		"Nightmare Demon",
+		"dlc4,Hallowed Concepts,cursed,offense,damage,on kill",
+		"dreamDemon",
+		"{offense:20%} chance on hit to haunt an enemy with a {offense:Nightmare Demon}. Damaging a haunted enemy charges the demon. Upon reaching a charge of {offense:1600%} damage, hitting the demon with any {misc:skill} causes it to {offense:explode} for {offense:600%} {+600%} base damage and activate all your {offense:On-kill} effects."
+	],
+	[
+		-1,
+		8,
+		"SprintDamage",
+		"Ritual Helmet",
+		"dlc4,Hallowed Concepts,cursed,offense,damage,sprint,mobility",
+		"sprintDamage",
+		"Sprinting grants a {misc:charge} for every {misc:10m} {-10%} traveled, up to a {misc:maximum of 10} charges. Once {misc:fully charged}, move {misc:10%} faster and sprinting grants an additional an additional {misc:5%} move speed per second, conjuring a {offense:phantasmal skull}. When the skull collides with an enemy, it consumes a charge and deals {offense:300%} {+100%} base damage, {offense:scaling with movement speed}."
+	],
+	[
+		-1,
+		8,
+		"SanguineChalice",
+		"Sanguine Chalice",
+		"dlc4,Hallowed Concepts,cursed,defense,healing",
+		"sanguineChalice",
+		"{offense:10%} chance to {offense:bleed} an enemy. Your {offense:bleed} damage {defense:heals you} for {defense:0.5%} {+0.5%} of your maximum health per tick."
+	],
+	[
+		-1,
+		8,
+		"GhostBlades",
+		"Stained Scimitar",
+		"dlc4,Hallowed Concepts,cursed,offense,damage",
+		"ghostBlades",
+		"Gain {defense:1%} {+1%} {defense:lifesteal}. {defense:Healing 10%} of your {defense:maximum health} spawns an {offense:orbiting ghost blade} for {misc:5s}, up to a {offense:maximum} of {offense:6} {+6}. Each {offense:blade} deals {offense:100% damage} on impact, plus an additional {offense:240%} as {offense:bleed} damage. Activating your {misc:Secondary skill} fires all {offense:blades} forward."
+	],
+	[
+		-1,
+		8,
+		"GoldenGoose",
+		"Totem of Avarice",
+		"dlc4,Hallowed Concepts,cursed,utility",
+		"goldenGoose",
+		"Hits that deal {offense:more than 400% damage} also turn enemies within {misc:5m} {+5m} into {offense:gold} for {misc:5s}. Enemies turned into gold are {offense:immobilized} and drop {misc:+50%} {+50%} more gold in the form of treasures. Recharges every {misc:10 seconds}."
+	],
+	[
+		-1,
+		8,
+		"VengefulSpirit",
+		"Vengeful Spirit",
+		"dlc4,Hallowed Concepts,cursed",
+		"vengefulSpirit",
+		"Gain {defense:1} {+1} {defense:protective spirit} that absorbs {defense:50%} of all damage taken. If the spirit is killed, become {offense:vengeful} for the rest of the stage, gaining a {offense:40%} increased {offense:attack speed} and {misc:20%} reduced {misc:skill cooldowns} for {misc:15s} {+15s} whenever an ally is killed."
+	],
+	[
+		-1,
+		8,
+		"VileCenser",
+		"Vile Censer",
+		"dlc4,Hallowed Concepts,cursed,offense,damage",
+		"vileCenser",
+		"Gain a {offense:10%} chance on hit to {offense:stun}. Hitting a {offense:stunned} target with a {misc:skill} releases tendrils of black smoke, dealing {offense:200%} {+100%} damage and {offense:chaining to all other enemies} within {misc:10m} {+5m}. This effect can repeat."
+	],
+	[
+		"**** HEXES ****"
+	],
+	[
+		-1,
+		9,
+		"SlipperyGround",
+		"Hex of Acceleration",
+		"dlc4,Hallowed Concepts,curse,mobility",
+		"slipperyGround",
+		"All ground becomes {debuff:slippery, hindering movement}. Your acceleration is reduced by {debuff:40%} {+30%}."
+	],
+	[
+		-1,
+		9,
+		"Blindness",
+		"Hex of Blindness",
+		"dlc4,Hallowed Concepts,curse",
+		"blindness",
+		"Reduces your vision to {debuff:100m} {-50%}."
+	],
+	[
+		-1,
+		9,
+		"LowerHealing",
+		"Hex of Famine",
+		"dlc4,Hallowed Concepts,curse,defense,healing",
+		"lowerHealing",
+		"All {defense:healing} is reduced by {debuff:40%} {+40%}."
+	],
+	[
+		-1,
+		9,
+		"ShareItemsWithEnemies",
+		"Hex of Greed",
+		"dlc4,Hallowed Concepts,curse",
+		"shareItemsWithEnemies",
+		"Every {misc:15 seconds}, {debuff:share a copy} of {offense:1} {+1} random item from your inventory with {misc:3 enemies}."
+	],
+	[
+		-1,
+		9,
+		"HexHaunting",
+		"Hex of Haunting",
+		"dlc4,Hallowed Concepts,curse",
+		"hexHaunting",
+		"Summons a {debuff:Poltergeist} every {misc:60} seconds {-25%} that haunts an {misc:interactable}. Haunted interactables float and get thrown towards you, dealing damage."
+	],
+	[
+		-1,
+		9,
+		"WeakAssHamstring",
+		"Hex of Leaping",
+		"dlc4,Hallowed Concepts,curse,mobility",
+		"weakAssHamstring",
+		"Jumping {debuff:reduces} your jump height by {debuff:25%}. Your jump height {misc:returns gradually} over {misc:6s} {+6}. Additionally, {debuff:reduces} the amount of distance you can {debuff:fall} without taking {debuff:fall damage}."
+	],
+	[
+		-1,
+		9,
+		"RoamingItemDisable",
+		"Hex of Loss",
+		"dlc4,Hallowed Concepts,curse,sprint,mobility",
+		"roamingItemDisable",
+		"Every {misc:30 seconds}, {debuff:10%} of the items in your inventory {+10%} become {debuff:disabled}."
+	],
+	[
+		-1,
+		9,
+		"Mimicry",
+		"Hex of Mimicry",
+		"dlc4,Hallowed Concepts,curse",
+		"mimicry",
+		"Summons a {debuff:Mimic} every {misc:60} seconds {-10%}. The Mimic gains a {misc:0%} increase to {misc:ALL stats} {+10%}."
+	],
+	[
+		-1,
+		9,
+		"RandomDebuffOnInteract",
+		"Hex of Misfortune",
+		"dlc4,Hallowed Concepts,curse",
+		"randomDebuffOnInteract",
+		"Activating an interactable has a {misc:50%} chance to give {debuff:1} {+1} {debuff:random debuff}. Shrines of Chance guarantee a {debuff:random debuff} on failure and none on success."
+	],
+	[
+		-1,
+		9,
+		"BarrierEnemiesOnKill",
+		"Hex of Ossification",
+		"dlc4,Hallowed Concepts,curse",
+		"barrierEnemiesOnKill",
+		"Killing an enemy grants {defense:100%} {+100%} of their maximum health as {defense:temporary barrier} to {debuff:all enemies} within {offense:30m} {+15m}."
+	],
+	[
+		-1,
+		9,
+		"HexCurse",
+		"Hex of Pain",
+		"dlc4,Hallowed Concepts,curse",
+		"hexCurse",
+		"Reduces your {defense:maximum health} by {debuff:30%} {+30%}."
+	],
+	[
+		-1,
+		9,
+		"OutOfTPRadius",
+		"Hex of Patience",
+		"dlc4,Hallowed Concepts,curse,teleporter",
+		"outOfTPRadius",
+		"Standing outside of the Teleporter's radius {debuff:harms you} by {debuff:1%} of your {debuff:maximum health}. Every {misc:10s} spent outside of the Teleporter {debuff:multiplies} the damage by {debuff:12.5%} {+12.5%}.\r\n{misc:This effect applies to your allies as well}."
+	],
+	[
+		-1,
+		9,
+		"IncreasedDifficulty",
+		"Hex of Rain",
+		"dlc4,Hallowed Concepts,curse",
+		"increasedDifficulty",
+		"Increases {debuff:Difficulty} by {debuff:25%} {+25%}."
+	],
+	[
+		-1,
+		9,
+		"HexMountain",
+		"Hex of Strife",
+		"dlc4,Hallowed Concepts,curse,teleporter,interactable",
+		"hexMountain",
+		"The Teleporter receives {debuff:1} {+1} Shrine of the Mountain effects, {debuff:without the extra rewards}."
+	],
+	[
+		"**** PAGES ****"
+	],
+	[
+		-1,
+		10,
+		"PageClarity",
+		"Clarity",
+		"dlc4,Hallowed Concepts,ritual,n’tormat",
+		"pageClarity",
+		"Unlocks the ritual {misc:Clarity} within the N'tormat. Refreshes your skill and equipment cooldowns on use, and grants a 75% reduction for 10 seconds."
+	],
+	[
+		-1,
+		10,
+		"PageUpgradeItem",
+		"Dark Alchemy",
+		"dlc4,Hallowed Concepts,ritual,n’tormat",
+		"pageUpgradeItem",
+		"Unlocks the ritual {misc:Dark Alchemy} within the N'tormat. {debuff:Downgrades} a targeted item to a lesser tier, while also dropping an extra copy."
+	],
+	[
+		-1,
+		10,
+		"PageSummonFeralToddlers",
+		"Fanatic Summons",
+		"dlc4,Hallowed Concepts,ritual,n’tormat",
+		"pageSummonFeralToddlers",
+		"Unlocks the ritual {misc:Fanatic Summons} within the N'tormat. Summons 10 {misc:Lynx Pups}, who rapidly bite foes for {offense:100% damage}."
+	],
+	[
+		-1,
+		10,
+		"PagePurify",
+		"Purify",
+		"dlc4,Hallowed Concepts,ritual,n’tormat",
+		"pagePurify",
+		"Unlocks the ritual {misc:Purify} within the N'tormat. Cut the {debuff:max health} of nearby enemies by {offense:50%}. Bosses and strong enemies {debuff:resist this effect}."
+	],
+	[
+		-1,
+		10,
+		"PageDie",
+		"Reincarnation",
+		"dlc4,Hallowed Concepts,ritual,n’tormat",
+		"pageDie",
+		"Unlocks the ritual {misc:Reincarnation} within the N'tormat. {debuff:Kills you}. If brought to the right location, allows you to travel to other locations."
+	],
+	[
+		-1,
+		10,
+		"PageTeamInvisibility",
+		"Shadow Cloak",
+		"dlc4,Hallowed Concepts,ritual,n’tormat",
+		"pageTeamInvisibility",
+		"Unlocks the ritual {misc:Shadow Cloak} within the N'tormat. Cloak yourself and your allies in shadow for 30 seconds, becoming {misc:invisible}, gaining {misc:40% movement speed}, and {misc:100 armor}."
+	],
+	[
+		-1,
+		10,
+		"PageShredded",
+		"Shredded Page",
+		"dlc4,Hallowed Concepts,ritual,n’tormat,unique",
+		"pageShredded",
+		"Does nothing. What did you think would happen?"
+	],
+	[
+		-1,
+		10,
+		"PageWarpGate",
+		"Warp Gate",
+		"dlc4,Hallowed Concepts,ritual,n’tormat",
+		"pageWarpGate",
+		"Unlocks the ritual {misc:Warp Gate} within the N'tormat. Conjures a {misc:Warp Gate} that can be used to {offense:explosively teleport} to anywhere you can see. On arrival, spatial backlash damages enemies for {offense:150% to 15000%} and applies stacks of {misc:Frost} based on distance traveled. {misc:Limited to 4 uses per stage.}"
+	],
+	[
+		"**** CURIOS ****"
+	],
+	[
+		-1,
+		11,
+		"CursedBook",
+		"The N'tormat",
+		"dlc4,Hallowed Concepts,key item,book,ritual",
+		"cursedBook",
+		"Pressing '{offense:activate key item}' casts a ritual by consuming a {misc:Page of the N'tormat}. Pressing '{misc:change key item action}' changes your currently equipped Page. Consumed Pages regenerate at the beginning of every stage. Acquiring a page curses the next Teleporter Event."
 	]
 ]

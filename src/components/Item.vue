@@ -42,7 +42,7 @@
 		<div class="item-body flex flex-row flex-nowrap">
 			<div v-lazyload class="grow-0 shrink-0 border-r" :class="[border]">
 				<img
-					title="Click to copy give command"
+					:title="giveCommand ? 'Click to copy give command' : undefined"
 					width="90"
 					height="90"
 					:data-url="`img/${item.image}.jpg`"
@@ -67,10 +67,6 @@ const emit = defineEmits<{
 	(event: 'toggleTracked', uid: ItemUid): void;
 }>();
 
-const isLunarEquipment = computed(() => {
-	return false; // return this.$store.state.lunarEquipments.indexOf(this.item.id) >= 0;
-});
-
 const border = computed(() => {
 	switch (props.item.rarity) {
 		case Rarity.COMMON:
@@ -87,6 +83,14 @@ const border = computed(() => {
 			return `border-meal-light`;
 		case Rarity.LUNAR:
 			return `border-lunar-light`;
+		case Rarity.HALLOWED:
+			return `border-hallowed-light`;
+		case Rarity.HEX:
+			return `border-hex-light`;
+		case Rarity.PAGE:
+			return `border-page-light`;
+		case Rarity.CURIO:
+			return `border-curio-light`;
 	}
 	// case Rarity.EQUIPMENT:
 	return `border-equipment-light`;
@@ -108,6 +112,14 @@ const background = computed(() => {
 			return `bg-meal`;
 		case Rarity.LUNAR:
 			return `bg-lunar`;
+		case Rarity.HALLOWED:
+			return `bg-hallowed`;
+		case Rarity.HEX:
+			return `bg-hex`;
+		case Rarity.PAGE:
+			return `bg-page`;
+		case Rarity.CURIO:
+			return `bg-curio`;
 	}
 	// case Rarity.EQUIPMENT:
 	return `bg-equipment`;
@@ -146,12 +158,17 @@ const starButtonClass = computed(() => {
 	return classes.join(' ');
 });
 
+const giveCommand = computed(() => {
+	const { id, uid, rarity } = props.item;
+	if (rarity === Rarity.CURIO || (id < 0 && uid.startsWith('missinguid_'))) return;
+
+	// Catalog indices are build-specific; new entries use the game's asset name instead.
+	const target = id < 0 ? uid : id;
+	return rarity === Rarity.EQUIPMENT ? `give_equip ${target}` : `give_item ${target} 1`;
+});
+
 const copyGive = () => {
-	let command = 'give_item';
-	if (props.item.rarity == Rarity.EQUIPMENT || (props.item.rarity == Rarity.LUNAR && isLunarEquipment.value)) {
-		command = 'give_equip';
-	}
-	navigator.clipboard.writeText(`${command} ${props.item.id} 1`);
+	if (giveCommand.value) navigator.clipboard.writeText(giveCommand.value);
 };
 
 const toggleModal = () => {

@@ -19,6 +19,14 @@
 	--color-equipment-light: #df9834;
 	--color-meal: #6d4905;
 	--color-meal-light: #a8710a;
+	--color-hallowed: #702943;
+	--color-hallowed-light: #ee82a6;
+	--color-hex: #4c365f;
+	--color-hex-light: #bb9de7;
+	--color-page: #685234;
+	--color-page-light: #d8b17a;
+	--color-curio: #265753;
+	--color-curio-light: #82c5ab;
 
 	--spacing-32p: 32%;
 	--spacing-48p: 48%;
@@ -98,6 +106,18 @@ body.modal-active {
 }
 .meal.active {
 	@apply bg-meal;
+}
+.hallowed.active {
+	@apply bg-hallowed;
+}
+.hex.active {
+	@apply bg-hex;
+}
+.page.active {
+	@apply bg-page;
+}
+.curio.active {
+	@apply bg-curio;
 }
 .tracked.active {
 	@apply bg-yellow-200 text-yellow-900;
