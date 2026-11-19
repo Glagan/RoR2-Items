@@ -164,7 +164,9 @@ const giveCommand = computed(() => {
 
 	// Catalog indices are build-specific; new entries use the game's asset name instead.
 	const target = id < 0 ? uid : id;
-	return rarity === Rarity.EQUIPMENT ? `give_equip ${target}` : `give_item ${target} 1`;
+	// Lunar items and equipment share a filter, not a catalog.
+	const isLunarEquipment = rarity === Rarity.LUNAR && ['BurnNearby', 'CrippleWard', 'Meteor', 'Tonic'].includes(uid);
+	return rarity === Rarity.EQUIPMENT || isLunarEquipment ? `give_equip ${target}` : `give_item ${target} 1`;
 });
 
 const copyGive = () => {
