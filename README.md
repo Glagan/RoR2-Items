@@ -33,3 +33,21 @@ The dev server prints a local URL you can open in the browser. Hot-module replac
 | `bun run build` | Create a production build under `dist/`.         |
 | `bun run serve` | Preview the production build locally.            |
 | `bun run test`  | Execute the Vitest suite (composables, helpers). |
+
+## Sentry
+
+To enable monitoring locally, use [`.env.example`](.env.example) as a template
+for `.env.local`, set `VITE_SENTRY_DSN` to the project's public DSN, and restart
+Vite. Without a DSN the SDK does not initialize.
+
+For production, pass `VITE_SENTRY_DSN` to Docker with `--build-arg`. The build
+sets the Sentry release to `ror2-items@<source hash>` by default, without needing
+`.git`. To use a specific release (such as a Git commit SHA), pass
+`--build-arg VITE_SENTRY_RELEASE=<id>`. These settings are embedded at build time;
+setting them on the running Nginx container has no effect. The Vite mode sets
+the Sentry environment. Traces are sampled at 100% locally and 10% in production. Session Replay captures only sessions with errors, masking text and
+blocking media. Use `Sentry.logger` for intentional application logs.
+
+Production stack traces need [Vite source map uploads](https://docs.sentry.io/platforms/javascript/guides/vue/sourcemaps/uploading/vite/).
+Uploads are not configured yet. Keep the upload token in your build secret store,
+never in a `VITE_` variable.

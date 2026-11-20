@@ -1,4 +1,6 @@
 node_modules
+dist
+dist-ssr
 Dockerfile*
 docker-compose*
 .dockerignore
@@ -10,6 +12,7 @@ LICENSE
 Makefile
 helm-charts
 .env
+.env*.local
 .editorconfig
 .idea
 coverage*

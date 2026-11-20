@@ -19,7 +19,18 @@ COPY . .
 # [optional] tests & build
 ENV NODE_ENV=production
 RUN bun run test
-RUN bun run build
+
+# Optional public build-time settings for the browser SDK.
+ARG VITE_SENTRY_DSN
+ARG VITE_SENTRY_RELEASE
+RUN set -o pipefail; \
+    if [ -z "$VITE_SENTRY_RELEASE" ]; then \
+        source_hash=$(find . -path './node_modules' -prune -o -type f -print0 \
+            | LC_ALL=C sort -z | xargs -0 sha256sum | sha256sum | cut -d ' ' -f 1) || exit 1; \
+        VITE_SENTRY_RELEASE="ror2-items@$source_hash"; \
+    fi; \
+    export VITE_SENTRY_RELEASE; \
+    bun run build
 
 # copy production dependencies and source code into final image
 FROM nginx:alpine AS release
